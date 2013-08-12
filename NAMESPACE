@@ -1,0 +1,10 @@
+importFrom( IRanges, unlist )
+importFrom( BiocGenerics, setdiff )
+
+export(
+    methodsMerge, plotChromosome, plotRegion,
+    readBreakDancer, readCnvnator, readDelly,
+    readPindel, readSvseq, svAnnotation, geneAnnotation
+)
+
+

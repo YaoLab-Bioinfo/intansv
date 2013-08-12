@@ -1,0 +1,241 @@
+%\VignetteIndexEntry{An Introduction to intansv}
+%\VignetteDepends{}
+%\VignetteKeywords{Structural variation}
+%\VignettePackage{intansv}
+\documentclass[10pt]{article}
+
+\textwidth=6.5in
+\textheight=8.5in
+%\parskip=.3cm
+\oddsidemargin=-.1in
+\evensidemargin=-.1in
+\headheight=-.3in
+
+\newcommand{\Rfunction}[1]{{\texttt{#1}}}
+\newcommand{\Robject}[1]{{\texttt{#1}}}
+\newcommand{\Rpackage}[1]{{\textit{#1}}}
+\newcommand{\Rmethod}[1]{{\texttt{#1}}}
+\newcommand{\Rfunarg}[1]{{\texttt{#1}}}
+\newcommand{\Rclass}[1]{{\textit{#1}}}
+\newcommand{\Rcode}[1]{{\texttt{#1}}}
+
+\newcommand{\software}[1]{\textsf{#1}}
+\newcommand{\R}{\software{R}}
+\newcommand{\intansv}{\Rpackage{intansv}}
+
+\usepackage{hyperref}
+
+\usepackage[authoryear,round]{natbib}
+\usepackage{times}
+
+\bibliographystyle{plainnat}
+
+\title{An Introduction to \intansv{}}
+\author{Wen Yao}
+\date{\today}
+
+\begin{document}
+\SweaveOpts{concordance=TRUE}
+
+\maketitle
+
+\tableofcontents
+
+<<options,echo=FALSE>>=
+options(width=72)
+@
+
+\section{Introduction}
+
+Currently, dozens of softwares have been developped to predict structural
+variations (SV) utilizing next-generation sequencing data. However, the 
+prediction of multiple methods have to be integrated to get relatively 
+reliable results \citep{Drosophila}. The \intansv{} package is designed for 
+integrating results of different methods, annotating effects caused by SVs to 
+genes and its elements, displaying the genomic distribution of SVs and 
+visualizing SVs in specific genomic region. In this vignette,
+we will rely on a simple, illustrative example dataset to explain 
+the usage of \intansv{}.
+
+The \intansv{} package is available at bioconductor.org and can be
+downloaded via \Rfunction{biocLite}:
+
+<<biocLite, eval=FALSE>>=
+source("http://bioconductor.org/biocLite.R")
+biocLite("intansv")
+@
+<<initialize, results=hide>>=
+library(intansv)
+@
+
+\section{Usage of \intansv{} with example dataset}
+
+The example dataset was obtained by running five different softwares with the 
+alignment results of a public available NGS dataset (NCBI SRA accession number
+ SRA012177) to the rice reference genome 
+(\url{http://rice.plantbiology.msu.edu/}). 
+These five softwares including BreakDancer \citep{BreakDancer}, 
+Pindel \citep{Pindel}, CNVnator \citep{CNVnator}, DELLY \citep{DELLY} and 
+SVseq2 \citep{svseq} were run with default parameters.
+The predicted SVs of chromosomes, \emph{chr05} and \emph{chr10}, 
+were provided in the example dataset. 
+
+\subsection{Read in predictions of different softwares}
+
+Most of the predictions of softwares are tedious and need to be formatted 
+for further analysis. \intansv{} provides functions to read in the 
+predictions of five popular softwares, BreakDancer, Pindel, CNVnator, 
+DELLY and SVseq2. During this process, the SV predictions with low quality 
+would be filtered out and overlapped predictions would be resolved.
+
+We begin our discussion by reading in some example data.
+<<read in results of different methods>>=
+breakdancer <- readBreakDancer(system.file("extdata/ZS97.breakdancer.sv",
+                               package="intansv"))
+cnvnator <- readCnvnator(system.file("extdata/cnvnator",package="intansv"))
+svseq <- readSvseq(system.file("extdata/svseq2",package="intansv"))
+delly <- readDelly(system.file("extdata/delly",package="intansv"))
+pindel <- readPindel(system.file("extdata/pindel",package="intansv"))
+@
+
+Note that files in the directories that contain the predictions of CNVnator, 
+DELLY, Pindel and SVseq2 should be named with approriate suffix names. See 
+the manuals and the example dataset for more details.
+
+The results of these five softwares have now been read into R and storaged as 
+R data structure of lists with different compoents representing different types 
+of SVs. We only care about three types of SVs, deletions, duplications and 
+inversions.
+
+<<BreakDancer>>=
+str(breakdancer)
+@
+
+BreakDancer is able to predict deletions and inversions.
+
+<<cnvnator>>=
+str(cnvnator)
+@
+
+CNVnator is able to predict deletions and duplications.
+
+<<SVseq2>>=
+str(svseq)
+@
+
+SVseq2 is able to predict deletions.
+
+<<DELLY>>=
+str(delly)
+@
+
+DELLY is able to predict deletions, inversions and duplications.
+
+<<Pindel>>=
+str(pindel)
+@
+
+Pindel is able to predict deletions, inversions and duplications.
+
+
+\subsection{Integrate predictions of different softwares}
+
+To get more reliable results, we need to integrate the predictions of
+different softwares. See our paper \citep{intansv} for more details on 
+how \intansv{} integrate the predictions of different softwares.
+<<MethodsMerge>>=
+sv_all_methods <- methodsMerge(breakdancer,pindel,cnvnator,delly,svseq)
+str(sv_all_methods)
+@
+
+The integrated results contain 897 deletions, 13 duplications and 12 inversions. 
+\intansv{} is also able to integrate SV predictions of other softwares. However,
+predictions of other softwares should be provided as a data frame with six columns:
+
+\begin{itemize}
+\item{chromosome}{\qquad the chromosome ID of a SV}
+\item{pos1}{\qquad the start coordinate of a SV}
+\item{pos2}{\qquad the end coordinate of a SV}
+\item{size}{\qquad the size of a SV}
+\item{type}{\qquad the type of a SV}
+\item{methods}{\qquad the software used to get this SV prediction}
+\end{itemize}
+
+\subsection{Annotate the effects of SVs}
+
+To annotate the effects of SVs to genes, we need the genomic annotation file,
+which is usually a \emph{.gff3} file. This file could be read into R by the 
+\Rpackage{rtracklayer} package and storaged as genomic ranges data. An example 
+genomic annotation file has been storaged in the example dataset of \intansv{}.
+
+<<sv annotation>>=
+load(system.file("extdata/genome.anno.RData",package="intansv"))
+sv_all_methods.anno <- llply(sv_all_methods,svAnnotation,
+                             genomeAnnotation=msu_gff_v7)
+names(sv_all_methods.anno)
+head(sv_all_methods.anno$del)
+@
+
+Since the function \Rfunction{svAnnotation} only accept structural variations 
+of the data frame format, we need to apply this function to each component of 
+\emph{sv\_all\_methods}, which is a list.
+
+\subsection{Display the genomic distribution of SVs}
+
+Now, let's get a genomic view of SVs. We first split chromosomes into 
+windows of 1 Mb and then display the number of SVs in each window as circular 
+barplot. We also need the length of each chromosome, which was storaged 
+in the example dataset of \intansv{}.
+%
+<<genomic_distribution, fig=TRUE, include=FALSE, eps=FALSE, width=7,height=7>>=
+genome
+plotChromosome(genome,sv_all_methods,1000000)
+@
+
+\begin{figure}[!htb]
+  \begin{center}
+     \includegraphics[width=0.8\textwidth]{intansvOverview-genomic_distribution}
+     \caption{\label{genomic_distribution}%
+      Visualization of SVs distribution in the whole genome. Blue: deletions, 
+      Red: duplications, Green: inversions.}
+  \end{center}
+\end{figure}
+
+
+\subsection{Visualize SVs in specific genomic region}
+
+We could also visualize SVs in specific genomic region. Here, we also need the 
+genomic annotation file (named with suffix \emph{.gff3} or \emph{.gff}). 
+
+%
+<<region_visualization, fig=TRUE, include=FALSE, eps=FALSE, width=7,height=7>>=
+head(msu_gff_v7,n=3)
+plotRegion(sv_all_methods,msu_gff_v7,"chr05",1,200000)
+@
+
+\begin{figure}[!htb]
+  \begin{center}
+     \includegraphics[width=0.7\textwidth]{intansvOverview-region_visualization}  
+     \caption{\label{region_visualization}%
+      SVs in genomic region chr05:1-200000. Blue: genes, Red: deletions, 
+      Green: duplications, Purple: inversions.
+     }
+  \end{center}
+\end{figure}
+
+This command showed the SVs in the genomic region \emph{chr05:1-200000}. 
+The genes and SVs were shown as circular rectangles with different color.
+
+\pagebreak[4]
+
+\section{Session Information}
+
+The version number of R and packages loaded for generating the vignette were:
+
+<<echo=FALSE>>=
+sessionInfo()
+@
+
+\bibliography{intansvOverview}
+
+\end{document}
