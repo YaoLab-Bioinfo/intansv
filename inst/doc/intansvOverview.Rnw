@@ -19,8 +19,8 @@
 \newcommand{\Rclass}[1]{{\textit{#1}}}
 \newcommand{\Rcode}[1]{{\texttt{#1}}}
 
-\newcommand{\software}[1]{\textsf{#1}}
-\newcommand{\R}{\software{R}}
+\newcommand{\program}[1]{\textsf{#1}}
+\newcommand{\R}{\program{R}}
 \newcommand{\intansv}{\Rpackage{intansv}}
 
 \usepackage{hyperref}
@@ -47,7 +47,7 @@ options(width=72)
 
 \section{Introduction}
 
-Currently, dozens of softwares have been developped to predict structural
+Currently, dozens of programs have been developped to predict structural
 variations (SV) utilizing next-generation sequencing data. However, the 
 prediction of multiple methods have to be integrated to get relatively 
 reliable results \citep{Drosophila}. The \intansv{} package is designed for 
@@ -70,87 +70,121 @@ library(intansv)
 
 \section{Usage of \intansv{} with example dataset}
 
-The example dataset was obtained by running five different softwares with the 
+The example dataset was obtained by running five different programs with the 
 alignment results of a public available NGS dataset (NCBI SRA accession number
  SRA012177) to the rice reference genome 
 (\url{http://rice.plantbiology.msu.edu/}). 
-These five softwares including BreakDancer \citep{BreakDancer}, 
+These five programs including BreakDancer \citep{BreakDancer}, 
 Pindel \citep{Pindel}, CNVnator \citep{CNVnator}, DELLY \citep{DELLY} and 
 SVseq2 \citep{svseq} were run with default parameters.
 The predicted SVs of chromosomes, \emph{chr05} and \emph{chr10}, 
 were provided in the example dataset. 
 
-\subsection{Read in predictions of different softwares}
+\subsection{Read in predictions of different programs}
 
-Most of the predictions of softwares are tedious and need to be formatted 
+Most of the predictions of programs are tedious and need to be formatted 
 for further analysis. \intansv{} provides functions to read in the 
-predictions of five popular softwares, BreakDancer, Pindel, CNVnator, 
+predictions of five popular programs, BreakDancer, Pindel, CNVnator, 
 DELLY and SVseq2. During this process, the SV predictions with low quality 
 would be filtered out and overlapped predictions would be resolved.
 
 We begin our discussion by reading in some example data.
-<<read in results of different methods>>=
+<<read in results of BreakDancer>>=
 breakdancer <- readBreakDancer(system.file("extdata/ZS97.breakdancer.sv",
                                package="intansv"))
-cnvnator <- readCnvnator(system.file("extdata/cnvnator",package="intansv"))
-svseq <- readSvseq(system.file("extdata/svseq2",package="intansv"))
-delly <- readDelly(system.file("extdata/delly",package="intansv"))
-pindel <- readPindel(system.file("extdata/pindel",package="intansv"))
-@
-
-Note that files in the directories that contain the predictions of CNVnator, 
-DELLY, Pindel and SVseq2 should be named with approriate suffix names. See 
-the manuals and the example dataset for more details.
-
-The results of these five softwares have now been read into R and storaged as 
-R data structure of lists with different compoents representing different types 
-of SVs. We only care about three types of SVs, deletions, duplications and 
-inversions.
-
-<<BreakDancer>>=
 str(breakdancer)
 @
 
-BreakDancer is able to predict deletions and inversions.
+BreakDancer is able to predict deletions and inversions. The prediction of
+all kind of SVs were provided as a single file by BreakDancer. You can feed
+this file to \Rfunction{readBreakdancer} and it will do all the tedious work
+for you.
 
-<<cnvnator>>=
+<<read in results of cnvnator>>=
+cnvnator <- readCnvnator(system.file("extdata/cnvnator",package="intansv"))
 str(cnvnator)
 @
 
-CNVnator is able to predict deletions and duplications.
+CNVnator is able to predict deletions and duplications. The final output of
+CNVnator usually contains several files and each file is the output for a 
+specific chromosome. You should put all these files in the same directory and
+feed the path of this directory to \Rfunction{readCnvnator}. Then it will do 
+all the jobs for you. However, the directory given to \Rfunction{readCnvnator}
+should only contain the final output files of CNVnator. See the example dataset 
+for more details.
 
-<<SVseq2>>=
+<<read in results of SVseq2>>=
+svseq <- readSvseq(system.file("extdata/svseq2",package="intansv"))
 str(svseq)
 @
 
-SVseq2 is able to predict deletions.
+SVseq2 is able to predict deletions. The final output of SVseq2 contains 
+several files and each file is the output for a specific chromosome. What's more,
+different kind of SVs were written to different files. You should put all these
+files in the same directory and feed the path of this directory to 
+\Rfunction{readSvseq}. However, the files contain the predicted deletions in this
+directory should be named with suffix of \emph{.del}. See the example dataset 
+for more details.
 
-<<DELLY>>=
+<<read in results of DELLY>>=
+delly <- readDelly(system.file("extdata/delly",package="intansv"))
 str(delly)
 @
 
-DELLY is able to predict deletions, inversions and duplications.
+DELLY is able to predict deletions, inversions and duplications. The final 
+prediction of different kind of SVs given by DELLY were written to different 
+files. You should put all these files in the same directory and feed the path of 
+this directory to \Rfunction{readDelly}. DELLY produces two output files for 
+all kind of SVs. One file with the paired-end predictions and one file with 
+the split-read predictions. The files contain the paired-end predictions of
+deletions, inversions and duplication in this directory should be named with 
+suffix of \emph{.del}, \emph{.inv} and \emph{.dup} respectively. The files 
+contain the paired-end predictions of deletions, inversions and duplication
+in this directory should be named with suffix of \emph{.del}, \emph{.inv} 
+and \emph{.dup} respectively. See the example dataset for more details.
 
-<<Pindel>>=
+<<read in results of Pindel>>=
+pindel <- readPindel(system.file("extdata/pindel",package="intansv"))
 str(pindel)
 @
 
-Pindel is able to predict deletions, inversions and duplications.
+Pindel is able to predict deletions, inversions and duplications. The final 
+prediction for different chromosomes given by Pindel were written to different 
+files. And different kind of SVs were written to different files. 
+You should put all these files in the same directory and feed the path of 
+this directory to \Rfunction{readPindel}. However, the files contain the 
+predicted deletions, inversions and duplication in this directory should be 
+named with suffix of \emph{\_D}, \emph{\_INV} and \emph{\_TD} respectively. See 
+the example dataset for more details.
 
 
-\subsection{Integrate predictions of different softwares}
+The results of these five programs have now been read into R and storaged as
+R data structure of lists with different compoents representing different types
+of SVs. We only care about three types of SVs, deletions, duplications and
+inversions.
+
+
+\subsection{Integrate predictions of different programs}
 
 To get more reliable results, we need to integrate the predictions of
-different softwares. See our paper \citep{intansv} for more details on 
-how \intansv{} integrate the predictions of different softwares.
+different programs. See our paper \citep{intansv} for more details on 
+how \intansv{} integrate the predictions of different programs.
 <<MethodsMerge>>=
 sv_all_methods <- methodsMerge(breakdancer,pindel,cnvnator,delly,svseq)
 str(sv_all_methods)
 @
 
 The integrated results contain 897 deletions, 13 duplications and 12 inversions. 
-\intansv{} is also able to integrate SV predictions of other softwares. However,
-predictions of other softwares should be provided as a data frame with six columns:
+However, it's not necessary for you to feed \intansv{} the output of all five programs.
+The following example shows the integration of four programs: BreakDancer, CNVnator,
+DELLY and SVseq2.
+<<MethodsMerge>>=
+sv_all_methods.nopindel <- methodsMerge(breakdancer,pindel=NULL,cnvnator,delly,svseq)
+str(sv_all_methods.nopindel)
+@
+
+\intansv{} is also able to integrate SV predictions of other programs. However,
+predictions of other programs should be provided as a data frame with six columns:
 
 \begin{itemize}
 \item{chromosome}{\qquad the chromosome ID of a SV}
@@ -158,7 +192,7 @@ predictions of other softwares should be provided as a data frame with six colum
 \item{pos2}{\qquad the end coordinate of a SV}
 \item{size}{\qquad the size of a SV}
 \item{type}{\qquad the type of a SV}
-\item{methods}{\qquad the software used to get this SV prediction}
+\item{methods}{\qquad the program used to get this SV prediction}
 \end{itemize}
 
 \subsection{Annotate the effects of SVs}
