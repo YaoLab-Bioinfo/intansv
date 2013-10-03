@@ -4,7 +4,7 @@ Description: This package provides efficient tools to read and integrate
 	structural variations predicted by popular softwares. Annotation and
 	visulation of structural variations are also implemented in the
 	package.
-Version: 0.99.3
+Version: 0.99.4
 Author: Wen Yao <ywhzau@gmail.com>
 Maintainer: Wen Yao <ywhzau@gmail.com>
 biocViews: Genetics, Annotation, Sequencing, Software

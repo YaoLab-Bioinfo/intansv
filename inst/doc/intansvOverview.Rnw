@@ -70,7 +70,7 @@ library(intansv)
 
 Note: Currently, \intansv{} is a devel version package and will appear in 
 the Bioconductor release 2.13. Now you have to download the source of 
-\intansv{} to install it via command \emph{R CMD INSTALL intansv_0.99.3.tar.gz}.
+\intansv{} to install it via command \emph{R CMD INSTALL intansv\_0.99.3.tar.gz}.
 
 \section{Usage of \intansv{} with example dataset}
 
