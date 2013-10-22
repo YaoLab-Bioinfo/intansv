@@ -19,6 +19,8 @@
     \item{delly}{a list of structural variations predicted by DELLY.}
     \item{svseq}{a list of structural variations predicted by SVseq2.}
     \item{others}{a data frame of structural variations predicted by other tools.}
+    \item{overLapPer}{SVs predicted by different methods that have reciprocal coordinate overlap larger than this threshold would be clustered together}
+    \item{numMethodsSup}{SV clusters supportted by no more than this threshold would be discarded}
 }
 
 \details{
@@ -59,5 +61,13 @@
 
     sv_all_methods <- methodsMerge(breakdancer,pindel,cnvnator,delly,svseq)
     str(sv_all_methods)
+    
+    sv_all_methods.1 <- methodsMerge(breakdancer,pindel,cnvnator,delly,svseq,
+                                 overLapPer=0.7)
+    str(sv_all_methods.1)
+
+    sv_all_methods.2 <- methodsMerge(breakdancer,pindel,cnvnator,delly,svseq,
+                                 overLapPer=0.8, numMethodsSup=3)
+    str(sv_all_methods.2)
 }
 

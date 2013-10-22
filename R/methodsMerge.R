@@ -1,6 +1,6 @@
 
 ## Merging overlapped SVs predicted by different methods
-methodsCluster <- function(df, methodsname)
+methodsCluster <- function(df, methodsName, overLapPer=0.8, numMethodsSup=2)
 {
     if(nrow(df)<2) {
         return(NULL)
@@ -16,7 +16,7 @@ methodsCluster <- function(df, methodsname)
                     as.numeric(as.character(x[2]))), 
                     OverlapLen/(as.numeric(as.character(y[3]))-
                     as.numeric(as.character(y[2]))))
-                if (OverlapPercent<0.8) {
+                if (OverlapPercent<overLapPer) {
                     return(1)
                 } else {
                     return(0)
@@ -28,12 +28,12 @@ methodsCluster <- function(df, methodsname)
         cl <- cutree(hc, h=0)
         df$cl <- unname(cl)
         dfRes <- ddply(df, ("cl"), function(dfTemp){
-            if (length(unique(dfTemp$method))<2) {
+            if (length(unique(dfTemp$method))<numMethodsSup) {
                 return(NULL)
             } else {
                 tmpRes <- c(dfTemp$chromosome[1], round(mean(dfTemp$pos1)), 
                             round(mean(dfTemp$pos2)))
-                MethodStat <- sapply(methodsname, function(x){
+                MethodStat <- sapply(methodsName, function(x){
                                      return(ifelse(any(grepl(x, dfTemp$method)),
                                                    "Y", "N"))})
                 return(c(tmpRes, MethodStat))
@@ -46,7 +46,7 @@ methodsCluster <- function(df, methodsname)
 
 
 methodsMerge <- function(breakdancer, pindel, cnvnator, 
-                         delly, svseq, others=NULL) 
+                         delly, svseq, others=NULL, overLapPer=0.8, numMethodsSup=2) 
 {
     ## collecting all deletions predicted by different methods
     DeletionList <- list(breakdancer$del, pindel$del, 
@@ -90,7 +90,8 @@ methodsMerge <- function(breakdancer, pindel, cnvnator,
     InversionRes <- findOverlaps(InversionIrange, reduce(InversionIrange))
     InversionDf$class <- subjectHits(InversionRes)
     InversionDfMerge <- ddply(InversionDf, ("class"), 
-                              methodsCluster, MethodsName)
+                              methodsCluster, methodsName=MethodsName, 
+                              overLapPer=overLapPer, numMethodsSup=numMethodsSup)
     InversionDfMerge$class <- NULL
     InversionDfMerge$cl <- NULL
     names(InversionDfMerge)[1:3] <- c("chromosome", "pos1", "pos2")
@@ -103,7 +104,8 @@ methodsMerge <- function(breakdancer, pindel, cnvnator,
     DeletionRes <- findOverlaps(DeletionIrange, reduce(DeletionIrange))
     DeletionDf$class <- subjectHits(DeletionRes)
     DeletionDfMerge <- ddply(DeletionDf, ("class"), 
-                             methodsCluster, MethodsName)
+                             methodsCluster, methodsName=MethodsName,
+                             overLapPer=overLapPer, numMethodsSup=numMethodsSup)
     DeletionDfMerge$class <- NULL
     DeletionDfMerge$cl <- NULL
     names(DeletionDfMerge)[1:3] <- c("chromosome", "pos1", "pos2")
@@ -117,7 +119,8 @@ methodsMerge <- function(breakdancer, pindel, cnvnator,
     DuplicationRes <- findOverlaps(DuplicationIrange, reduce(DuplicationIrange))
     DuplicationDf$class <- subjectHits(DuplicationRes)
     DuplicationDfMerge <- ddply(DuplicationDf, ("class"), 
-                                methodsCluster, MethodsName)
+                                methodsCluster, methodsName=MethodsName,
+                                overLapPer=overLapPer, numMethodsSup=numMethodsSup)
     DuplicationDfMerge$class <- NULL
     DuplicationDfMerge$cl <- NULL
     names(DuplicationDfMerge)[1:3] <- c("chromosome", "pos1", "pos2")
