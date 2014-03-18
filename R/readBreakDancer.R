@@ -27,13 +27,15 @@ breakDancerCluster <- function(df)
 }
 
 ## Reading in the predicted SVs given by breakDancer
-readBreakDancer <- function(breakDancer, scoreCutoff=60, readsSupport=3, 
-                            regSizeLowerCutoff=100, regSizeUpperCutoff=1000000)
+readBreakDancer <- function(file="", scoreCutoff=60, readsSupport=3, 
+                            regSizeLowerCutoff=100, regSizeUpperCutoff=1000000,
+                            method="BreakDancer", ...)
 {
     bdColClass <- c("character", "numeric", "NULL", "character", "numeric", 
                     "NULL", "character", "numeric", "numeric", "numeric", 
-                    "NULL", "NULL", "NULL")
-    bdPred <- read.table(breakDancer, colClasses=bdColClass)
+                    "NULL", "NULL")
+    bdPred <- read.table(file, colClasses=bdColClass, ...)
+    bdPred <- bdPred[,1:8]
     names(bdPred) <- c("chr1", "pos1", "chr2", "pos2", "type", "size", 
                        "score", "ReadPairSupp")
     bdPred <- bdPred[bdPred$score>=scoreCutoff&
@@ -51,23 +53,38 @@ readBreakDancer <- function(breakDancer, scoreCutoff=60, readsSupport=3,
     bdDelIrangeRes <- findOverlaps(bdDelIrange, reduce(bdDelIrange))
     bdDel$clu <- subjectHits(bdDelIrangeRes)
     bdDelFilMer <- ddply(bdDel, ("clu"), breakDancerCluster)
-    bdDelFilMer <- bdDelFilMer[, c(1, 2, 4, 6)]
-    names(bdDelFilMer) <- c("chromosome", "pos1", "pos2", "size")
+    if (nrow(bdDelFilMer)==0) {
+        bdDelFilMer <- NULL
+    } else {
+        bdDelFilMer <- bdDelFilMer[, c(1, 2, 4, 6)]
+        names(bdDelFilMer) <- c("chromosome", "pos1", "pos2", "size")
+    }
 
     ## filtering and merging inversions
     bdInv <- bdPred[bdPred$type=="INV", ]
-    bdInv$size <- abs(bdInv$size)
-    bdInv$mid <- (bdInv$pos1 + bdInv$pos2)/2
-    bdInv$pos1 <- round(bdInv$mid - bdInv$size/2)
-    bdInv$pos2 <- round(bdInv$mid + bdInv$size/2)
-    bdInvIrange <- GRanges(seqnames=bdInv$chr1, 
+    if (nrow(bdInv)==0) {
+        bdInvFilMer <- NULL
+    } else {
+        bdInv$size <- abs(bdInv$size)
+        bdInv$mid <- (bdInv$pos1 + bdInv$pos2)/2
+        bdInv$pos1 <- round(bdInv$mid - bdInv$size/2)
+        bdInv$pos2 <- round(bdInv$mid + bdInv$size/2)
+        bdInvIrange <- GRanges(seqnames=bdInv$chr1, 
                            ranges=IRanges(start=bdInv$pos1, 
                            end=bdInv$pos2))
-    bdInvIrangeRes <- findOverlaps(bdInvIrange, reduce(bdInvIrange))
-    bdInv$clu <- subjectHits(bdInvIrangeRes)
-    bdInvFilMer <- ddply(bdInv, ("clu"), breakDancerCluster)
-    bdInvFilMer <- bdInvFilMer[, c(1, 2, 4, 6)]
-    names(bdInvFilMer) <- c("chromosome", "pos1", "pos2", "size")
+        bdInvIrangeRes <- findOverlaps(bdInvIrange, reduce(bdInvIrange))
+        bdInv$clu <- subjectHits(bdInvIrangeRes)
+        bdInvFilMer <- ddply(bdInv, ("clu"), breakDancerCluster)
+        if (nrow(bdInvFilMer)==0) {
+            bdInvFilMer <- NULL
+        } else {
+            bdInvFilMer <- bdInvFilMer[, c(1, 2, 4, 6)]
+            names(bdInvFilMer) <- c("chromosome", "pos1", "pos2", "size")
+        }
+    }
 
-    return(list(del=bdDelFilMer, inv=bdInvFilMer))
+    retuRes <- list(del=bdDelFilMer, inv=bdInvFilMer)
+    attributes(retuRes) <- c(attributes(retuRes), list(method=method))
+    
+    return(retuRes);
 }

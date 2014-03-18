@@ -68,18 +68,16 @@ biocLite("intansv")
 library(intansv)
 @
 
-Note: Currently, \intansv{} is a devel version package and will appear in 
-the Bioconductor release 2.13. Now you have to download the source of 
-\intansv{} to install it via command \emph{R CMD INSTALL intansv\_0.99.3.tar.gz}.
 
 \section{Usage of \intansv{} with example dataset}
 
-The example dataset was obtained by running five different programs with the 
+The example dataset was obtained by running seven different programs with the 
 alignment results of a public available NGS dataset (NCBI SRA accession number
  SRA012177) to the rice reference genome 
 (\url{http://rice.plantbiology.msu.edu/}). 
-These five programs including BreakDancer \citep{BreakDancer}, 
-Pindel \citep{Pindel}, CNVnator \citep{CNVnator}, DELLY \citep{DELLY} and 
+These seven programs including BreakDancer \citep{BreakDancer}, 
+Pindel \citep{Pindel}, CNVnator \citep{CNVnator}, DELLY \citep{DELLY},
+Lumpy \citep{Lumpy}, softSearch \citep{softSearch}, and 
 SVseq2 \citep{svseq} were run with default parameters.
 The predicted SVs of chromosomes, \emph{chr05} and \emph{chr10}, 
 were provided in the example dataset. 
@@ -161,8 +159,28 @@ predicted deletions, inversions and duplication in this directory should be
 named with suffix of \emph{\_D}, \emph{\_INV} and \emph{\_TD} respectively. See 
 the example dataset for more details.
 
+<<read in results of Lumpy>>=
+lumpy <- readLumpy(system.file("extdata/ZS97.lumpy.pesr.bedpe",
+                   package="intansv"))
+str(lumpy)
+@
 
-The results of these five programs have now been read into R and storaged as
+Lumpy is able to predict deletions, inversions and duplications. The prediction
+ of all kind of SVs were provided as a single file by Lumpy. You can feed
+this file to \Rfunction{readLumpy} and it will do all the tedious work
+for you.
+
+<<read in results of softSearch>>=
+ softSearch <- readSoftSearch(system.file("extdata/ZS97.softsearch",package="intansv"))
+str(softSearch)
+@
+
+softSearch is able to predict deletions, inversions and duplications. The 
+prediction of all kind of SVs were provided as a single file by softSearch. 
+You can feed this file to \Rfunction{readSoftSearch} and it will do all the 
+tedious work for you.
+
+The results of these seven programs have now been read into R and storaged as
 R data structure of lists with different compoents representing different types
 of SVs. We only care about three types of SVs, deletions, duplications and
 inversions.
@@ -183,7 +201,7 @@ However, it's not necessary for you to feed \intansv{} the output of all five pr
 The following example shows the integration of four programs: BreakDancer, CNVnator,
 DELLY and SVseq2.
 <<MethodsMerge>>=
-sv_all_methods.nopindel <- methodsMerge(breakdancer,pindel=NULL,cnvnator,delly,svseq)
+sv_all_methods.nopindel <- methodsMerge(breakdancer,cnvnator,delly,svseq)
 str(sv_all_methods.nopindel)
 @
 

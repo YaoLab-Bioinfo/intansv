@@ -16,7 +16,7 @@ CnvnatorCluster <- function(df)
 
 ## Reading in the predicted SVs given by CNVnator
 readCnvnator <- function(dataDir=".", regSizeLowerCutoff=100, 
-                         regSizeUpperCutoff=1000000) 
+                         regSizeUpperCutoff=1000000, method="CNVnator") 
 {
     CnvnatorOutputList <- list.files(dataDir, full.names=T)
     CnvnatorPredc <- lapply(CnvnatorOutputList, function(x){
@@ -67,7 +67,10 @@ readCnvnator <- function(dataDir=".", regSizeLowerCutoff=100,
     CnvnatorDupFilMer <- CnvnatorDupFilMer[, c(3:5, 2)]
     CnvnatorDupFilMer$chromosome <- as.character(CnvnatorDupFilMer$chromosome)
 
-    return(list(del=CnvnatorDelFilMer, dup=CnvnatorDupFilMer))
+    retuRes <- list(del=CnvnatorDelFilMer, dup=CnvnatorDupFilMer)
+    attributes(retuRes) <- c(attributes(retuRes), list(method=method))
+    
+    return(retuRes);
 }
 
 

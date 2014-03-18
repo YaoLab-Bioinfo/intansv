@@ -9,18 +9,23 @@
 }
 
 \usage{
-    methodsMerge(breakdancer, pindel, cnvnator, delly, svseq, others=NULL)
+    methodsMerge(..., others=NULL, 
+    overLapPerDel = 0.8, overLapPerDup = 0.8, overLapPerInv = 0.8,
+    numMethodsSupDel = 2, numMethodsSupDup = 2, numMethodsSupInv = 2)
 }
 
 \arguments{
-    \item{breakdancer}{a list of structural variations predicted by BreakDancer.}
-    \item{pindel}{a list of structural variations predicted by Pindel.}
-    \item{cnvnator}{a list of structural variations predicted by CNVnator.}
-    \item{delly}{a list of structural variations predicted by DELLY.}
-    \item{svseq}{a list of structural variations predicted by SVseq2.}
+    \item{...}{results of different SVs predictions read in to R by intansv.}
     \item{others}{a data frame of structural variations predicted by other tools.}
-    \item{overLapPer}{SVs predicted by different methods that have reciprocal coordinate overlap larger than this threshold would be clustered together}
-    \item{numMethodsSup}{SV clusters supportted by no more than this threshold would be discarded}
+    \item{overLapPerDel}{Deletions predicted by different methods that have reciprocal coordinate overlap larger than this threshold would be clustered together}
+    \item{overLapPerDup}{Duplications predicted by different methods that have reciprocal coordinate overlap larger than this threshold would be clustered together}
+    \item{overLapPerInv}{Inversions predicted by different methods that have reciprocal coordinate overlap larger than this threshold would be clustered together}
+    \item{numMethodsSupDel}{Deletion clusters supportted by no more than this 
+    threshold of read support would be discarded}
+    \item{numMethodsSupDup}{Duplication clusters supportted by no more than this
+    threshold of read support would be discarded}
+    \item{numMethodsSupInv}{Inversion clusters supportted by no more than this 
+    threshold of read support would be discarded}
 }
 
 \details{
@@ -63,11 +68,11 @@
     str(sv_all_methods)
     
     sv_all_methods.1 <- methodsMerge(breakdancer,pindel,cnvnator,delly,svseq,
-                                 overLapPer=0.7)
+                                 overLapPerDel=0.7)
     str(sv_all_methods.1)
 
     sv_all_methods.2 <- methodsMerge(breakdancer,pindel,cnvnator,delly,svseq,
-                                 overLapPer=0.8, numMethodsSup=3)
+                                 overLapPerDel=0.8, numMethodsSupDel=3)
     str(sv_all_methods.2)
 }
 

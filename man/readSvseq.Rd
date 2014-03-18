@@ -9,7 +9,7 @@
 }
 
 \usage{
-    readSvseq(dataDir=".", regSizeLowerCutoff=100, 
+    readSvseq(dataDir=".", regSizeLowerCutoff=100, method="SVseq2", 
               regSizeUpperCutoff=1000000, readsSupport=3) 
 }
 
@@ -21,6 +21,7 @@
                               variation to be read.}
     \item{readsSupport}{the minimum read pair support for a 
                         structural variation to be read.}
+    \item{method}{a tag to assign to the result of this function.}
 }
 
 \details{

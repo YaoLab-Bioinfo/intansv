@@ -27,9 +27,9 @@
     The parameter "structuralVariation" should be a data frame with three 
     columns:
     \itemize{
-         \item{chr}{ the chromosome of a structural variation.}
-         \item{start}{ the start coordinate of a structural variation.}
-         \item{end}{ the end coordinate of a structural variation.}
+         \item{chromosome}{ the chromosome of a structural variation.}
+         \item{pos1}{ the start coordinate of a structural variation.}
+         \item{pos2}{ the end coordinate of a structural variation.}
     }
 
 }

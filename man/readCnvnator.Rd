@@ -9,7 +9,8 @@
 }
 
 \usage{
-    readCnvnator(dataDir=".", regSizeLowerCutoff=100, regSizeUpperCutoff=1000000)
+    readCnvnator(dataDir=".", regSizeLowerCutoff=100, regSizeUpperCutoff=1000000,
+                 method="CNVnator")
 }
 
 \arguments{
@@ -18,6 +19,7 @@
                               variation to be read.}
     \item{regSizeUpperCutoff}{the maximum size for a structural 
                               variation to be read.}
+    \item{method}{a tag to assign to the result of this function.}
 }
 
 \details{

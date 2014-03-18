@@ -9,12 +9,13 @@
 }
 
 \usage{
-    readBreakDancer(breakDancer, scoreCutoff=60, readsSupport=3, 
-                    regSizeLowerCutoff=100, regSizeUpperCutoff=1000000)
+    readBreakDancer(file="", scoreCutoff=60, readsSupport=3, 
+                    regSizeLowerCutoff=100, regSizeUpperCutoff=1000000,
+                    method="BreakDancer", ...)
 }
 
 \arguments{
-    \item{breakDancer}{the output file of breakDancer.}
+    \item{file}{the output file of breakDancer.}
     \item{scoreCutoff}{the minimum score for a structural variation 
                        to be read in.}
     \item{readsSupport}{the minimum read pair support for a 
@@ -23,6 +24,8 @@
                               variation to be read in.}
     \item{regSizeUpperCutoff}{the maximum size for a structural 
                               variation to be read in.}
+    \item{method}{a tag to assign to the result of this function.}
+    \item{...}{parameters passed to read.table.}
 }
 
 \details{

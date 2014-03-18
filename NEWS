@@ -1,10 +1,52 @@
+
+CHANGES IN VERSION 1.2.1
+------------------------
+
+Notes
+
+    o Add support to SV prediction programs Lumpy
+      and softSearch.
+    o Modify methodsMerge to make it more robust.
+    o Modify all the read functions to coordinate
+      methodsMerge.
+
+
+CHANGES IN VERSION 1.1.4
+------------------------
+
+Notes
+
+    o Modify svAnnotation and geneAnnotation to deal with
+      more versatile genome annotation files.
+    o Modify plotChromosome to deal with exceptions.
+
+CHANGES IN VERSION 1.1.3
+------------------------
+
+Notes
+
+    o Modify readDelly and readSvseq to deal with
+      exceptions in the output of SV prediction programs.
+    o Add more parameters to the function 'methodsMerge' to 
+      make it more robust.
+
+
+CHANGES IN VERSION 1.1.2
+------------------------
+
+Notes
+
+    o Modify readPindel and readBreakDancer to deal with
+      exceptions in the output of SV prediction programs.
+
+
 CHANGES IN VERSION 1.0.1
 ------------------------
 
 Notes
 
     o Add more parameters to the function 'methodsMerge' to 
-      accept user defined thresholds
+      accept user defined thresholds.
 
 
 CHANGES IN VERSION 0.99.3

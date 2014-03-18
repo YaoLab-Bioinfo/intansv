@@ -10,7 +10,8 @@
 
 \usage{
     readDelly(dataDir=".", regSizeLowerCutoff=100, 
-              regSizeUpperCutoff=1000000, readsSupport=3)
+              regSizeUpperCutoff=1000000, readsSupport=3,
+              method="DELLY")
 }
 
 \arguments{
@@ -21,6 +22,7 @@
                               variation to be read.}
     \item{readsSupport}{the minimum read pair support for a structural 
                         variation to be read.}
+    \item{method}{a tag to assign to the result of this function.}
 }
 
 \details{
