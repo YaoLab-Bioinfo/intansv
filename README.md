@@ -3,7 +3,7 @@ intansv
 
 Integrative analysis of structural variations
 
-## intansv release version 1.7.1 support the following version of SV prediction programs
+### intansv release version 1.7.1 support the following version of SV prediction programs
 * BreakDancer version 1.0r112
 * Pindel version 0.2.4t
 * DELLY version 0.0.11
