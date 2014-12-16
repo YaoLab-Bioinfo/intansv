@@ -38,10 +38,11 @@ readSoftSearch <- function(file="", regSizeLowerCutoff=100, readsSupport=3,
   softSearchPred <- softSearchPred[softSearchPred$filter=="PASS", ]
   softSearchPred$alt <- gsub("]", "", softSearchPred$alt)
   softSearchPred$chr2 <- gsub(":.*", "", softSearchPred$alt)
-  softSearchPred$end <- as.numeric(gsub(".*:([0-9]+).*", "\\1", softSearchPred$alt))
   softSearchPred$alt <- NULL; softSearchPred$filter <- NULL;
   softSearchPred$type <- gsub(".*EVENT=([A-Z_]+);.*", "\\1", softSearchPred$info)
   softSearchPred$size <- as.numeric(gsub(".*ISIZE=([0-9]+);.*", "\\1", 
+                                         softSearchPred$info))
+  softSearchPred$end <- as.numeric(gsub(".*END=([0-9]+);.*", "\\1", 
                                          softSearchPred$info))
   softSearchPred$info <- NULL;
   

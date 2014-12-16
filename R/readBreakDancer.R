@@ -32,9 +32,8 @@ readBreakDancer <- function(file="", scoreCutoff=60, readsSupport=3,
                             method="BreakDancer", ...)
 {
     bdColClass <- c("character", "numeric", "NULL", "character", "numeric", 
-                    "NULL", "character", "numeric", "numeric", "numeric", 
-                    "NULL", "NULL")
-    bdPred <- read.table(file, colClasses=bdColClass, ...)
+                    "NULL", "character", "numeric", "numeric", "numeric")
+    bdPred <- read.table(file, colClasses=bdColClass, fill=T, ...)
     bdPred <- bdPred[,1:8]
     names(bdPred) <- c("chr1", "pos1", "chr2", "pos2", "type", "size", 
                        "score", "ReadPairSupp")
