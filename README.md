@@ -3,7 +3,7 @@ intansv
 
 Integrative analysis of structural variations (SV)
 
-This package provides efficient tools to read and integrate structural variations predicted by popular softwares. Annotation and visulation of structural variations are also implemented in the package.
+This package provides efficient tools to read and integrate structural variations predicted by popular softwares. Annotation and visualization of structural variations are also implemented in the package.
 
 ### intansv integrates the SV predictions of the following programs
 <ul>
