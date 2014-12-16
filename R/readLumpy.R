@@ -32,7 +32,7 @@ readLumpy <- function(file="", regSizeLowerCutoff=100, readsSupport=3,
 {
   LumpyColClass <- c("character", "numeric", "numeric", "character", "numeric", 
                      "numeric", "NULL", "numeric", "NULL", "NULL", "character",
-                     "NULL", "character")
+                     "NULL", "character", "NULL", "NULL")
   LumpyPred <- read.table(file, colClasses=LumpyColClass, as.is=T, ...)
   names(LumpyPred) <- c("chr1", "start1", "end1", "chr2", "start2", "end2",
                         "score",  "type", "ReadPairSupp")
