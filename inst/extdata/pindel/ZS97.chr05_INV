@@ -1,129 +1,406 @@
 ####################################################################################################
-108	INV 74	NT 0:0 "":""	ChrID chr05	BP 6948149	6948224	BP_range 6948149	6948224	Supports 3	2	+ 0	0	- 3	2	S1 4	SUM_MS 87	1	NumSupSamples 1	1	ZS97 0 0 3 2
-CGTACACCCTAGATTTCAACTTTGGCAAATGAACATCTTAtttggattgttactcatcatcaacattgtcatataactga
-----------------------------------------------------------------------------------------------------
-aactgaccatgttaatgatggagtaataatccaaaccatcTAAAATGTTCTTGCTTATAATTAGGATGACATACGATATT
-                            ATCCAAACCATCTAAAATGTTCTTGCTTATAATTAGGATG           	-	6948399	29	ZS97	@HWI-EAS-249_16:6:26:399:1272/2
-                            ATCCAAACCATCTAAAATGTTCTTGCTTATAATTAGGATG           	-	6948412	29	ZS97	@HWI-EAS-249_16:7:52:1211:995/1
-                       TAACAATCCAAACCATCTAAAATGTTCTTGCTTATAATTA                	-	6948405	29	ZS97	@HWI-EAS-249_16:3:25:6:760/1
+0	INV 3	NT 3 "TTT"	ChrID chr05	BP 2610320	2610324	BP_range 2610320	2610324	Supports 4	4	+ 1	1	- 3	3	S1 8	SUM_MS 116	1	NumSupSamples 1	1	ZS97 0 0 1 1 3 3
+ATCCAACTTCTATGCTTGTCAATTACTAGAAGTTTTTTTTtttAAAAAAAAAATCAACGAGAGCGCTCATTCAAAACCTATCA
+                           AGAAGTTTTTTTTTTTAAAAAAAAAATCATCGAGAGCGCT		-	2610480	29	ZS97	@HWI-EAS-249_16:7:5:1677:877/2
+                         CTAGAAGTTTTTTTTTTTAAAAAAAAAATCAACGATAGCG		-	2610488	29	ZS97	@HWI-EAS-249_16:4:71:1172:438/1
+                       TACTAGAAGTTTTTTTTTTTAAAAAAAAAATCAACTAGAG		-	2610482	29	ZS97	@HWI-EAS-249_16:4:20:472:1387/1
+                  TAAATTACTAGAAGTTTTTTTTTTTAAAAAAAAAATCAAC		+	2610136	29	ZS97	@HWI-EAS-249_16:3:92:1009:485/1
 ####################################################################################################
-109	INV 121	NT 0:9 "":"CGCCTGTGT"	ChrID chr05	BP 3062624	3062746	BP_range 3062624	3062746	Supports 3	2	+ 0	0	- 3	2	S1 4	SUM_MS 103	1	NumSupSamples 1	1	ZS97 0 0 3 2
+1	INV 3	NT 3 "TAT"	ChrID chr05	BP 3470622	3470626	BP_range 3470622	3470626	Supports 5	5	+ 3	3	- 2	2	S1 12	SUM_MS 153	1	NumSupSamples 1	1	ZS97 2 2 3 3 2 2
+CATTGTTAATCTCGCCCTTCTTCGTTAACAATTTTTTTTTtatAAAAACATCTTCATCGGTTTCAAACACTTGCGGCTAAGTT
+                            CAATTTTTTTTTTATAAAAACATCTTCATCGGTTTCAAAC		+	3470443	37	ZS97	@HWI-EAS-249_16:5:1:955:685/1
+                         TAACAATTTTTTTTTTATAAAAACATCTTCATCGGTTTCA		-	3470801	29	ZS97	@HWI-EAS-249_16:6:47:1225:933/2
+                 TTCTTCGTTAACAATTTTTTTTTTATAAAAACATCTTCAT		+	3470462	29	ZS97	@HWI-EAS-249_16:1:65:1117:270/2
+                CTTCTTCGTTAACAATTTTTTTTTTATAAAAACATCTTCA		-	3470783	29	ZS97	@HWI-EAS-249_16:6:9:1476:1990/1
+                CTTCTTCGTTAACAATTTTTTTTTTATAAAAACATCTTCA		+	3470441	29	ZS97	@HWI-EAS-249_13:6:65:890:1541/1
+####################################################################################################
+2	INV 229	NT 0:0 "":""	ChrID chr05	BP 777580	777810	BP_range 777580	777810	Supports 4	2	+ 4	2	- 0	0	S1 5	SUM_MS 116	1	NumSupSamples 1	1	ZS97 0 2 4 2 0 0
+GTGAGAAAAGAGAGCTACTAGAAGCACATCGCTTTTCCTCagaggaggtcgacgatggaacctgcacgtcccgcttccag
+            AACTACTAGAAGCACATCGCTTTTCCTCAGAGGAGTTGGA                           	+	777386	29	ZS97	@HWI-EAS-249_13:6:50:1622:1419/2
+            AACTACTAGAAGCACATCGCTTTTCCTCAGAGGAGTTGGA                           	+	777428	29	ZS97	@HWI-EAS-249_13:8:36:1427:1618/1
+            AACTACTAGAAGCACATCGCTTTTCCTCAGAGGAGTTGGA                           	+	777428	29	ZS97	@HWI-EAS-249_16:1:78:1289:1945/1
+                                 TTTCCTCAGAGGAGGTCGACGATGGAACCTGCACGTCCCG	+	777708	29	ZS97	@HWI-EAS-249_13:6:49:1431:1222/2
+----------------------------------------------------------------------------------------------------
+caccgccgccgtcgccgtcgccgtcttgtcgtccaactctGGGTCTCTGCTGGGTCTAACGGCGACGGCAACTTCGCTGG
+####################################################################################################
+3	INV 85	NT 0:0 "":""	ChrID chr05	BP 1164959	1165041	BP_range 1164959	1165041	Supports 3	2	+ 0	0	- 3	2	S1 4	SUM_MS 180	1	NumSupSamples 1	1	ZS97 6 6 0 0 3 2
+CTTCTTAACCAACGTTTGACCATTCGTTTTATTTAAAATTttatgtaattatcatttattttattgtgacttgattaatc
+----------------------------------------------------------------------------------------------------
+tcaaatgttctttaagtatgatataaatattttcatattaAGTTTTTAATAAAACGAATGGTCAAACGTTGGATAAAAAG
+                      ATATTTTCATATTAAATTTTGAATAAAACGAATGGTCAAA                 	-	1165166	60	ZS97	@HWI-EAS-249_16:1:34:676:410/1
+                      ATATTTTCATATTAAATTTTGAATAAAACGAATGGTCAAA                 	-	1165166	60	ZS97	@HWI-EAS-249_16:4:50:1738:631/1
+         AAGTATGATATAAATATTTTCATATTAAATTTTGAATAAA                              	-	1165175	60	ZS97	@HWI-EAS-249_13:8:84:191:473/1
+####################################################################################################
+4	INV 4224	NT 0:0 "":""	ChrID chr05	BP 1385804	1390029	BP_range 1385804	1390029	Supports 9	6	+ 0	0	- 9	6	S1 10	SUM_MS 184	1	NumSupSamples 1	1	ZS97 3 6 0 0 9 6
+TTAGCCACCCGCCTCGCAGCTACCTCGTATAGAATTTTTTaaaaaaaaacacagtttagcagtttgaaaagtgtgcatgc
+----------------------------------------------------------------------------------------------------
+catgcacacttttcaaactgctaaactgtgttttttttaaAAAAAAATTCTATACGAAAGTTGCTTAAAAATAATATTAA
+                            TGTTTTTTTTAAAAAAAAATTCTATACGAAAGTTGCTTAA           	-	1390198	29	ZS97	@HWI-EAS-249_16:2:76:161:849/2
+                         CTGTGTTTTTTTTAAAAAAAAATTCTATACGAAAGTTGCT              	-	1390204	20	ZS97	@HWI-EAS-249_16:1:88:496:1862/2
+                         CTGTGTTTTTTTTAAAAAAAAATTCTATATGAAAGTTGCT              	-	1390204	29	ZS97	@HWI-EAS-249_16:7:74:1351:436/2
+                         CTGTGTTTTTTTTAAAAAAAAATTCTATACGAAAGTTGCT              	-	1390209	20	ZS97	@HWI-EAS-249_16:6:5:1561:83/1
+                       AACTGTGTTTTTTTTAAAAAAAAATTCTATACGAAAGTTG                	-	1390194	20	ZS97	@HWI-EAS-249_16:6:49:472:1459/2
+                       AACTGTGTTTTTTTTAAAAAAAAATTCTATACGAAAGTTG                	-	1390194	20	ZS97	@HWI-EAS-249_16:7:34:100:974/2
+                   GCTAAACTGTGTTTTTTTTAAAAAAAAATTCTATACGAAA                    	-	1390220	12	ZS97	@HWI-EAS-249_16:1:23:970:2027/1
+             CAAACTGCTAAACTGTGTTTTTTTTAAAAAAAAATTCTAT                          	-	1390201	17	ZS97	@HWI-EAS-249_16:1:27:298:1611/1
+           TTCAAACTGCTAAACTGTGTTTTTTTTAAAAAAAAATTCT                            	-	1390189	17	ZS97	@HWI-EAS-249_16:4:1:1442:579/2
+####################################################################################################
+5	INV 3147	NT 0:0 "":""	ChrID chr05	BP 2580617	2583765	BP_range 2580617	2583765	Supports 3	3	+ 3	3	- 0	0	S1 4	SUM_MS 0	1	NumSupSamples 1	1	ZS97 3 6 3 3 0 0
+CGGTGGTTTAGTCTATCAAATGGCTATGGAAGGATTATGGatatatattgtaacatcctgaaaattcccaataataaaaa
+                       CTATTGAAGGATTATGGATATATATTGTAACACCCTGAAA                	+	2580459	0	ZS97	@HWI-EAS-249_16:4:74:935:1290/1
+                    TGGCTATGGAAGGATTATGGATATATATTGTAACACCCTG                   	+	2580453	0	ZS97	@HWI-EAS-249_13:8:6:1437:1235/2
+              ATCAAATGGCTATGGAAGGATTATGGATATATATTGTAAC                         	+	2580379	0	ZS97	@HWI-EAS-249_16:2:23:689:1205/1
+----------------------------------------------------------------------------------------------------
+ctgttatgtaacagtgctatttagatagatgcatatatagGTTAATGGTTTGTTTTGTTTTACGTGCGCCGAAAAATCTT
+####################################################################################################
+6	INV 37198	NT 0:0 "":""	ChrID chr05	BP 3894827	3932026	BP_range 3894827	3932026	Supports 3	2	+ 0	0	- 3	2	S1 4	SUM_MS 149	1	NumSupSamples 1	1	ZS97 13 7 0 0 3 2
+TATTCTTCCGATGCTTCTGAAAAGAATAACCAAATCAAATcagctgggtgtaccaccgggaccttaagcccgagatttga
+----------------------------------------------------------------------------------------------------
+gcgtggagctgcacaggcgtgcagggcggcttgctggcacATTTGATTTGGTGTTTGTTCTTTTCAAAAGTGTTGAAAGA
+                       GGGCGGCTTGCCGGCACATTTGATTTGGTGTTTGTTCTTT	-	3894954	29	ZS97	@HWI-EAS-249_16:6:81:1619:465/2
+           CACAGGCGTGCAGGGCGGCTTGCCGGCACATTTGATTTGG	-	3894974	60	ZS97	@HWI-EAS-249_13:8:100:1341:1774/1
+           CCCAGGCGTGCAGGGCGGCTTGCCGGCACATTTGATTTGG	-	3894974	60	ZS97	@HWI-EAS-249_16:6:86:959:1882/1
+####################################################################################################
+7	INV 222	NT 0:0 "":""	ChrID chr05	BP 3907746	3907961	BP_range 3907746	3907961	Supports 5	2	+ 0	0	- 5	2	S1 6	SUM_MS 18	1	NumSupSamples 1	1	ZS97 168 628 0 0 5 2
+CTTACCCACTAGACATGTGGAAGTACGGTAGTGCTTTGCAatttaattagggaaccttaggtggttttacaactttagac
+----------------------------------------------------------------------------------------------------
+agcacctcggccgtttaaggaccggtcttcgggcctctgtTGCGAAGCATCTACCTAAAATCAAACTAGGGATACCATGA
+                         CCTCTGTTGCAAAGCATCTACCTAAAATCAAACTAGGGAT              	-	3907993	9	ZS97	@HWI-EAS-249_16:5:5:1374:193/2
+      CCGCTTAAGGACCGGTCTTCGGGCCTCTGTTGCAAAGCAT	-	3907918	0	ZS97	@HWI-EAS-249_16:6:87:1118:1186/1
+      CCGTTTAAGGACCGGTCTTCGGGCCTCTGTTGCAAAGCAT	-	3907929	9	ZS97	@HWI-EAS-249_16:2:24:1678:237/1
+      CCGTTTAAGGACCGGTCTTCGGGCCTCTGTTGCAAAGCAT	-	3907931	0	ZS97	@HWI-EAS-249_16:2:67:355:292/1
+      CCGTTTAAGGACCGGTCTTCGGGCCTCTGTTGCAAAGCAT	-	3907911	0	ZS97	@HWI-EAS-249_16:3:84:1305:1332/2
+####################################################################################################
+8	INV 121	NT 0:9 "":"CGCCTGTGT"	ChrID chr05	BP 3062624	3062746	BP_range 3062624	3062746	Supports 4	2	+ 0	0	- 4	2	S1 5	SUM_MS 140	1	NumSupSamples 1	1	ZS97 0 0 0 0 4 2
 ATGTCCATTTTTTAATCTAGCGATAGTTTGCAAGTTCCCTgcgcgcgcgcacatatatatatatatatatatatatatat
 ----------------------------------------------------------------------------------------------------
 tatatatatatatatatatatatatatatagacacacaca         TTGCACTGTGTATTTTCCCCCGATACTCTAGTGGTAGTGG
                          ATATAGACACACACACGCCTGTGTTTGCACTGTGAATTTT              	-	3062907	37	ZS97	@HWI-EAS-249_16:2:95:956:1600/2
-                         ATATAGACACACACACGCGTGTGTTTGCACTGTGAATTTT              	-	3063095	29	ZS97	@HWI-EAS-249_16:4:8:1085:1721/1
+                         ATATAGACACACACACGCGTGTGTTTGCACTGTGAATTTT              	-	3062910	29	ZS97	@HWI-EAS-249_16:4:8:1085:1721/1
                    ATATATATATAGACACACACACGCGTGTGTTTGCACTTTG                    	-	3062935	37	ZS97	@HWI-EAS-249_13:6:17:1089:1300/1
+                   ATATATATATAGACACACACACGCGTGTTTTTGCCCTGTG                    	-	3062935	37	ZS97	@HWI-EAS-249_16:4:40:320:1906/1
 ####################################################################################################
-110	INV 53	NT 2:0 "CA":""	ChrID chr05	BP 5543498	5543552	BP_range 5543498	5543552	Supports 3	3	+ 3	3	- 0	0	S1 4	SUM_MS 180	1	NumSupSamples 1	1	ZS97 3 3 0 0
-AAAAGTTAACGGTGTCAAACATTTCGAAATGGAGGGAGTA  tgcacaatctttcgctagtgcaaaaccttacgtagaacct
-                     TTTCGAAACGGAGGGAGTACATGCAAAATCTTTCGCTAGT                  	+	5543075	60	ZS97	@HWI-EAS-249_13:8:24:1268:1434/1
-                    ATTTCGAAACGGAGGGAGTACATGCAAAATCTTTCGCTAG                   	+	5543078	60	ZS97	@HWI-EAS-249_16:4:67:517:1333/2
-              TCAAACATTTCGAAACGGAGGGAGTACATGCAAAATCTTT                         	+	5542934	60	ZS97	@HWI-EAS-249_16:1:54:751:818/1
+9	INV 12970	NT 0:0 "":""	ChrID chr05	BP 6298321	6311292	BP_range 6298321	6311292	Supports 3	3	+ 2	2	- 1	1	S1 6	SUM_MS 118	1	NumSupSamples 1	1	ZS97 14 2 2 2 1 1
+TGATCATGATCTACTGAAAATAGACAAAAAAAATATATATgtaaatattttaataaaaaatgtaaaaataaaaaaatcaa
+                         AAAAAAAATATTTATGTAAATATTTTAATAAAAAATGTAA	+	6311115	29	ZS97	@HWI-EAS-249_16:7:90:1465:959/2
+                        CAAAAAAAATATTTATGTAAATATTTTAATAAAAAATGTA	+	6311110	29	ZS97	@HWI-EAS-249_16:5:3:988:1319/1
 ----------------------------------------------------------------------------------------------------
-gctagtgcaaaaccttacgtagaacctggaactaccatgaGGGGTGTTTGGTTGCTTGCATCACTTAGCCACGTCAAACT
+tgttcctgcatatatatatttccaaaaataataggtctagATAAATATTTTTTTGTTTCGAAAATTTGCAAATCTAATCG
+             ATATTTCCAAAAATAATAGGTCTAGATATATATTTTTTTG	-	6298508	60	ZS97	@HWI-EAS-249_16:6:68:190:1419/1
 ####################################################################################################
-111	INV 90	NT 0:1 "":"A"	ChrID chr05	BP 6954653	6954744	BP_range 6954653	6954744	Supports 5	4	+ 0	0	- 5	4	S1 6	SUM_MS 153	1	NumSupSamples 1	1	ZS97 0 0 5 4
+10	INV 81330	NT 0:0 "":""	ChrID chr05	BP 6372427	6453758	BP_range 6372427	6453758	Supports 5	3	+ 5	3	- 0	0	S1 6	SUM_MS 132	1	NumSupSamples 1	1	ZS97 1 12 5 3 0 0
+TTGCCACAAGCAGGTTGTCGTGCTCGGAGGGTTTAACAAActagaaaggtagcccgcgcacatgcgcgggcatcttctcg
+                       TCGGAGGGTTTAACAAACTAGAAAGGTAGCCCGCGCACAT                	+	6372240	37	ZS97	@HWI-EAS-249_16:5:10:1378:1047/1
+                       TCGGAGGGTTTAACAAACTAGAAAGGTAGCCCGCGCACAT                	+	6372240	37	ZS97	@HWI-EAS-249_16:6:20:511:433/1
+                   GTGCTCGGAGGGTTTAACAAACTAGAAAGGCAGCCCGCGC	+	6453610	0	ZS97	@HWI-EAS-249_16:7:25:790:294/1
+                 TCGTGCTCGGATGGTTTAACAAACTAGAAAGGTAGCCCGC                      	+	6372283	29	ZS97	@HWI-EAS-249_16:7:1:253:197/2
+                 TCGTGCTCGGATGGTTTAACAAACTAGAAAGGTAGCCCGC                      	+	6372283	29	ZS97	@HWI-EAS-249_16:3:40:1244:1127/2
+----------------------------------------------------------------------------------------------------
+ccaaactgatgggtgacggtgtaaccccaccaccatacaaTTGTCTTCATTATTTTAGCCAAAAAAAATTTTGCAAAATT
+####################################################################################################
+11	INV 6745	NT 0:0 "":""	ChrID chr05	BP 7554190	7560936	BP_range 7554190	7560936	Supports 4	3	+ 1	1	- 3	2	S1 8	SUM_MS 147	1	NumSupSamples 1	1	ZS97 2 7 1 1 3 2
+ATGGCCTAATTAGGATACTTAAAAGATTATCTCACGATTTctatataaactctgcaattagtttttctttttatcttctt
+                       AATTTATCTCACGATTTCTATATAAACTCTACAATTAGTT	+	7560744	60	ZS97	@HWI-EAS-249_13:6:63:1469:412/1
+----------------------------------------------------------------------------------------------------
+aaatagataaaaagaaaaactaattacatagtttgcatgtAAATCGTGAGATAAATCTCAAGCCTAATTAGTATATGATT
+                 AACTAATTACACAGTTTGCATGTAAATCGTGAGATGAATC	-	7554330	29	ZS97	@HWI-EAS-249_16:4:16:24:522/2
+               AAAACTAATTACACAGTTTGCATGTAAATCGTGAGATGAA	-	7554336	29	ZS97	@HWI-EAS-249_16:1:23:453:1868/1
+               AAAACTAATTACACAGTTTGCATGTAAATCGTGAGATGAA	-	7554336	29	ZS97	@HWI-EAS-249_16:3:23:369:930/1
+####################################################################################################
+12	INV 69	NT 0:0 "":""	ChrID chr05	BP 7924644	7924714	BP_range 7924644	7924714	Supports 3	3	+ 0	0	- 3	3	S1 4	SUM_MS 111	1	NumSupSamples 1	1	ZS97 2 1 0 0 3 3
+ATTATCTCAGAAGGATAGTAACATCATATGTTACTGCAAAtttcgtcatattgttactgccaaaagagcagtaacaacct
+----------------------------------------------------------------------------------------------------
+agtaacaacctataaagtttacagtaacaacctatacgttTTTGCAGTAACATATGATGTTACTGCAAAGAACATGCATA
+                          ACAACCTATACGTTTTTGCAATAACATATGATGTTACTAC	-	7924819	16	ZS97	@HWI-EAS-249_16:1:91:1625:533/1
+              AAGTTAACAATAACAACCTATACGTTTTTGCAATAACATA                         	-	7924872	43	ZS97	@HWI-EAS-249_13:8:54:1508:122/1
+             AAAGTTTAAAGTAACAACCTATACGTTTTTGCAATAACAT                          	-	7924860	52	ZS97	@HWI-EAS-249_16:7:99:819:331/2
+####################################################################################################
+13	INV 1524727	NT 0:0 "":""	ChrID chr05	BP 8422915	9947637	BP_range 8422915	9947637	Supports 7	6	+ 4	3	- 3	3	S1 20	SUM_MS 29	1	NumSupSamples 1	1	ZS97 37 27 4 3 3 3
+TGGTTCAAGTTGCTAAATTTTTCTAAAATAAAGATCTACAtgctaaaaatatccacatgtactgtttatgcttgtttttg
+                             AATCAAGATCTACATGCTAAAATTAGCCACATGTACTGTT	+	9947461	29	ZS97	@HWI-EAS-249_16:3:38:1140:1370/2
+                           AAAATCAAGATCTACATGCTAAAAATATCCGCATGTACTG            	+	8422763	0	ZS97	@HWI-EAS-249_16:6:23:1034:1853/2
+                           AAAATCAAGATCTACATGCTAAAAATATCCGCATGTACTG	+	9947518	0	ZS97	@HWI-EAS-249_16:4:28:982:1030/1
+                           AAAATCAAGATCTACATGCTAAAAATATCCGCATGTACTG	+	9947518	0	ZS97	@HWI-EAS-249_16:7:99:828:1223/1
+----------------------------------------------------------------------------------------------------
+aattaaataaatttaattcaatttatggacaattttaataTGTAGATCTTGATTTTAGAAGAATTTAGCAACTTGAACCA
+                             TAATATGTAGATCTTGATTTTAGAAAAATTTAGCAACTTG	-	8423102	0	ZS97	@HWI-EAS-249_16:7:27:552:814/2
+            ATTCAATTAATGGACAATTTTAATATGTAGATCTTTATTT	-	8423104	0	ZS97	@HWI-EAS-249_16:3:33:461:1598/2
+           AATTCAACTTATAGACAATTTTAATATGTAGATCTTTATT	-	8423114	0	ZS97	@HWI-EAS-249_16:6:47:1324:589/1
+####################################################################################################
+14	INV 3597	NT 0:0 "":""	ChrID chr05	BP 8813771	8817369	BP_range 8813771	8817369	Supports 4	4	+ 0	0	- 4	4	S1 5	SUM_MS 0	1	NumSupSamples 1	1	ZS97 18 102 0 0 4 4
+TTAGATTTTCTCTTCAAGGCTTTTAAAATAAATTCTAGAAaatgatttaaaatatgcatttttaatttagtcgattttta
+----------------------------------------------------------------------------------------------------
+ctaaaaattcaaaatatataaattgttgtttaaatggaatTTTAGAAATTGTTTTAAAAGCCTACAAGCTAAACCTTAAT
+                           GTTTAATTGGAATTTTAGAAATTATTTTAAAAGCCTACAA            	-	8817553	0	ZS97	@HWI-EAS-249_13:6:44:325:1515/2
+                         TGTTTAATTGGAATTTTAGAAATTATTTTAAAAGCCTACA              	-	8817555	0	ZS97	@HWI-EAS-249_16:4:9:150:1568/1
+                       GTTGTTTAATTGGAATTTTAGAAATTATTTTAAAAGCCTA                	-	8817552	0	ZS97	@HWI-EAS-249_16:4:21:1399:621/1
+              ATATAAATTGTTGTTTAATTGGAATTTTAGAAATTATTTT                         	-	8817523	0	ZS97	@HWI-EAS-249_13:8:92:977:1345/2
+####################################################################################################
+15	INV 90	NT 0:1 "":"A"	ChrID chr05	BP 6954653	6954744	BP_range 6954653	6954744	Supports 5	4	+ 0	0	- 5	4	S1 6	SUM_MS 153	1	NumSupSamples 1	1	ZS97 0 3 0 0 5 4
 ACCTAAACTTAGCACCTAGTATTAAATTAAAAAAAATTACagaccggccataaactaccggtctgaccagccgacatacg
 ----------------------------------------------------------------------------------------------------
 cggccctctcagaggaaaaccggtagactttcaaactttg GACCGGCAGAGTCCGAGCCCGAGTCTATTTCGTCAGGTCT
                         AGACTTTCAAACTTTGAGACCGGCAGAGTCCGAGCCCGAG               	-	6954931	29	ZS97	@HWI-EAS-249_16:2:20:248:462/1
-                      GTAGACTTTCAAACTTTGAGACCGGCAGAGTCCGAGCCCG                 	-	6955097	29	ZS97	@HWI-EAS-249_13:6:29:1157:1765/2
-                      GTAGACTTTCAAACTTTGAGACCGGCAGAGTCCGAGCCCG                 	-	6955081	29	ZS97	@HWI-EAS-249_13:8:70:1101:1239/2
-                     GGTAGACTTTCAAACTTTGAGACCGGCAGCGTCCGAGCCC                  	-	6955091	29	ZS97	@HWI-EAS-249_16:1:45:1643:26/1
+                      GTAGACTTTCAAACTTTGAGACCGGCAGAGTCCGAGCCCG                 	-	6954912	29	ZS97	@HWI-EAS-249_13:6:29:1157:1765/2
+                      GTAGACTTTCAAACTTTGAGACCGGCAGAGTCCGAGCCCG                 	-	6954896	29	ZS97	@HWI-EAS-249_13:8:70:1101:1239/2
+                     GGTAGACTTTCAAACTTTGAGACCGGCAGCGTCCGAGCCC                  	-	6954906	29	ZS97	@HWI-EAS-249_16:1:45:1643:26/1
                   ACCGGTAGACTTTCAAACTTTGAGACCGGCAGAGTCCGAG                     	-	6954898	37	ZS97	@HWI-EAS-249_16:2:7:848:123/2
 ####################################################################################################
-112	INV 233	NT 0:3 "":"TAA"	ChrID chr05	BP 7562060	7562294	BP_range 7562060	7562294	Supports 3	3	+ 0	0	- 3	3	S1 4	SUM_MS 87	1	NumSupSamples 1	1	ZS97 0 0 3 3
-CCACTGGATATGTTGATCTATGAAAGGTACTCCCTCCGTTacgttgtaagacgttttgactttggtaaaactcaaactgt
-----------------------------------------------------------------------------------------------------
-aatttgactttgaacaaagtcaaaacgtcttataacctaa   AATAAAATGCGGCTAACATCGAACGTATTTGCTGAAGCAC
-                              TATAACCTAATAAAATAAAATGCAGCTAACATCGAACGTA         	-	7562631	29	ZS97	@HWI-EAS-249_16:2:13:1341:1915/2
-                            CTTATAACCTAATAAAATAAAATGCAGCTAACATCGAACG           	-	7562659	29	ZS97	@HWI-EAS-249_16:4:7:1432:826/1
-               AAAGTCAAAACGTCTTATAACCTAATAAAATAAAATGCAG                        	-	7562458	29	ZS97	@HWI-EAS-249_16:4:6:304:1691/2
+16	INV 3	NT 3 "AAG"	ChrID chr05	BP 13686791	13686795	BP_range 13686791	13686795	Supports 3	3	+ 3	3	- 0	0	S1 4	SUM_MS 87	1	NumSupSamples 1	1	ZS97 7 7 3 3 0 0
+AGTCGGTGGTACATTACAGTTACTAGCCGTCAACCCGTGCaagGCACGGGTTATTGGTATTGGTAGTATAAAGATCAAAATTT
+                               AACCCGTGCAAGGCACGGGTTATTGGTATTGGTAGTATAA		+	13686647	29	ZS97	@HWI-EAS-249_16:3:64:1756:533/1
+                   TTACTAGCCGTCAACCCGTGCAAGGCACGGGTTATTGGTA		+	13686667	29	ZS97	@HWI-EAS-249_16:6:14:1769:1742/1
+               ACAGTTACTAGCCGTCAACCCGTGCAAGGCACGGGTTATT		+	13686623	29	ZS97	@HWI-EAS-249_13:8:33:1558:229/2
 ####################################################################################################
-173	INV 94	NT 0:0 "":""	ChrID chr05	BP 17465388	17465483	BP_range 17465388	17465483	Supports 3	2	+ 3	2	- 0	0	S1 4	SUM_MS 87	1	NumSupSamples 1	1	ZS97 3 2 0 0
-CTAACTAAAAGCCAAATTATGATACAAACAAGCCGCTCAGttgattcttaacacaatgcaaaaatagactaagtaaaagc
-                              AGCCGCTCAGTTGATTCTTAACACAATGCAAAAATAGACT	+	17465290	29	ZS97	@HWI-EAS-249_16:2:68:557:247/2
-                       ACAAACAAGCCGCTCAGTTGATTCTTAACACAATGCAAAA	+	17465283	29	ZS97	@HWI-EAS-249_16:3:45:270:828/2
-                       ACAAACAAGCCGCTCAGTTGATTCTTAACACAATGCAAAA	+	17465283	29	ZS97	@HWI-EAS-249_16:6:21:497:77/2
+17	INV 3592834	NT 0:0 "":""	ChrID chr05	BP 10695879	14288700	BP_range 10695879	14288700	Supports 3	3	+ 1	1	- 2	2	S1 6	SUM_MS 37	1	NumSupSamples 1	1	ZS97 133 438 1 1 2 2
+ACGATTGGGCACAGCTTCACCCATCACGCGAATCTTCGAAgattcgcgtgatgggtgaagctgtgcccgattgtgctcaa
+          ATCGGGCACAGCTTCACCCATCACGCGAATCTTCGAAGCT	+	14288531	37	ZS97	@HWI-EAS-249_16:3:4:736:507/2
 ----------------------------------------------------------------------------------------------------
-tctgaaaaaaaggatgttatacactgtgttaagaatcaacTTTTTAGTTAGTCTATTTATGCAAGCCAATTTATTTAGAA
+caagaaagagaacctgtccgccacctcgtctccagttagcTTCGAAGCTAACTGGAGACGAGGGGGCGGACAGGTTCTCT
+                         CTTCGAAGCTAACTGGAGACGAGGTGGCGGACAGGTTCTC	-	10696050	0	ZS97	@HWI-EAS-249_16:7:12:263:1095/1
+                        ATCTTCGAAGCTAACTGGAGACGAGGTGGCGGACAGGTTC	-	10696063	0	ZS97	@HWI-EAS-249_16:5:16:874:647/1
 ####################################################################################################
-174	INV 553	NT 0:0 "":""	ChrID chr05	BP 18770853	18771407	BP_range 18770853	18771407	Supports 8	7	+ 8	7	- 0	0	S1 9	SUM_MS 256	1	NumSupSamples 1	1	ZS97 8 7 0 0
+18	INV 14009	NT 0:0 "":""	ChrID chr05	BP 11567861	11581867	BP_range 11567861	11581867	Supports 5	3	+ 0	0	- 5	3	S1 6	SUM_MS 0	1	NumSupSamples 1	1	ZS97 11 13 0 0 5 3
+CCTTGTACCCCCCTTGCATTAATTATGCATCCGCCGGTGTggcctgctgagtactgtggttgtactcattcttgcgcaat
+----------------------------------------------------------------------------------------------------
+attgagcaagaatgagtacaaccacagtactcagcaagtcACACCGGAGATGCACAATTAATGCAAAGGAGTACAAGGGG
+                      GTACTCAGCAAGGCACACCGGAGATGCACGAGTAATGCAA	-	11568038	0	ZS97	@HWI-EAS-249_13:8:65:1540:122/1
+                   ACAGTACTCAGCAAGGCACACCGGAGATGCACGAGTAATG	-	11568028	0	ZS97	@HWI-EAS-249_13:8:10:803:846/1
+                   ACAGTACTCAGCAAGGCACACCGGAGATGCACGAGTAATG	-	11568046	0	ZS97	@HWI-EAS-249_16:2:71:1169:115/1
+               AACCACAGTACTCAGCAAGGCACACCGGAGATGCACGAGT	-	11568043	0	ZS97	@HWI-EAS-249_16:3:92:1702:1974/2
+               AACCACAGTACTCAGCAAGGCACACCGGAGATGCACGAGT	-	11568041	0	ZS97	@HWI-EAS-249_16:7:66:551:43/2
+####################################################################################################
+19	INV 101	NT 0:0 "":""	ChrID chr05	BP 13771747	13771849	BP_range 13771747	13771849	Supports 4	3	+ 4	3	- 0	0	S1 5	SUM_MS 116	1	NumSupSamples 1	1	ZS97 9 0 4 3 0 0
+CACCAAGAAGTTTTCTAAACTGAAAATAGGAAATAAATAAactgatcactttaagagaaagcctaaattttatcaaaaaa
+                          TAGGAAGTAAATAAACTGATCACTTTAAGAGAAAGCCAAA	+	13771665	29	ZS97	@HWI-EAS-249_16:2:78:339:700/1
+                   CTGAATATAGGAAGTAAATAAACTGATCACTTTAAGAGAA	+	13771702	29	ZS97	@HWI-EAS-249_16:6:53:137:1216/1
+                  ACTGAATATAGGAAGTAAATAAACTGATCACTTTAAGAGA	+	13771699	29	ZS97	@HWI-EAS-249_16:3:49:1008:49/1
+                  ACTGAATATAGGAAGTAAATAAACTGATCACTTTAAGAGA	+	13771699	29	ZS97	@HWI-EAS-249_16:4:49:1668:1411/1
+----------------------------------------------------------------------------------------------------
+ttttttgataaaatttaggctttctcttagggagatcaacTTAGAAAACTGAAACAAATTTTCGGAGAGATTATACGTCT
+####################################################################################################
+20	INV 3131	NT 0:0 "":""	ChrID chr05	BP 14285031	14288163	BP_range 14285031	14288163	Supports 3	3	+ 1	1	- 2	2	S1 6	SUM_MS 0	1	NumSupSamples 1	1	ZS97 389 84 1 1 2 2
+ATGTATTCTGCTATCTCACGTCGCATACTAGCCCACCAGAcacaactgatcaatctgttagtgcagcaggaacagaatca
+                             AGCCCAACAGACACAACTGATTAATCTGTTAGTGCAGCAG	+	14288028	0	ZS97	@HWI-EAS-249_13:6:84:953:986/1
+----------------------------------------------------------------------------------------------------
+cctggaagcactaagatgtaccaagacttaaagcaacaatTCTGTTGGGCCAAAATCTGAGCTAGCGTTGAGTTCTCTTC
+             AGATGTACCAAGACTTAAAGCAACAATTCTGGTGGGCCAA	-	14285208	0	ZS97	@HWI-EAS-249_16:4:82:1566:1523/2
+           TAAGATGTACCAAGACTTAAAGCAACAATTCTGGTGGGCC	-	14285233	0	ZS97	@HWI-EAS-249_16:2:7:723:1969/1
+####################################################################################################
+21	INV 949	NT 0:0 "":""	ChrID chr05	BP 14285213	14286163	BP_range 14285213	14286163	Supports 6	2	+ 4	1	- 2	1	S1 15	SUM_MS 9	1	NumSupSamples 1	1	ZS97 890 225 4 1 2 1
+CTCATCTTCTACAAAACCGATGGCTTTACCTCTTCTCATGttcttatttactccaagacgaaggaagaacatgaagagca
+           CAAAACCGATGGCTTTACCTCTTCTCATGTTCTTCTTTAC                            	+	14285030	0	ZS97	@HWI-EAS-249_16:3:50:913:351/2
+           CAAAACCGATGGCTTTACCTCTTCTCATGTTCTTCTTTAC                            	+	14285030	0	ZS97	@HWI-EAS-249_16:6:40:1311:619/2
+           CAAAACCGATGGCTTTACCTCTTCTCATGTTCTTCTTTAC                            	+	14285030	0	ZS97	@HWI-EAS-249_16:4:16:1692:1500/2
+           CAAAACCGATGGCTTTACCCCTTCTCATGTTCTTCTTTAC                            	+	14285031	0	ZS97	@HWI-EAS-249_13:6:98:537:605/2
+----------------------------------------------------------------------------------------------------
+ctcaagtgaatgatcctgatatccaggaaataaagaagaaTGTCATCAATAAACACCACGACAAACTTATCCAGATATTC
+                         ATAAATAAGAATGTCATCAATAAACACCACGACAAACTTA              	-	14286351	9	ZS97	@HWI-EAS-249_16:4:45:657:142/2
+                         ATAAATAAGAATGTCATCAATAAACACCACGACAAACTTA              	-	14286357	0	ZS97	@HWI-EAS-249_16:7:22:170:1020/2
+####################################################################################################
+22	INV 3	NT 3 "TTT"	ChrID chr05	BP 17004256	17004260	BP_range 17004256	17004260	Supports 3	3	+ 3	3	- 0	0	S1 4	SUM_MS 75	1	NumSupSamples 1	1	ZS97 0 0 3 3 0 0
+TGATTTTATACTTGCTTGGTTCCTGGTTTACATGGTAAAAtttTTTTGATTTATACTATTGTAGCCTATGTGTATCCCAACAT
+                              CATAGTAAAATTTTTTTGATTTATACTATTGTAGCCTATG		+	17004110	29	ZS97	@HWI-EAS-249_16:3:61:1784:782/1
+                 GGTTCCTGGTTTACATGGTAAAATTTTTTTGATTTATACT		+	17004067	29	ZS97	@HWI-EAS-249_16:4:48:1637:929/1
+                TGGTTCCTGGTTTACATGGTAAAATTTTTTTGATTTATAC		+	17004084	17	ZS97	@HWI-EAS-249_16:6:97:1367:1242/1
+####################################################################################################
+23	INV 3	NT 3 "TTT"	ChrID chr05	BP 18551929	18551933	BP_range 18551929	18551933	Supports 4	3	+ 4	3	- 0	0	S1 5	SUM_MS 104	1	NumSupSamples 1	1	ZS97 0 0 4 3 0 0
+TTAGAGACTTACAATTTAAATACATACCAACTATTTTTTTtttAAAAATATGACGCCATAAATATAGCTAGTCCTATTAATTA
+                             ACTATTTTTTTTTTAAAAATATGACGCCATAAATATAGCT		+	18551790	17	ZS97	@HWI-EAS-249_16:4:33:241:1062/1
+                           CGACTATTTTTTTTTGAAAAATATGACGCCATAAATATAG		+	18551758	29	ZS97	@HWI-EAS-249_13:6:74:458:376/1
+                           CGACTATTTTTTTTTGAAAAATATGACGCCATAAATATAG		+	18551758	29	ZS97	@HWI-EAS-249_16:5:2:1333:1467/1
+              TTTAAATACATACCGACTATTTTTTTTTGAAAAATATGAC		+	18551749	29	ZS97	@HWI-EAS-249_16:4:48:922:1002/1
+####################################################################################################
+24	INV 74196	NT 0:0 "":""	ChrID chr05	BP 15085292	15159489	BP_range 15085292	15159489	Supports 5	4	+ 0	0	- 5	4	S1 6	SUM_MS 103	1	NumSupSamples 1	1	ZS97 1 3 0 0 5 4
+GCGGGAGAGCGTCCGCCACGTGATCGAGATCCAGGACGCGcccacgctttctctccaccaaaaccctagaaatcctcagg
+----------------------------------------------------------------------------------------------------
+gtatgaaccggaacaggtagatcccggcgagcacgtagcaCGCGTGGGTGAGAGGAGATGATCAGATGAGGAGAGGAAGC
+                            GAGCACGTAGCACGCGTGGGTGAGAGGAGATGATCAGATG           	-	15159698	29	ZS97	@HWI-EAS-249_16:7:56:452:617/1
+                  AGATCCCGGCGAGCACGTAGCACGCGTGGGTGAGAGGAGA                     	-	15159615	0	ZS97	@HWI-EAS-249_16:7:99:1361:1719/1
+                 TAGATCCCGGCGAGCACGTAGCACGCGTGGGTGAGAGGAG                      	-	15159634	0	ZS97	@HWI-EAS-249_16:3:51:13:1641/2
+              AGGTAGATCCCGGCGAGCACGTAGCACGCGTGGGTGAGAG                         	-	15159675	37	ZS97	@HWI-EAS-249_16:2:74:740:1936/1
+              AGGTAGATCCCGGCGAGCACGTAGCACGCGTGGGTGGGAG                         	-	15159675	37	ZS97	@HWI-EAS-249_16:2:48:702:1317/1
+####################################################################################################
+25	INV 696088	NT 0:0 "":""	ChrID chr05	BP 15491260	16187349	BP_range 15491260	16187349	Supports 4	3	+ 4	3	- 0	0	S1 5	SUM_MS 87	1	NumSupSamples 1	1	ZS97 2 0 4 3 0 0
+TTACGAACCGGGACTAAAAAGCACTTCTCCACCAGTGTACctccgttgacgccgttaacttttaaataaacgtttgataa
+                              ACCAGTGTACCTCCGTTGACGCCGTTAACTTTTAAATAAA	+	16187192	29	ZS97	@HWI-EAS-249_16:7:85:1106:159/1
+                     CACTTCTCCACCAGTGTACCTCCGTTGACGCCGTTAACTT	+	16187147	29	ZS97	@HWI-EAS-249_16:2:68:694:1191/1
+                     CACTTCTCCACCAGTGTACCTCCGTTGACGCCGTTACCTT	+	16187204	29	ZS97	@HWI-EAS-249_16:7:47:954:185/2
+                 AAAGCACTTCCCCACCAGTGTACCTCCGTTGACGCCGTTA                      	+	15491118	0	ZS97	@HWI-EAS-249_16:2:82:370:422/2
+----------------------------------------------------------------------------------------------------
+tttacatgttaaaagataggagcatttggttaattgttgtGTAGTATCTGCTCCACGTTCGAATATATGTTTTCAAAAAA
+####################################################################################################
+26	INV 92	NT 0:0 "":""	ChrID chr05	BP 15710864	15710957	BP_range 15710864	15710957	Supports 3	3	+ 3	3	- 0	0	S1 4	SUM_MS 71	1	NumSupSamples 1	1	ZS97 0 2 3 3 0 0
+AAGAAAACTAATTTTATAACTCGCCTGAAAACCACGAGATgaatcttttgagtctaattagtctatgattagtcataagt
+                        CTGGAAACCACGAGATGAATCTTTTGAGTCTAATTAATCT               	+	15710681	23	ZS97	@HWI-EAS-249_16:1:16:1372:1511/1
+                TAACTCGCCTGGAAACCACGAGATGAATCTTTTGAGTCTA                       	+	15710697	19	ZS97	@HWI-EAS-249_16:2:88:33:1857/1
+            TTCATAACTCGCCTGGAAACCACGAGATGAATCTTTTGAG                           	+	15710659	29	ZS97	@HWI-EAS-249_16:4:19:533:653/1
+----------------------------------------------------------------------------------------------------
+cacgtatgctaatgacggattaattaggctcagaaaatttGTCTCGCGATTTCCTCCTTAACTGTGTAATTAGTTTTTGT
+####################################################################################################
+27	INV 976	NT 0:0 "":""	ChrID chr05	BP 16437918	16438895	BP_range 16437918	16438895	Supports 6	3	+ 6	3	- 0	0	S1 7	SUM_MS 86	1	NumSupSamples 1	1	ZS97 0 1 6 3 0 0
+CTGATGTTACTTTGTAGTCACCCTAATCTACCGTCCAGCAgcaatccaacgactcagctcgcagatgcctcgcgtggtgc
+                      CTGATCTACCGTCCAGCAGCAATCCAACGACTCAGCTCGC                 	+	16437752	18	ZS97	@HWI-EAS-249_16:1:14:816:291/2
+                      CTAAACTCCCGTCCAGCAGCAATCCAACGACTCAGCTCGC                 	+	16437752	17	ZS97	@HWI-EAS-249_16:7:83:1218:120/2
+                     CCTGATCTACCGTCCAGCAGCAATCCAACGACTCAGCTCG                  	+	16437793	11	ZS97	@HWI-EAS-249_16:6:42:1454:1635/2
+                     CCTGATCTACCGTCCAGCAGCAATCCAACGACTCAGCTCG                  	+	16437767	11	ZS97	@HWI-EAS-249_16:6:46:1744:763/2
+                     CCGGATCTACCGTCCAGCAGCAATCCAACGACTCAGCTCG                  	+	16437767	11	ZS97	@HWI-EAS-249_16:1:70:629:1186/2
+             GCAGTCACCCTGATCTACCGTCCAGCAGCAATCCAACGAC                          	+	16437706	18	ZS97	@HWI-EAS-249_16:3:59:1079:369/1
+----------------------------------------------------------------------------------------------------
+gcaccacgcgaggcatctgtgagctgagtcattggattgtTGCTGGACGGTAAATCAGAGTGACTACAAAGTAACGTCAG
+####################################################################################################
+28	INV 553	NT 0:0 "":""	ChrID chr05	BP 18770853	18771407	BP_range 18770853	18771407	Supports 7	6	+ 7	6	- 0	0	S1 8	SUM_MS 227	1	NumSupSamples 1	1	ZS97 0 0 7 6 0 0
 GTGGGAAATGAAATCCAATCATTACTTGATGAGTAAAAATagttcaactaccttagagcccgtgcattgcaacggaaaac
-                     TTACTTGATGAGTAAAAATAGTACAACTACCTTAGAGCCC                  	+	18770640	29	ZS97	@HWI-EAS-249_16:6:79:1075:1272/2
         TGAAATCCAATCATTACTTGATGAGTAAAAATAGTTCAAC	+	18771219	37	ZS97	@HWI-EAS-249_16:7:63:150:1269/1
-                          TGATGAGTAAAAATAGTTCAACTACCTTAGAGCCCGTGCA	+	18771050	29	ZS97	@HWI-EAS-249_16:2:87:1087:1641/1
-                 ATCATTACTTGATGAGTAAAAATAGTTCAACTACCTTAGA                      	+	18770507	29	ZS97	@HWI-EAS-249_16:7:52:895:1903/2
-                AATCATTACTTGATGAGTAAAAATAGTTCAACTACCTTAG                       	+	18770525	29	ZS97	@HWI-EAS-249_16:3:65:628:760/1
+                          TGATGAGTAAAAATAGTTCAACTACCTTAGAGCCCGTGCA	+	18771235	29	ZS97	@HWI-EAS-249_16:2:87:1087:1641/1
+                 ATCATTACTTGATGAGTAAAAATAGTTCAACTACCTTAGA                      	+	18770692	29	ZS97	@HWI-EAS-249_16:7:52:895:1903/2
+                AATCATTACTTGATGAGTAAAAATAGTTCAACTACCTTAG                       	+	18770710	29	ZS97	@HWI-EAS-249_16:3:65:628:760/1
                CAATCATTACTTGATGAGTAAAAATAGTTCAACTACCTTA                        	+	18770664	29	ZS97	@HWI-EAS-249_16:6:17:211:2010/1
-          AAATCCAATCATTACTTGATGAGTAAAAATAGTTCAACTA	+	18771234	37	ZS97	@HWI-EAS-249_16:1:70:1506:1932/2
           AAACCCAATCATTACTTGATGAGTAAAAATAGTTCAACTA	+	18771227	37	ZS97	@HWI-EAS-249_16:4:81:780:821/2
+          AAATCCAATCATTACTTGATGAGTAAAAATAGTTCAACTA	+	18771234	37	ZS97	@HWI-EAS-249_16:1:70:1506:1932/2
 ----------------------------------------------------------------------------------------------------
 ctagctgtaaataatgctatcaaaattggaaatattttctAAAAATATCCACTGAATTTCGTTCAAAAACAATGTCCACT
 ####################################################################################################
-175	INV 1452	NT 0:2 "":"CC"	ChrID chr05	BP 12014414	12015867	BP_range 12014414	12015867	Supports 3	3	+ 0	0	- 3	3	S1 4	SUM_MS 111	1	NumSupSamples 1	1	ZS97 0 0 3 3
-TTTCTTGTTTGCTGCCGCTTTGCTCTTGCGCTCCCGCCGTcccctccttgtgggctgctgcagctcatcgccgaaccgtg
+29	INV 898927	NT 0:0 "":""	ChrID chr05	BP 18770861	19669787	BP_range 18770861	19669787	Supports 7	6	+ 0	0	- 7	6	S1 8	SUM_MS 199	1	NumSupSamples 1	1	ZS97 0 0 0 0 7 6
+TGAAATCCAATCATTACTTGATGAGTAAAAATAGAAAATAtcctcgacatcatgtgagacgtgtggttcaaattcgaata
 ----------------------------------------------------------------------------------------------------
-ggtgcccgatgaagacgacatcgtcatacagtaaagagcg  CGATGCCGGCAGTAGGCCTTCACGCAGAAATCGATGGTGA
-                              GTAAAGAGCGCCCGATGCCGGCAGTAGGCCTTCACGCAGA	-	12014568	37	ZS97	@HWI-EAS-249_13:6:63:1229:1493/2
-                   ATCGTCAAACAGTAAAGAGCGCCCGATGCCGGCAGTAGGC                    	-	12016021	37	ZS97	@HWI-EAS-249_13:6:1:1168:359/2
-                GACATCGTCAAACAGTAAAGAGCGCCCGATGCAGGCAGTA                       	-	12016019	37	ZS97	@HWI-EAS-249_13:8:26:1538:1627/1
+agtttcctctagctgtaaataatgctatcaaaattggaaaCCAAACTCTTGATGTGGAGGTCGAGATGACGACAACCACC
+                             AATTGGAAATCAAACTCTTGATGTGGAGGTCGAGATGACG	-	18770992	37	ZS97	@HWI-EAS-249_16:5:5:960:1337/2
+                          CAAAAGTGGAAATCAAACTCTTGATGTGGAGGTCGAGATG	-	18771025	37	ZS97	@HWI-EAS-249_13:8:46:124:676/2
+                       TTTCAAAATTGGAAATCAAACTCTTGATGTGGAGGTTGTG                	-	19669976	9	ZS97	@HWI-EAS-249_16:6:90:1455:1430/2
+                 TAATGCTTTCAAAATTGGAAATCAAACTCTTGATGTGGAG	-	18771060	29	ZS97	@HWI-EAS-249_16:7:15:197:1035/2
+                 TAATGCTTTCAAAATTGGAAATCAAACTCTTGATGTGGAG	-	18771060	29	ZS97	@HWI-EAS-249_16:4:88:672:949/2
+               AATAATGCTTTCAAAATTGGAAATCAAACTCTTGATGTGG	-	18771028	29	ZS97	@HWI-EAS-249_16:4:62:1313:383/1
+              AAATAATGCTTTCAAAATTGGAAATCAAACTCTTGATGTG	-	18771027	29	ZS97	@HWI-EAS-249_13:6:54:1193:1705/1
 ####################################################################################################
-176	INV 112	NT 5:0 "GTAAA":""	ChrID chr05	BP 13771739	13771852	BP_range 13771739	13771852	Supports 5	4	+ 5	4	- 0	0	S1 6	SUM_MS 161	1	NumSupSamples 1	1	ZS97 5 4 0 0
-TAGAGCATCACCAAGAAGTTTTCTAAACTGAAAATAGGAA     taaactgatcactttaagagaaagcctaaattttatcaaa
-                           CTGAATATAGGAAGTAAATAAACTGATCACTTTAAGAGAA	+	13771517	29	ZS97	@HWI-EAS-249_16:6:53:137:1216/1
-                          ACTGAATATAGGAAGTAAATAAACTGATCACTTTAAGAGA	+	13771514	29	ZS97	@HWI-EAS-249_16:3:49:1008:49/1
-                          ACTGAATATAGGAAGTAAATAAACTGATCACTTTAAGAGA	+	13771514	29	ZS97	@HWI-EAS-249_16:4:49:1668:1411/1
-                 GTTTTCTAAACTGAATATAGGAAGTAAATAAACTGATCAC	+	13771695	37	ZS97	@HWI-EAS-249_16:3:68:172:1638/1
-                AGTTTTCTAAACTGAATATAGGAAGTAAATAAACTGATCA	+	13771704	37	ZS97	@HWI-EAS-249_16:3:44:96:1474/2
-----------------------------------------------------------------------------------------------------
-taaaatttaggctttctcttagggagatcaacttatttatGAAAACTGAAACAAATTTTCGGAGAGATTATACGTCTGTT
-####################################################################################################
-177	INV 2059	NT 0:1 "":"C"	ChrID chr05	BP 19387424	19389484	BP_range 19387424	19389484	Supports 3	3	+ 0	0	- 3	3	S1 4	SUM_MS 103	1	NumSupSamples 1	1	ZS97 0 0 3 3
+30	INV 2059	NT 0:1 "":"C"	ChrID chr05	BP 19387424	19389484	BP_range 19387424	19389484	Supports 3	3	+ 0	0	- 3	3	S1 4	SUM_MS 103	1	NumSupSamples 1	1	ZS97 14 2 0 0 3 3
 TCCAAAGAAGTTTCATAATATGTGTAACGACCCGCCTCTCtcttttatgcacactttgtcctcactcgtgcgcactcggg
 ----------------------------------------------------------------------------------------------------
 gacctataaaagctatcagatgtaagcaggcctggcctgg CTGGGAGAGGCGAGTCGTTACAATATGCAACAAATTTTGA
-                       AAGTAGGCCTGGCCTGGCCTGGGAGAGGCGAGTCGTTACA                	-	19389829	29	ZS97	@HWI-EAS-249_16:4:4:756:1379/2
+                       AAGTAGGCCTGGCCTGGCCTGGGAGAGGCGAGTCGTTACA                	-	19389644	29	ZS97	@HWI-EAS-249_16:4:4:756:1379/2
                     TGTAAGTAGGCCTGGCCTGGCCTGGGAGAGGCGAGTCGTT                   	-	19389662	37	ZS97	@HWI-EAS-249_16:6:5:269:537/1
                  AGATGTAAGTAGGCCTGGCCTGGCCTGGGAGAGGCGAGTC                      	-	19389618	37	ZS97	@HWI-EAS-249_13:8:30:488:805/2
 ####################################################################################################
-178	INV 52	NT 4:0 "TACA":""	ChrID chr05	BP 19475858	19475911	BP_range 19475858	19475911	Supports 3	3	+ 3	3	- 0	0	S1 4	SUM_MS 118	1	NumSupSamples 1	1	ZS97 3 3 0 0
-GCAAATACTACTCCCTCCGTCCCATAAAAAACAAACCTAG    ggatgtgacacatcttagtactacgaatctggacagactg
-                       ATAAAAAACAAATCTAGTACAGGATGTGACATATCTTAGT	+	19475733	60	ZS97	@HWI-EAS-249_16:4:40:1096:1871/2
-                  GTCCCATAAAAAACAAATCTAGTACAGGATGTGACATATC	+	19475583	29	ZS97	@HWI-EAS-249_16:2:67:574:2006/2
-                 CGTCCCATAAAAAACAAATCTAGTACAGGATGTGACATAT	+	19475725	29	ZS97	@HWI-EAS-249_16:1:97:1473:487/2
-----------------------------------------------------------------------------------------------------
-tcttagtactacgaatctggacagactgtcacatcccgttCGTACTAGATTTGTTTTTTTATGGGACGGAGGGAGTATGT
+31	INV 5	NT 5 "TATAT"	ChrID chr05	BP 21750546	21750552	BP_range 21750546	21750552	Supports 8	6	+ 3	3	- 5	3	S1 24	SUM_MS 240	1	NumSupSamples 1	1	ZS97 3 3 3 3 5 3
+CAACAATTTTTTATTTAATTTTCATCTCAATCCTCATCTTtatatTTTTTTTCAGAAATATATTTGAGACGGGGAGATACTTTTT
+                           CAATCCTCATCTTTATATTTTTTTTCAGAAATATATTTGA		+	21750374	29	ZS97	@HWI-EAS-249_16:7:56:474:1201/1
+                          TCAATCCTCATCTTTATATTTTTTTTCAGAAATATATTTG		-	21750719	29	ZS97	@HWI-EAS-249_13:6:14:1163:271/2
+                          TCAATCCTCATCTTTATATTTTTTTTCAGAAATATATTTG		-	21750719	29	ZS97	@HWI-EAS-249_16:3:81:1224:351/2
+                          TCAATCCTCATCTTTATATTTTTTTTCAGAAATATATTTG		-	21750719	29	ZS97	@HWI-EAS-249_16:6:49:1392:1737/2
+                   TTTCATCTCAATCCTCATCTTTATATTTTTTTTCAGAAAT		+	21750358	29	ZS97	@HWI-EAS-249_16:2:83:87:989/1
+                   TTTCATCTCAATCCTCATCTTTATATTTTTTTTCAGAAAT		-	21750725	29	ZS97	@HWI-EAS-249_16:6:87:660:1084/2
+                  TTTTCATCTCAATCCTCATCTTTATATTTTTTTTCAGAAA		+	21750403	29	ZS97	@HWI-EAS-249_16:7:81:865:1546/1
+              TTAATTTTCATCTCAATCCTCATCTTTATATTTTTTTTCA		-	21750711	37	ZS97	@HWI-EAS-249_16:7:23:590:140/1
 ####################################################################################################
-282	INV 68	NT 0:0 "":""	ChrID chr05	BP 20671118	20671187	BP_range 20671118	20671187	Supports 3	3	+ 3	3	- 0	0	S1 4	SUM_MS 80	1	NumSupSamples 1	1	ZS97 3 3 0 0
-AGTTTGCCCGGTACTCCCTAAGTCATTTTAGCATTATACAtatttatatagatgttaataaatctagatatttgtctata
-                           TTAACATTATACATATTTATATAGATGTTAATAAATCTAG            	+	20670951	22	ZS97	@HWI-EAS-249_16:4:3:1266:1485/2
-                         TTTTAACATTATACATATTTATATAGATGTTAATAAATCT              	+	20670783	29	ZS97	@HWI-EAS-249_16:6:31:396:527/1
-                  TAAGTCATTTTAACATTATACATATTTATATAGATGTTAA                     	+	20670784	29	ZS97	@HWI-EAS-249_16:3:73:1132:1540/1
-----------------------------------------------------------------------------------------------------
-tatttgtctatatctatattcattaacatctatatgaatgTAGACAATACTAAAATAATTTATATTATGAAACGGAGGAA
+32	INV 3	NT 3 "AAA"	ChrID chr05	BP 22843167	22843171	BP_range 22843167	22843171	Supports 3	3	+ 3	3	- 0	0	S1 4	SUM_MS 75	1	NumSupSamples 1	1	ZS97 0 0 3 3 0 0
+CATTAATACTCTATCCGTTTCATATTATAAGTCATTTAAAaaaTTTTTAATCAAAGTTCTTTAAATTTGATCAAATTTATAGA
+                              GTCATTTAAAAAATTTTTAATCAAAGTTCTTTAAATTTGA		+	22843016	29	ZS97	@HWI-EAS-249_16:3:73:1271:1813/2
+                          ATAAGTCATTTAAAAAATTTTTAATCAAAGTTCTTTAAAT		+	22843009	17	ZS97	@HWI-EAS-249_16:4:50:1006:1051/2
+                  TTCATATTATAAGTCATTTAAAAAATTTTTAATCAAAGTT		+	22843001	29	ZS97	@HWI-EAS-249_16:3:76:621:164/1
 ####################################################################################################
-283	INV 75	NT 0:0 "":""	ChrID chr05	BP 21940704	21940780	BP_range 21940704	21940780	Supports 3	3	+ 0	0	- 3	3	S1 4	SUM_MS 78	1	NumSupSamples 1	1	ZS97 0 0 3 3
-TTCAACACTTGACCATTCGTCTTATTTAAAAAAAAATTATattttttttaaaaaaataattacacataaaatactattta
-----------------------------------------------------------------------------------------------------
-atttatgttttatcatataataacaacaaaaatattaatcATAAATTTTTTAAATAAGACGGACGATCAAAATATTAGAT
-                   ATAACAACAAAAATATTAATCATAATTTTTTTAAATAAGA	-	21940883	20	ZS97	@HWI-EAS-249_16:2:47:1136:1107/2
-                  AATAACAACAAAAATATTAATCATAATTTTTTTAAATAAG	-	21940879	29	ZS97	@HWI-EAS-249_13:6:66:495:1684/2
-               TATAATAACAACAAAAATATTAATCATAATTTTTTTAAAT	-	21941039	29	ZS97	@HWI-EAS-249_16:2:94:818:541/1
+33	INV 6	NT 6 "ATCTGG"	ChrID chr05	BP 23532987	23532994	BP_range 23532987	23532994	Supports 4	3	+ 2	2	- 2	1	S1 9	SUM_MS 116	1	NumSupSamples 1	1	ZS97 0 0 2 2 2 1
+GATTTTGGAGGGACATGACACATCCTAGTTAGGACCATGTatctggACATGGTCCTAAGATGTGTCGCATCCCTCCAAAATCCGTT
+                           GTTAGGACCATGTATCTGGACATGGTCCTAAGATGTGTCG		-	23533147	29	ZS97	@HWI-EAS-249_16:4:53:1088:1212/1
+                           GTTAGGACCATGTATCTGGACATGGTCCTAAGATGTGTCG		-	23533173	29	ZS97	@HWI-EAS-249_13:6:79:572:62/2
+                      TCCTAGTTAGGACCATGTATCTGGACATGGTCCTAAGATG		+	23532798	29	ZS97	@HWI-EAS-249_13:8:11:575:1715/2
+                     ATCCTAGTTAGGACCATGTATCTGGACATGGTCCTAAGAT		+	23532827	29	ZS97	@HWI-EAS-249_16:4:78:520:1202/1
 ####################################################################################################
-284	INV 4758	NT 0:0 "":""	ChrID chr05	BP 28884233	28888992	BP_range 28884233	28888992	Supports 3	3	+ 3	3	- 0	0	S1 4	SUM_MS 87	1	NumSupSamples 1	1	ZS97 3 3 0 0
-CGTCCCTCAACTTACGAAAACCAGACAAACGAGGTTCCTTggcggttttgatagcggttttggctgacgtggcgcctacg
-                     CAGACAAACGAGGTTCCTTGGCGGTTTTAATAGCGGTTTT                  	+	28883885	29	ZS97	@HWI-EAS-249_16:7:9:1714:1723/1
-                    CCAGACAAACGAGGTTCCTTGGCGGTTTTAATAGCGGTTT                   	+	28883875	29	ZS97	@HWI-EAS-249_16:1:94:106:880/1
-                 AAACCAGACAAACGAGGTTCCTTGGCGGTTTTAATAGCGG                      	+	28883886	29	ZS97	@HWI-EAS-249_16:3:3:1132:1460/1
-----------------------------------------------------------------------------------------------------
-tcaaattagccacgtaggcgccacgttagccaaaaccactGAGCGACCTCGTTTGCCCGGTTTTCGTAAGTTGAGGGACA
+34	INV 3	NT 3 "TGC"	ChrID chr05	BP 24637061	24637065	BP_range 24637061	24637065	Supports 3	3	+ 1	1	- 2	2	S1 6	SUM_MS 73	1	NumSupSamples 1	1	ZS97 0 0 1 1 2 2
+TTTATTTTGCTGTAGCTCCGCCCTTGTTACTAGGCATGCTtgcAGCATGCATATGCTCTATATAATCCTAGAGCAAGCTGACA
+                             CTAGGCATGCTTGCAGCATGCATATGCTCTATATAATCCT		+	24636969	15	ZS97	@HWI-EAS-249_16:4:73:28:1717/2
+                           TACTAGGCATGCTTGCAGCATGCATATGCTCTATATAATC		-	24637201	29	ZS97	@HWI-EAS-249_16:3:13:1364:53/1
+            TAGCTCCGCCCCTGTTACTAGGCATGCTTGCAGCATGCAT		-	24637211	29	ZS97	@HWI-EAS-249_16:4:18:495:260/1
 ####################################################################################################
-285	INV 28117	NT 0:4 "":"ACAG"	ChrID chr05	BP 24022276	24050394	BP_range 24022276	24050394	Supports 3	3	+ 0	0	- 3	3	S1 4	SUM_MS 87	1	NumSupSamples 1	1	ZS97 0 0 3 3
-ATCACATCGTTCCAATTTCAATTAAACTTTCAATTTTGGCtggcgtgaactaaacacaaccatatatgtgaggaaggcac
+35	INV 9058615	NT 0:0 "":""	ChrID chr05	BP 13200477	22259093	BP_range 13200477	22259093	Supports 5	4	+ 0	0	- 5	4	S1 6	SUM_MS 169	1	NumSupSamples 1	1	ZS97 -1 0 0 0 5 4
+TTGGTCTGAATGGCTTATTTGGCTTGATGACCATTTTTTTtaaccacgatgccaccggtggaagaagccccgtcgccacc
 ----------------------------------------------------------------------------------------------------
-agtcagaaagctcaaacatatatgggtgtgtttagttcac    AAATTGGAAGTTTGGTTGAAATTGGAACGATGTGACGGAA
-                        GGTGTGTTTAGTTCACACAGAAATTGGAAGTTTGGTTGAA	-	24022598	29	ZS97	@HWI-EAS-249_16:6:20:621:1770/2
-                      TGGGTGTGTTTAGTTCACACAGAAATTGGAAGTTTGGTTG	-	24022461	29	ZS97	@HWI-EAS-249_16:3:94:1049:1257/2
-                   ATATGGGTGTGTTTAGTTCACACAGAAATTGGAAGTTTGG	-	24022463	29	ZS97	@HWI-EAS-249_13:6:76:1121:505/1
+gttttggcttattaaaagaaaagccaaacgatgagggcaaGAGTACCTATGTGTCGAGGTGAAGATGTTTCAGATTTGGA
+                         AAACGATGAGGTCAAGAGTACCTATGTGTCGAGGTGAAGA              	-	22259241	29	ZS97	@HWI-EAS-249_16:7:66:877:1794/1
+                             GATGAGGGCAAGAGTACCTATGTGTCGAGGTGAAGATGTT          	-	22259277	29	ZS97	@HWI-EAS-249_16:6:25:1394:1451/2
+                  AAAAGCCAAACGATGAGGGCAAGAGTACCTATGTGTCGAG                     	-	22259211	37	ZS97	@HWI-EAS-249_16:2:93:776:742/2
+               AAGAAAAGCCAAACGATGAGGGCAAGAGTACCTATGTGTC                        	-	22259238	37	ZS97	@HWI-EAS-249_13:6:59:1137:1861/1
+               AAGAAAAGCCAAACGATGAGGGCAAGAGTACCTATGTGTC                        	-	22259238	37	ZS97	@HWI-EAS-249_16:7:31:1482:286/1
+####################################################################################################
+36	INV 3203	NT 0:0 "":""	ChrID chr05	BP 20324022	20327226	BP_range 20324022	20327226	Supports 3	3	+ 0	0	- 3	3	S1 4	SUM_MS 87	1	NumSupSamples 1	1	ZS97 9 2 0 0 3 3
+TATATATATATATATATATATATATATATAGATCTAGACAtgacaatgctagaaagtcttataatataaaccggagggag
+----------------------------------------------------------------------------------------------------
+caggttataaaactttctagcattatccatattcacatagTGTCTAGATTCATTAATATATATATGAATATGGGCAATGC
+                     ATTATCCATATTCACATAGTGTCTAGATTTATTAATATAT	-	20324101	29	ZS97	@HWI-EAS-249_16:6:96:639:1668/1
+                   GCATTATCCATATTCACATAGTGTCTAGATTTATTAATAT	-	20324178	29	ZS97	@HWI-EAS-249_16:7:42:992:1219/2
+                 TAGAATTATCCATATTCACATAGTGTCTAGATTTATTAAT	-	20324191	29	ZS97	@HWI-EAS-249_16:1:88:1041:1386/2
+####################################################################################################
+37	INV 1832	NT 0:0 "":""	ChrID chr05	BP 21600482	21602315	BP_range 21600482	21602315	Supports 4	4	+ 4	4	- 0	0	S1 5	SUM_MS 81	1	NumSupSamples 1	1	ZS97 0 5 4 4 0 0
+TTTCGTCTCTAAACCGCAAAACCGGGTACGACCCATCCCCaacttacgaaaaccgggcaaacgaggtctctcggtggttt
+                          TACGAACAATCCCCAACTTACGAAAACCGGGCAAACGAGG             	+	21600316	17	ZS97	@HWI-EAS-249_16:2:36:1454:1979/1
+                        GGTACGACCCATCCCCAACTTACGAAAACCGGGCAAACGA               	+	21600337	29	ZS97	@HWI-EAS-249_16:7:55:1172:1339/2
+                      CGGGTACGACCCATCCCCAACTTACGAAAACCGGGCAAAC                 	+	21600309	18	ZS97	@HWI-EAS-249_16:7:1:1653:1408/1
+             CCGCAAAACCGGGTACGACCCATCCCCAACTTACGAAAAC                          	+	21600302	17	ZS97	@HWI-EAS-249_16:6:94:992:173/1
+----------------------------------------------------------------------------------------------------
+aaccaccgagggacctcctttgcccgattttcgtaagttgGGGGGATGGTTCGTACCTGGTTTTGTGGTTCAGGGACGAA
+####################################################################################################
+38	INV 208	NT 0:0 "":""	ChrID chr05	BP 23446248	23446457	BP_range 23446248	23446457	Supports 3	3	+ 1	1	- 2	2	S1 6	SUM_MS 180	1	NumSupSamples 1	1	ZS97 9 6 1 1 2 2
+GTTCAAATTCGACTTCTATAAGTTGTAACAAAAACAACAAatttgactatatatatatatatatatatatatatatatat
+                           ACAAAAAGAACAAATTGGACTATATATATATATATATATA            	+	23446243	60	ZS97	@HWI-EAS-249_16:7:60:1354:1461/2
+----------------------------------------------------------------------------------------------------
+ctgtgtgcataggatatgttgcctatatatatagttaaatTTGTTATTTTTGTTACAACTTGTAGAATTCGAATTTGAAT
+TGTATAGGATATTTTGCCTATATATATAGTTAAATTTGTT                                       	-	23446469	60	ZS97	@HWI-EAS-249_16:7:60:1354:1461/1
+GTATAGGATATGTTGCCTATATATATAGTTAAATTTGTTA                                       	-	23446482	60	ZS97	@HWI-EAS-249_16:7:48:191:79/2
+####################################################################################################
+39	INV 2099	NT 0:0 "":""	ChrID chr05	BP 23472712	23474794	BP_range 23472712	23474794	Supports 3	3	+ 0	0	- 3	3	S1 4	SUM_MS 118	1	NumSupSamples 1	1	ZS97 0 0 0 0 3 3
+CATGTGTGGTTTTGTTTTGAAGATTTAATTGCAACGAATTtggacaatcttttatctagattcattggattaggatgtgt
+----------------------------------------------------------------------------------------------------
+ttaaattacttatccaaatcatgattcgattgcaacattaAATTCGTTGGACTAAGATATGTCTCATCCAATTCTAAATT
+                AGTTTAAATTCGTTGGACTAAGATATGTCTCATCCAATTC                       	-	23474974	29	ZS97	@HWI-EAS-249_16:1:96:533:1164/1
+                AAGTTTAAATTCGTTGGACTAAGATATGTCTCATCCTATT                       	-	23475011	29	ZS97	@HWI-EAS-249_16:4:81:1767:960/1
+                     TTAAATTCGTTGGACTAAGATATGTCTCATCCAATTCTAA                  	-	23474980	60	ZS97	@HWI-EAS-249_16:4:62:601:842/1
+####################################################################################################
+40	INV 3	NT 3 "TTT"	ChrID chr05	BP 26905794	26905798	BP_range 26905794	26905798	Supports 6	6	+ 2	2	- 4	4	S1 15	SUM_MS 154	1	NumSupSamples 1	1	ZS97 0 0 2 2 4 4
+ACTTTACTCATGACTTATGTTTTTAATTTTTTTTCAAAAAtttTTTAAATAAGACGAACGGTTAAAGTTGGGTGCGGAAAACC
+                             TTTTTCAAAAATTTTTTAAATAAGACGAACGGTTAAAGTT		+	26905610	21	ZS97	@HWI-EAS-249_16:2:7:937:1432/1
+                     TTTAATTTTTTTTCAAAAATTTTTTAAATAAGACGAACGG		-	26905975	29	ZS97	@HWI-EAS-249_16:2:54:683:1828/1
+                  GTTTTTAATTTTTTTTCAAAAATTTTTTAAATAAGACGAA		-	26905961	29	ZS97	@HWI-EAS-249_16:7:45:651:1818/2
+               TATGTTTTTAATTTTTTTTCAAAAATTTTTTAAATAAGAC		-	26905966	23	ZS97	@HWI-EAS-249_16:3:10:1688:1346/1
+               TATGTTTTTAATTTTTTTTCAAAAATTTTTTAAATAAGAC		+	26905590	23	ZS97	@HWI-EAS-249_16:2:4:1332:539/2
+           GACTCATGTTTTTAATTTTTTTTCAAAAATTTTTTAAATA		-	26905983	29	ZS97	@HWI-EAS-249_16:6:80:862:1196/1
+####################################################################################################
+41	INV 5	NT 5 "TAGTG"	ChrID chr05	BP 29373509	29373515	BP_range 29373509	29373515	Supports 7	4	+ 7	4	- 0	0	S1 8	SUM_MS 179	1	NumSupSamples 1	1	ZS97 0 0 7 4 0 0
+AAACTAAAACTTAACATGCAAAGCATGCCACATTATCATCtagtgGCAATTACTACTATTTTAGCCCATTTAAAATTCCATGCAA
+                         TGCCACATTATCATCTAGTGGCAATTACTACTATTTTAGC		+	29373338	29	ZS97	@HWI-EAS-249_16:3:27:225:2015/2
+                         TGGCACATTATCATCTAGTGGCAATTACTACTATTTTAGC		+	29373338	29	ZS97	@HWI-EAS-249_16:6:1:1651:212/2
+                      GCATGCCACATTATCATCTCGTGGCAATTACTACTTTTTT		+	29373339	29	ZS97	@HWI-EAS-249_16:5:15:1564:1890/2
+                  CAAAGCATGCCACATTATCATCTAGTGGCAATTACTACTA		+	29373376	29	ZS97	@HWI-EAS-249_13:6:68:1631:1438/2
+                  CAAAGCATGCCACATTATCATCTAGTGGCAATTACTACTA		+	29373353	29	ZS97	@HWI-EAS-249_16:7:9:1295:300/1
+               ATGCAAAGCATGCCACATTATCATCTAGTGGCAATTACTA		+	29373374	17	ZS97	@HWI-EAS-249_16:5:6:310:1958/2
+               ATGCAAAGCATGCCACATTATCATCTAGTGGCAATTACTA		+	29373374	17	ZS97	@HWI-EAS-249_13:8:56:1678:1347/2
+####################################################################################################
+42	INV 167	NT 0:0 "":""	ChrID chr05	BP 27856537	27856705	BP_range 27856537	27856705	Supports 3	3	+ 3	3	- 0	0	S1 4	SUM_MS 87	1	NumSupSamples 1	1	ZS97 0 1 3 3 0 0
+ACTTACTCTCTCCGTTTTGAAATGTTTGACACCGTTAACTtttttagcacatatttgacccattcgtcttattcaaaaaa
+          TCCGTTTCGAAATGTTTGACACCGTTGACTTTTTTAGCAC                             	+	27856364	29	ZS97	@HWI-EAS-249_16:2:51:946:797/1
+                           GACACCGTTGACTTTTTTAGCACATGTTTGACCCATTCGT            	+	27856374	29	ZS97	@HWI-EAS-249_13:8:92:152:1769/1
+                        TTTGACACCGTTGACTTTTTTAGCACATGTTTGACCCATT               	+	27856352	29	ZS97	@HWI-EAS-249_16:7:10:1185:303/1
+----------------------------------------------------------------------------------------------------
+aagtttttgaataagacgaacggtcaaacatacgctaaaaGTCAACGGTGTCAAACATTTTAAAACGGAGAGAGTATGTT
+####################################################################################################
+43	INV 32597	NT 0:0 "":""	ChrID chr05	BP 28358532	28391130	BP_range 28358532	28391130	Supports 3	3	+ 3	3	- 0	0	S1 4	SUM_MS 72	1	NumSupSamples 1	1	ZS97 11 3 3 3 0 0
+AATTAATTTCAACAACAGGAAAATAGACATGAATGGGCATtgactctcgcgtggttgcccaaattcggccctgattagtt
+                         GGCATGAATGGGCATTGACTCTCGCGTGGTTGCCCCAATT              	+	28358384	37	ZS97	@HWI-EAS-249_16:7:73:386:994/2
+                        AGACATGAATGGGCATTGACTCTCGCGCGGTTGCCCAAAT	+	28390952	12	ZS97	@HWI-EAS-249_13:8:54:985:1493/1
+            CAACAGGAAAATAGACATGAATGGGCATTGACTCTTGTGT	+	28390950	23	ZS97	@HWI-EAS-249_16:7:88:1696:1364/2
+----------------------------------------------------------------------------------------------------
+tgctactgccgcttggttctgtgcttcactactgagtactATGCTGATCGATCCGGGTCGTATCGTCGTCGTAGCTAAGA
+####################################################################################################
+44	INV 19876459	NT 0:7 "":"CATCACG"	ChrID chr05	BP 7304754	27181214	BP_range 7304754	27181214	Supports 3	3	+ 0	0	- 3	3	S1 4	SUM_MS 87	1	NumSupSamples 1	1	ZS97 -1 11 0 0 3 3
+TATTTCAATGATGGTGCCAAATCAGGAAAATTATTGGGATgttatgttatgttgtgtaaaactatgtgcagaatttcatt
+----------------------------------------------------------------------------------------------------
+cgcaaacaacattcacatttcacacctttctctggattaa       ACAGATTAGTTTCATATTATGGATAAACATGGTTGACAAA
+                        CCTTTCTCTGGATTAACATCACGACAGATTAGTTTCAAAT               	-	27181395	29	ZS97	@HWI-EAS-249_16:4:57:1295:1456/2
+                       ACCTTTCTCTGGATTAACATCACGACAGATTAGTTTCAAA                	-	27181371	29	ZS97	@HWI-EAS-249_16:7:5:972:504/2
+                  TTCACACCTTTCTCTGGATTAACATCACGACAGATTAATT                     	-	27181390	29	ZS97	@HWI-EAS-249_16:6:79:1548:33/1
+####################################################################################################
+45	INV 678	NT 0:5 "":"CATGA"	ChrID chr05	BP 29431737	29432416	BP_range 29431737	29432416	Supports 3	3	+ 0	0	- 3	3	S1 4	SUM_MS 95	1	NumSupSamples 1	1	ZS97 4 1 0 0 3 3
+AGATAATTAAATATCTAAACAATATATACTTCCTCATTCAaaaaaacacacacacaccatatctaaccgttttgagaaag
+----------------------------------------------------------------------------------------------------
+acaatatataaatacaaccaacttattctaatagtacttt     TCCCCAAAAAGTTTTATAGATCAGTCATTTAAAACAAATA
+                           CTAATTGTACTTTCATGATCCCCAAAAAGTTTTATAGATC            	-	29432587	29	ZS97	@HWI-EAS-249_16:3:32:1366:931/2
+                  CAACTTATTCTAATAGTACTTTCATGATCCCCAAAAAGTT                     	-	29432571	37	ZS97	@HWI-EAS-249_16:7:14:1573:1276/2
+                 CCAACTTATTCTAATAGTACTTTCATGATCCCCAAAAAGT	-	29431857	29	ZS97	@HWI-EAS-249_16:1:32:1213:1495/2
