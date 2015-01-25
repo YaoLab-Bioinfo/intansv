@@ -18,7 +18,7 @@ This package provides efficient tools to read and integrate structural variation
 
 ### Install
 
--   the latest released version from CRAN with
+-   the latest released version from Bioconductor with
 
     ``` r
     source("http://bioconductor.org/biocLite.R")
