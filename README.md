@@ -16,6 +16,33 @@ This package provides efficient tools to read and integrate structural variation
 <li><a href="http://code.google.com/p/softsearch/" target="_blank">SoftSearch</a></li>
 </ul>
 
+### Install
+
+-   the latest released version from CRAN with
+
+    ``` r
+    source("http://bioconductor.org/biocLite.R")
+    biocLite("intansv")
+    ```
+    
+-   the latest development version from github with
+
+    ``` r
+    if (packageVersion("devtools") < 1.6) {
+      install.packages("devtools")
+    }
+    devtools::install_github("andrewhzau/intansv")
+    ```
+
+### intansv release version 1.7.3 support the following version of SV prediction programs
+* BreakDancer version 1.4.5
+* Pindel version 0.2.5a8
+* DELLY version 0.6.1
+* SVseq2 version 2.2
+* CNVnator version 0.3
+* Lumpy version 0.2.8
+* SoftSearch version 2.4
+
 ### intansv release version 1.7.1 support the following version of SV prediction programs
 * BreakDancer version 1.0r112
 * Pindel version 0.2.4t
