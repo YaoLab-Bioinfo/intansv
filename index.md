@@ -36,22 +36,22 @@ This package provides efficient tools to read and integrate structural variation
     devtools::install_github("andrewhzau/intansv")  
 
 ### intansv release version 1.7.3 support the following version of SV prediction programs
-* [BreakDancer version 1.4.5]({{ BASE_PATH }}/assets/BreakDancer_version_1.4.5.output)  
-* [Pindel version 0.2.5a8]({{ BASE_PATH }}/assets/Pindel_version_0.2.5a8.output.zip)   
-* [DELLY version 0.6.1]({{ BASE_PATH }}/assets/DELLY_version_0.6.1.output.zip)  
-* [SVseq2 version 2.2]({{ BASE_PATH }}/assets/SVseq2_version_2.2.output.zip)  
-* [CNVnator version 0.3]({{ BASE_PATH }}/assets/CNVnator_version_0.3.output.zip)  
-* [Lumpy version 0.2.8]({{ BASE_PATH }}/assets/Lumpy_version_0.2.8.output)  
-* [SoftSearch version 2.4]({{ BASE_PATH }}/assets/SoftSearch_version_2.4.output)  
+* BreakDancer version 1.4.5, [example output]({{ BASE_PATH }}/assets/BreakDancer_version_1.4.5.output)  
+* Pindel version 0.2.5a8, [example output]({{ BASE_PATH }}/assets/Pindel_version_0.2.5a8.output.zip)   
+* DELLY version 0.6.1, [example output]({{ BASE_PATH }}/assets/DELLY_version_0.6.1.output.zip)  
+* SVseq2 version 2.2, [example output]({{ BASE_PATH }}/assets/SVseq2_version_2.2.output.zip)  
+* CNVnator version 0.3, [example output]({{ BASE_PATH }}/assets/CNVnator_version_0.3.output.zip)  
+* Lumpy version 0.2.8, [example output]({{ BASE_PATH }}/assets/Lumpy_version_0.2.8.output)  
+* SoftSearch version 2.4, [example output]({{ BASE_PATH }}/assets/SoftSearch_version_2.4.output)  
 
 ### intansv release version 1.7.1 support the following version of SV prediction programs
-* BreakDancer version 1.0r112
-* Pindel version 0.2.4t
-* DELLY version 0.0.11
-* SVseq2 version 2.2
-* CNVnator version 0.2.7
-* Lumpy version 0.1.5
-* SoftSearch version 2.3
+* BreakDancer version 1.0r112, [example output]({{ BASE_PATH }}/assets/BreakDancer_version_1.0r112.output)  
+* Pindel version 0.2.4t, [example output]({{ BASE_PATH }}/assets/Pindel_version_0.2.4t.output.zip)  
+* DELLY version 0.0.11, [example output]({{ BASE_PATH }}/assets/DELLY_version_0.0.11.output.zip)  
+* SVseq2 version 2.2, [example output]({{ BASE_PATH }}/assets/SVseq2_version_2.2.output.zip)  
+* CNVnator version 0.2.7, [example output]({{ BASE_PATH }}/assets/CNVnator_version_0.2.7.output.zip)  
+* Lumpy version 0.1.5, [example output]({{ BASE_PATH }}/assets/Lumpy_version_0.1.5.output)  
+* SoftSearch version 2.3, [example output]({{ BASE_PATH }}/assets/SoftSearch_version_2.3.output)  
 
 ### Helpful information
 During the development of intansv, several nice users reported bugs or given useful suggestions. I really appreciate it! I had collected several of these emails and made it available to the public. I hope this would be helpful to users of intansv.
