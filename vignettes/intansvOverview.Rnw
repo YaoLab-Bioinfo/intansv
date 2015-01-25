@@ -135,15 +135,9 @@ str(delly)
 
 DELLY is able to predict deletions, inversions and duplications. The final 
 prediction of different kind of SVs given by DELLY were written to different 
-files. You should put all these files in the same directory and feed the path of 
-this directory to \Rfunction{readDelly}. DELLY produces two output files for 
-all kind of SVs. One file with the paired-end predictions and one file with 
-the split-read predictions. The files contain the paired-end predictions of
-deletions, inversions and duplication in this directory should be named with 
-suffix of \emph{.del}, \emph{.inv} and \emph{.dup} respectively. The files 
-contain the split-read predictions of deletions, inversions and duplication
-in this directory should be named with suffix of \emph{.del.br}, \emph{.inv.br} 
-and \emph{.dup.br} respectively. See the example dataset for more details.
+files. DELLY v0.6.1 outputs vcf files now. You should put all these files 
+in the same directory and feed the path of this directory to \Rfunction{readDelly}. 
+See the example dataset for more details.
 
 <<read in results of Pindel>>=
 pindel <- readPindel(system.file("extdata/pindel",package="intansv"))
