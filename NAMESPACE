@@ -1,4 +1,5 @@
 importFrom( IRanges, unlist )
+importFrom( IRanges, IRanges )
 importFrom( BiocGenerics, setdiff )
 
 import(plyr)

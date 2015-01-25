@@ -33,7 +33,7 @@ readDelly <- function(dataDir=".", regSizeLowerCutoff=100,
     dellyFileList <- list.files(dataDir, full.names=T)
 
     dellyFileCont <- lapply(dellyFileList, function(x) {
-        dellyData <- try(read.table(x, as.is=T, head=F), silent=T)
+        dellyData <- try(read.table(x, as.is=T), silent=T)
         if (is.data.frame(dellyData)) {
             dellyData <- dellyData[, c(1:2, 7:8, 10)]
             names(dellyData) <- c("chr", "start", "pass", 
