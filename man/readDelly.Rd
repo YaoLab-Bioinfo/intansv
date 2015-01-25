@@ -11,7 +11,7 @@
 \usage{
     readDelly(dataDir=".", regSizeLowerCutoff=100, 
               regSizeUpperCutoff=1000000, readsSupport=3,
-              method="DELLY")
+              method="DELLY", pass=TRUE, minMappingQuality=30)
 }
 
 \arguments{
@@ -23,6 +23,8 @@
     \item{readsSupport}{the minimum read pair support for a structural 
                         variation to be read.}
     \item{method}{a tag to assign to the result of this function.}
+    \item{pass}{set pass=TRUE to remove LowQual SVs reported by DELLY.}
+    \item{minMappingQuality}{the minimum mapping quality for a SV to be read.}
 }
 
 \details{
@@ -30,14 +32,7 @@
     supporting the occurence of a specific SV, and the predicted size of SVs 
     to get more reliable SVs. See our paper for more details.
     The directory that specified by the parameter "dataDir" should only 
-    contain the predictions of DELLY. The paired-end deletions output files 
-    should be named using the suffix ".del" and the corresponding split-read 
-    output files should be named using the suffix ".del.br". The paired-end 
-    duplications output files should be named using the suffix ".dup" and the 
-    corresponding split-read output files should be named using the suffix 
-    ".dup.br". The paired-end inversions output files should be named using 
-    the suffix ".inv" and the corresponding split-read output files should be 
-    named using the suffix ".inv.br". See the example dataset for more details.
+    contain the predictions of DELLY. See the example dataset for more details.
 }
 
 \value{

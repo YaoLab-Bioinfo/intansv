@@ -32,11 +32,6 @@
     The predicted SVs could be further filtered by the number of reads 
     supporting the occurence of a specific SV, and the predicted size of 
     SVs to get more reliable SVs. See our paper for more details.
-    The directory that specified by the parameter "dataDir" should only 
-    contain the predictions of SoftSearch. The deletions output files should 
-    be named using the suffix "_D", the duplications output files should 
-    be named using the suffix "_TD", and the inversions output files should 
-    be named using the suffix "_INV". See the example dataset for more details.
 }
 
 \value{
