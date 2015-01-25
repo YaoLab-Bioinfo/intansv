@@ -25,26 +25,22 @@ This package provides efficient tools to read and integrate structural variation
 
 -   the latest released version from Bioconductor with
 
-    ``` r
-    source("http://bioconductor.org/biocLite.R")
-    biocLite("intansv")
-    ```
+    source("http://bioconductor.org/biocLite.R")  
+    biocLite("intansv")  
     
 -   the latest development version from github with
 
-    ``` r
-    if (packageVersion("devtools") < 1.6) {
-      install.packages("devtools")
-    }
-    devtools::install_github("andrewhzau/intansv")
-    ```
+    if (packageVersion("devtools") < 1.6) {  
+      install.packages("devtools")  
+    }  
+    devtools::install_github("andrewhzau/intansv")  
 
 ### intansv release version 1.7.3 support the following version of SV prediction programs
 * [BreakDancer version 1.4.5]({{ BASE_PATH }}/assets/BreakDancer_version_1.4.5.output)  
-* [Pindel version 0.2.5a8]({{ BASE_PATH }}/assets/Pindel_version_0.2.5a8.output)   
-* [DELLY version 0.6.1]({{ BASE_PATH }}/assets/DELLY_version_0.6.1.output)  
-* [SVseq2 version 2.2]({{ BASE_PATH }}/assets/SVseq2_version_2.2.output)  
-* [CNVnator version 0.3]({{ BASE_PATH }}/assets/CNVnator_version_0.3.output)  
+* [Pindel version 0.2.5a8]({{ BASE_PATH }}/assets/Pindel_version_0.2.5a8.output.zip)   
+* [DELLY version 0.6.1]({{ BASE_PATH }}/assets/DELLY_version_0.6.1.output.zip)  
+* [SVseq2 version 2.2]({{ BASE_PATH }}/assets/SVseq2_version_2.2.output.zip)  
+* [CNVnator version 0.3]({{ BASE_PATH }}/assets/CNVnator_version_0.3.output.zip)  
 * [Lumpy version 0.2.8]({{ BASE_PATH }}/assets/Lumpy_version_0.2.8.output)  
 * [SoftSearch version 2.4]({{ BASE_PATH }}/assets/SoftSearch_version_2.4.output)  
 
