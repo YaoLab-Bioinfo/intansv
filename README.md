@@ -43,7 +43,7 @@ This package provides efficient tools to read and integrate structural variation
 * Lumpy version 0.2.8
 * SoftSearch version 2.4
 
-Example output of these SV programs are listed here: http://andrewhzau.github.io/intansv/  
+Example output of these SV programs are listed at http://andrewhzau.github.io/intansv/  
 
 ### intansv release version 1.7.1 support the following version of SV prediction programs
 * BreakDancer version 1.0r112
