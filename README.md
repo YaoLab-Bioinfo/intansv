@@ -34,7 +34,7 @@ This package provides efficient tools to read and integrate structural variation
     devtools::install_github("andrewhzau/intansv")
     ```
 
-### intansv release version 1.7.3 support the following version of SV prediction programs
+### intansv release version 1.7.3 support the following version of SV prediction programs  
 * BreakDancer version 1.4.5
 * Pindel version 0.2.5a8
 * DELLY version 0.6.1
@@ -42,6 +42,8 @@ This package provides efficient tools to read and integrate structural variation
 * CNVnator version 0.3
 * Lumpy version 0.2.8
 * SoftSearch version 2.4
+
+Example output of these SV programs are listed here: http://andrewhzau.github.io/intansv/  
 
 ### intansv release version 1.7.1 support the following version of SV prediction programs
 * BreakDancer version 1.0r112
