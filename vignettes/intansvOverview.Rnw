@@ -218,6 +218,15 @@ which is usually a \emph{.gff3} file. This file could be read into R by the
 \Rpackage{rtracklayer} package and storaged as genomic ranges data. An example 
 genomic annotation file has been storaged in the example dataset of \intansv{}.
 
+The follow code shows how to read a \emph{.gff3} file into R.
+
+<<read in Gff files into R>>=
+library(rtracklayer)
+msu_gff_v7 <- import.gff(system.file("extdata/chr05_chr10.gff3", package="intansv"), 
+                         asRangedData=FALSE)
+head(msu_gff_v7)
+@
+
 <<sv annotation>>=
 load(system.file("extdata/genome.anno.RData",package="intansv"))
 sv_all_methods.anno <- llply(sv_all_methods,svAnnotation,
