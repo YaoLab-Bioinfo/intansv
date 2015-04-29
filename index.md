@@ -66,6 +66,9 @@ Thanks to [Mike Place]({{ BASE_PATH }}/assets/Mike.pdf)!
 Thanks to [Phil]({{ BASE_PATH }}/assets/Phil.pdf)!  
 Thanks to [Radesh P Nattamai Malli]({{ BASE_PATH }}/assets/Radesh.pdf)!  
 
+### Available Genome Annotation files storaged as 'Rdata' created from Gff3 files  
+[evidence-based annotation of the human genome (GRCh38), version 22 (Ensembl 79)]{{{ BASE_PATH }}/assets/GffAnnotation/GRCh38.anno.RData}   
+
 
 ### Report bugs
 If you find any bugs using intansv, please <a href="https://github.com/andrewhzau/intansv/issues" target="_blank">create an issue</a> or send me an email.
