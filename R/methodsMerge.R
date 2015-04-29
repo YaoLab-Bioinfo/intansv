@@ -92,48 +92,66 @@ methodsMerge <- function(..., others=NULL, overLapPerDel=0.8,
         ranges=IRanges(start=InversionDf$pos1, end=InversionDf$pos2))
     InversionRes <- findOverlaps(InversionIrange, reduce(InversionIrange))
     InversionDf$class <- subjectHits(InversionRes)
-    InversionDfMerge <- ddply(InversionDf, ("class"), 
-                              methodsCluster, methodsName=MethodsName, 
-                              overLapPer=overLapPerInv, numMethodsSup=numMethodsSupInv)
-    if (nrow(InversionDfMerge)>0) {
+    if (nrow(InversionDf)>0) {
+      InversionDfMerge <- ddply(InversionDf, ("class"), 
+                                methodsCluster, methodsName=MethodsName, 
+                                overLapPer=overLapPerInv, numMethodsSup=numMethodsSupInv)
+      if (nrow(InversionDfMerge)>0) {
         InversionDfMerge$class <- NULL
         InversionDfMerge$cl <- NULL
         names(InversionDfMerge)[1:3] <- c("chromosome", "pos1", "pos2")
         InversionDfMerge$pos1 <- as.numeric(InversionDfMerge$pos1)
         InversionDfMerge$pos2 <- as.numeric(InversionDfMerge$pos2)
+      } else {
+        InversionDfMerge <- NULL
+      }
+    } else {
+      InversionDfMerge <- NULL
     }
+    
 
     ## merging deletions predicted by different methods
     DeletionIrange <- GRanges(seqnames=DeletionDf$chromosome, 
         ranges=IRanges(start=DeletionDf$pos1, end=DeletionDf$pos2))
     DeletionRes <- findOverlaps(DeletionIrange, reduce(DeletionIrange))
     DeletionDf$class <- subjectHits(DeletionRes)
-    DeletionDfMerge <- ddply(DeletionDf, ("class"), 
-                             methodsCluster, methodsName=MethodsName,
-                             overLapPer=overLapPerDel, numMethodsSup=numMethodsSupDel)
-    if (nrow(DeletionDfMerge)>0) {
+    if (nrow(DeletionDf)>0) {
+      DeletionDfMerge <- ddply(DeletionDf, ("class"), 
+                               methodsCluster, methodsName=MethodsName,
+                               overLapPer=overLapPerDel, numMethodsSup=numMethodsSupDel)
+      if (nrow(DeletionDfMerge)>0) {
         DeletionDfMerge$class <- NULL
         DeletionDfMerge$cl <- NULL
         names(DeletionDfMerge)[1:3] <- c("chromosome", "pos1", "pos2")
         DeletionDfMerge$pos1 <- as.numeric(DeletionDfMerge$pos1)
         DeletionDfMerge$pos2 <- as.numeric(DeletionDfMerge$pos2)
+      } else {
+        DeletionDfMerge <- NULL
+      }
+    } else {
+      DeletionDfMerge <- NULL
     }
-
 
     ## merging duplications predicted by different methods
     DuplicationIrange <- GRanges(seqnames=DuplicationDf$chromosome, 
         ranges=IRanges(start=DuplicationDf$pos1, end=DuplicationDf$pos2))
     DuplicationRes <- findOverlaps(DuplicationIrange, reduce(DuplicationIrange))
     DuplicationDf$class <- subjectHits(DuplicationRes)
-    DuplicationDfMerge <- ddply(DuplicationDf, ("class"), 
-                                methodsCluster, methodsName=MethodsName,
-                                overLapPer=overLapPerDup, numMethodsSup=numMethodsSupDup)
-    if (nrow(DuplicationDfMerge)>0) {
+    if (nrow(DuplicationDf)>0) {
+      DuplicationDfMerge <- ddply(DuplicationDf, ("class"), 
+                                  methodsCluster, methodsName=MethodsName,
+                                  overLapPer=overLapPerDup, numMethodsSup=numMethodsSupDup)
+      if (nrow(DuplicationDfMerge)>0) {
         DuplicationDfMerge$class <- NULL
         DuplicationDfMerge$cl <- NULL
         names(DuplicationDfMerge)[1:3] <- c("chromosome", "pos1", "pos2")
         DuplicationDfMerge$pos1 <- as.numeric(DuplicationDfMerge$pos1)
         DuplicationDfMerge$pos2 <- as.numeric(DuplicationDfMerge$pos2)
+      } else {
+        DuplicationDfMerge <- NULL
+      }
+    } else {
+      DuplicationDfMerge <- NULL
     }
 
     return(list(del=DeletionDfMerge, dup=DuplicationDfMerge, 

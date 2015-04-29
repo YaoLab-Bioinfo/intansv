@@ -1,7 +1,9 @@
 
 svAnnotation <- function(structuralVariation, genomeAnnotation) 
 {
-  if (!is.data.frame(structuralVariation)) {
+  if (is.null(structuralVariation)) {
+    return(NULL)
+  } else if (!is.data.frame(structuralVariation)) {
     stop("structuralVariation should be a data frame!\n")
   } else if (!identical(names(structuralVariation)[1:3], 
                         c("chromosome", "pos1", "pos2"))) {
