@@ -222,8 +222,7 @@ The follow code shows how to read a \emph{.gff3} file into R.
 
 <<read in Gff files into R>>=
 library(rtracklayer)
-msu_gff_v7 <- import.gff(system.file("extdata/chr05_chr10.gff3", package="intansv"), 
-                         asRangedData=FALSE)
+msu_gff_v7 <- import.gff(system.file("extdata/chr05_chr10.gff3", package="intansv"))
 head(msu_gff_v7)
 @
 
