@@ -1,10 +1,9 @@
-importFrom( IRanges, unlist )
-importFrom( IRanges, IRanges )
-importFrom( BiocGenerics, setdiff )
-
 import(plyr)
-import(ggbio)
+import(BiocGenerics)
 import(GenomicRanges)
+import(ggbio)
+
+importFrom(IRanges, IRanges)
 
 export(
     methodsMerge, plotChromosome, plotRegion,
