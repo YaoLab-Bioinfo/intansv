@@ -16,9 +16,9 @@ This package provides efficient tools to read and integrate structural variation
 <li><a href="https://github.com/genome/pindel" target="_blank">Pindel</a></li>
 <li><a href="https://github.com/tobiasrausch/delly" target="_blank">DELLY</a></li>
 <li><a href="http://www.engr.uconn.edu/~jiz08001/svseq2.html" target="_blank">SVseq2</a></li>
-<li><a href="http://sv.gersteinlab.org/cnvnator/" target="_blank">CNVnator</a></li>
+<li><a href="https://github.com/abyzovlab/CNVnator" target="_blank">CNVnator</a></li>
 <li><a href="https://github.com/arq5x/lumpy-sv" target="_blank">Lumpy</a></li>
-<li><a href="http://code.google.com/p/softsearch/" target="_blank">SoftSearch</a></li>
+<li><a href="https://github.com/Steven-N-Hart/softsearch" target="_blank">SoftSearch</a></li>
 </ul>
 
 ### Install
