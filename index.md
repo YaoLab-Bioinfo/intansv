@@ -31,7 +31,7 @@ This package provides efficient tools to read and integrate structural variation
 -   the latest development version from Bioconductor with
 
     source("http://bioconductor.org/biocLite.R")  
-	useDevel()
+    useDevel()  
     biocLite("intansv")  
 
 	
