@@ -9,9 +9,8 @@
 }
 
 \usage{
-    readLumpy(file="", regSizeLowerCutoff=100, readsSupport=3, 
-              method="Lumpy", regSizeUpperCutoff=1000000, 
-              breakpointThres=200, scoreCut=0.1, ...)
+    readLumpy(file="", regSizeLowerCutoff=100, regSizeUpperCutoff=1000000,
+	readsSupport=3, method="Lumpy",  ...)
 }
 
 \arguments{
@@ -23,10 +22,6 @@
     \item{readsSupport}{the minimum read pair support for a structural variation 
                               to be read.} 
     \item{method}{a tag to assign to the result of this function.}
-    \item{breakpointThres}{a threshold to remove SVs with breakpoint with 
-                           too large interval.}
-    \item{scoreCut}{predictions with score larger than this threshold will
-                    be discarded.}
     \item{...}{parameters passed to read.table.}
 }
 

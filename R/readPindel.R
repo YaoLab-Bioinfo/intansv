@@ -100,8 +100,11 @@ readPindel <- function(dataDir=".", regSizeLowerCutoff=100,
         PindelDelIrangeRes <- findOverlaps(PindelDelIrange, reduce(PindelDelIrange))
         PindelDelDf$clu <- subjectHits(PindelDelIrangeRes)
         PindelDelDfFilMer <- ddply(PindelDelDf, ("clu"), PindelCluster)
-        PindelDelDfFilMer <- PindelDelDfFilMer[, c(3:5, 2)]
-        names(PindelDelDfFilMer)[2:4] <- c("pos1", "pos2", "size")
+        PindelDelDfFilMer <- PindelDelDfFilMer[, c(3:5, 2, 8:9)]
+        names(PindelDelDfFilMer)[2:6] <- c("pos1", "pos2", "size", "readsSupport", "score")
+	PindelDelDfFilMer$info <- paste0("SR=", PindelDelDfFilMer$readsSupport, ";score=", PindelDelDfFilMer$score)
+	PindelDelDfFilMer$readsSupport <- NULL
+	PindelDelDfFilMer$score <- NULL
         PindelDelDfFilMer$size <- as.numeric(PindelDelDfFilMer$size)
         PindelDelDfFilMer$pos1 <- as.numeric(PindelDelDfFilMer$pos1)
         PindelDelDfFilMer$pos2 <- as.numeric(PindelDelDfFilMer$pos2)
@@ -117,8 +120,11 @@ readPindel <- function(dataDir=".", regSizeLowerCutoff=100,
         PindelInvIrangeRes <- findOverlaps(PindelInvIrange, reduce(PindelInvIrange))
         PindelInvDf$clu <- subjectHits(PindelInvIrangeRes)
         PindelInvDfFilMer <- ddply(PindelInvDf, ("clu"), PindelCluster)
-        PindelInvDfFilMer <- PindelInvDfFilMer[, c(3:5, 2)]
-        names(PindelInvDfFilMer)[2:4] <- c("pos1", "pos2", "size")
+        PindelInvDfFilMer <- PindelInvDfFilMer[, c(3:5, 2, 8:9)]
+        names(PindelInvDfFilMer)[2:6] <- c("pos1", "pos2", "size", "readsSupport", "score")
+	PindelInvDfFilMer$info <- paste0("SR=", PindelInvDfFilMer$readsSupport, ";score=", PindelInvDfFilMer$score)
+	PindelInvDfFilMer$readsSupport <- NULL
+	PindelInvDfFilMer$score <- NULL
         PindelInvDfFilMer$size <- as.numeric(PindelInvDfFilMer$size)
         PindelInvDfFilMer$pos1 <- as.numeric(PindelInvDfFilMer$pos1)
         PindelInvDfFilMer$pos2 <- as.numeric(PindelInvDfFilMer$pos2)
@@ -134,8 +140,11 @@ readPindel <- function(dataDir=".", regSizeLowerCutoff=100,
         PindelTdIrangeRes <- findOverlaps(PindelTdIrange, reduce(PindelTdIrange))
         PindelTdDf$clu <- subjectHits(PindelTdIrangeRes)
         PindelTdDfFilMer <- ddply(PindelTdDf, ("clu"), PindelCluster)
-        PindelTdDfFilMer <- PindelTdDfFilMer[, c(3:5, 2)]
-        names(PindelTdDfFilMer)[2:4] <- c("pos1", "pos2", "size")
+        PindelTdDfFilMer <- PindelTdDfFilMer[, c(3:5, 2, 8:9)]
+        names(PindelTdDfFilMer)[2:6] <- c("pos1", "pos2", "size", "readsSupport", "score")
+	PindelTdDfFilMer$info <- paste0("SR=", PindelTdDfFilMer$readsSupport, ";score=", PindelTdDfFilMer$score)
+	PindelTdDfFilMer$readsSupport <- NULL
+	PindelTdDfFilMer$score <- NULL
         PindelTdDfFilMer$size <- as.numeric(PindelTdDfFilMer$size)
         PindelTdDfFilMer$pos1 <- as.numeric(PindelTdDfFilMer$pos1)
         PindelTdDfFilMer$pos2 <- as.numeric(PindelTdDfFilMer$pos2)

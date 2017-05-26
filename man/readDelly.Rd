@@ -11,7 +11,7 @@
 \usage{
     readDelly(dataDir=".", regSizeLowerCutoff=100, 
               regSizeUpperCutoff=1000000, readsSupport=3,
-              method="DELLY", pass=TRUE, minMappingQuality=30)
+              method="DELLY", pass=TRUE, minMappingQuality=20)
 }
 
 \arguments{

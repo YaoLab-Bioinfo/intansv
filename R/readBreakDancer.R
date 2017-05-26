@@ -55,8 +55,10 @@ readBreakDancer <- function(file="", scoreCutoff=60, readsSupport=3,
     if (nrow(bdDelFilMer)==0) {
         bdDelFilMer <- NULL
     } else {
-        bdDelFilMer <- bdDelFilMer[, c(1, 2, 4, 6)]
-        names(bdDelFilMer) <- c("chromosome", "pos1", "pos2", "size")
+        bdDelFilMer <- bdDelFilMer[, c(1, 2, 4, 6:8)]
+        names(bdDelFilMer) <- c("chromosome", "pos1", "pos2", "size", "score", "ReadPairSupp")
+        bdDelFilMer$info <- paste0("score=", bdDelFilMer$score, ";", "PE=", bdDelFilMer$ReadPairSupp)
+        bdDelFilMer$score <- NULL; bdDelFilMer$ReadPairSupp <- NULL;
     }
 
     ## filtering and merging inversions
@@ -77,8 +79,10 @@ readBreakDancer <- function(file="", scoreCutoff=60, readsSupport=3,
         if (nrow(bdInvFilMer)==0) {
             bdInvFilMer <- NULL
         } else {
-            bdInvFilMer <- bdInvFilMer[, c(1, 2, 4, 6)]
-            names(bdInvFilMer) <- c("chromosome", "pos1", "pos2", "size")
+            bdInvFilMer <- bdInvFilMer[, c(1, 2, 4, 6:8)]
+            names(bdInvFilMer) <- c("chromosome", "pos1", "pos2", "size", "score", "ReadPairSupp")
+            bdInvFilMer$info <- paste0("score=", bdInvFilMer$score, ";", "PE=", bdInvFilMer$ReadPairSupp)
+            bdInvFilMer$score <- NULL; bdInvFilMer$ReadPairSupp <- NULL;
         }
     }
 

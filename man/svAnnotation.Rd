@@ -14,7 +14,7 @@
 
 \arguments{
     \item{structuralVariation}{A data frame of structural variations.}
-    \item{genomeAnnotation}{A genomic ranges of the genome annotation.}
+    \item{genomeAnnotation}{A data frame of genome annotations.}
 }
 
 \details{
@@ -37,16 +37,16 @@
 \value{
     A data frame with the following columns:
     
-    \item{chr}{the chromosome of a structural variation.}
-    \item{start}{the start coordinate of a structural variation.}
-    \item{end}{the end coordinate of a structural variation.}
-    \item{overlap}{the overlap length between a structural variation and a 
-                   specific gene or its element.}
-    \item{annotation}{the annotation of a specific gene that overlap with 
-                      the structural variation.}
-    \item{parent}{the ID of a specific gene that overlap with the 
-                  structural variation.}
-
+    \item{chromosome}{the chromosome of a structural variation.}
+    \item{pos1}{the start coordinate of a structural variation.}
+    \item{pos2}{the end coordinate of a structural variation.}
+	\item{size}{the size of a structural variation.}
+	\item{info}{information on a structural variation.}
+    \item{tag}{the tag of a genomic element.}
+	\item{start}{the start coordinate of a genomic element.}
+	\item{end}{the end coordinate of a genomic element.}
+	\item{strand}{the strand of a genomic element.}
+	\item{ID}{the ID of a genomic element.}
 }
 
 \author{Wen Yao}
@@ -57,8 +57,8 @@
                                    package="intansv"))
     str(breakdancer)
 
-    load(system.file("extdata/genome.anno.RData",package="intansv"))
-    str(msu_gff_v7)
+    msu_gff_v7 <- read.table(system.file("extdata/chr05_chr10.anno.txt", package="intansv"),
+                               head=TRUE, as.is=TRUE, sep="\t")
     breakdancer.anno <- llply(breakdancer,svAnnotation,
                               genomeAnnotation=msu_gff_v7)
     str(breakdancer.anno)

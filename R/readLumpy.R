@@ -1,135 +1,111 @@
 
-## Merging overlapped SVs predicted by Lumpy
-LumpyCluster <- function(df)
+## merging overlapped SVs predicted by DELLY
+LumpyCluster <- function(df) 
 {
-  maxReadPairSupp <- max(df$ReadPairSupp)
-  dfFil <- df[df$ReadPairSupp>=(maxReadPairSupp/2), ]
-  dfFilIrange <- IRanges(start=dfFil$pos1, end=dfFil$pos2)
-  outTmp <- findOverlaps(dfFilIrange, reduce(dfFilIrange))
-  dfFil$clulumpy <- subjectHits(outTmp)
-  dfFilRes <- ddply(dfFil, ("clulumpy"), function(x){
-    if(nrow(x)==1){
-      return(x)
-    } else {
-      leftMin <- min(x$pos1)
-      rightMax <- max(x$pos2)
-      rangeLength <- rightMax-leftMin
-      x$op <- (x$pos2-x$pos1)/rangeLength
-      if(any(x$op<0.8)){
-        return(NULL)
-      } else {
-        return(x[which.max(x$ReadPairSupp), ])
-      }
-    }
-  })
+    maxReadPairSupp <- max(df$rp_support)
+    dfFil <- df[df$rp_support>=(maxReadPairSupp/2), ]
+    dfFilIrange <- IRanges(start=dfFil$start, end=dfFil$end)
+    outTmp <- findOverlaps(dfFilIrange, reduce(dfFilIrange))
+    dfFil$cluLumpy <- subjectHits(outTmp)
+    dfFilRes <- ddply(dfFil, ("cluLumpy"), function(x){
+        if(nrow(x)==1){
+            return(x)
+        } else {
+            LeftMin <- min(x$start)
+            RightMax <- max(x$end)
+            RangeLength <- RightMax-LeftMin
+            x$op <- (x$end - x$start)/RangeLength
+            if(any(x$op<0.8)){
+                return(NULL)
+            } else {
+                return(x[which.max(x$rp_support), ])
+            }
+        }
+    })
 }
 
-
-## Reading in the predicted SVs given by Lumpy
-readLumpy <- function(file="", regSizeLowerCutoff=100, readsSupport=3, 
-                           method="Lumpy", regSizeUpperCutoff=1000000, 
-                      breakpointThres=200, scoreCut=0.1, ...)
+## Reading in the predicted SVs given by DELLY
+readLumpy <- function(file="", regSizeLowerCutoff=100, 
+                      regSizeUpperCutoff=1000000, readsSupport=3,
+                      method="Lumpy", ...) 
 {
-  LumpyColClass <- c("character", "numeric", "numeric", "character", "numeric", 
-                     "numeric", "NULL", "numeric", "NULL", "NULL", "character",
-                     "NULL", "character", "NULL", "NULL")
-  LumpyPred <- read.table(file, colClasses=LumpyColClass, as.is=T, ...)
-  names(LumpyPred) <- c("chr1", "start1", "end1", "chr2", "start2", "end2",
-                        "score",  "type", "ReadPairSupp")
-  LumpyPred$type <- gsub("TYPE:", "", LumpyPred$type)
-  LumpyPred$ReadPairSupp <- as.numeric(gsub(".*,", "", 
-                                            LumpyPred$ReadPairSupp))
-  LumpyPred <- LumpyPred[LumpyPred$end1<(LumpyPred$start2-100),]
-  LumpyPred <- LumpyPred[(LumpyPred$end1-LumpyPred$start1)<=breakpointThres&
-                         (LumpyPred$end2-LumpyPred$start2)<=breakpointThres, ]
-  LumpyPred <- LumpyPred[LumpyPred$score<=scoreCut, ]
-  LumpyPred <- LumpyPred[LumpyPred$type%in%c("DELETION", "DUPLICATION", 
-                                             "INVERSION"), ]
-  LumpyPred$pos1 <- round((LumpyPred$start1+LumpyPred$end1)/2)
-  LumpyPred$pos2 <- round((LumpyPred$start2+LumpyPred$end2)/2)
-  LumpyPred$size <- LumpyPred$pos2-LumpyPred$pos1+1
-  LumpyPred$chr2 <- NULL;  
-  LumpyPred <- LumpyPred[abs(LumpyPred$size)>=regSizeLowerCutoff&
-                         abs(LumpyPred$size)<=regSizeUpperCutoff&
-                         abs(LumpyPred$ReadPairSupp)>=readsSupport, ]
-  LumpyPred <- LumpyPred[, c("chr1", "pos1", "pos2", "size", "type", "ReadPairSupp")]
-  names(LumpyPred)[1] <- "chromosome"
-  
-  ## filtering and merging deletions
-  LumpyDel <- LumpyPred[LumpyPred$type=="DELETION", ]
-  
-  if (nrow(LumpyDel)==0) {
-    LumpyDelFilMer <- NULL
-  } else {
-    LumpyDel$size <- abs(LumpyDel$size)
-    LumpyDel$mid <- (LumpyDel$pos1 + LumpyDel$pos2)/2
-    LumpyDel$pos1 <- round(LumpyDel$mid - LumpyDel$size/2)
-    LumpyDel$pos2 <- round(LumpyDel$mid + LumpyDel$size/2)
-    LumpyDelIrange <- GRanges(seqnames=LumpyDel$chromosome, 
-                                   ranges=IRanges(start=LumpyDel$pos1, 
-                                                  end=LumpyDel$pos2))
-    LumpyDelIrangeRes <- findOverlaps(LumpyDelIrange, reduce(LumpyDelIrange))
-    LumpyDel$clu <- subjectHits(LumpyDelIrangeRes)
-    LumpyDelFilMer <- ddply(LumpyDel, ("clu"), LumpyCluster)
-    if (nrow(LumpyDelFilMer)==0) {
-      LumpyDelFilMer <- NULL
+    ## reading in SV predictions
+    LumpyCont <- read.table(file, as.is=T, ...)
+    LumpyCont <- LumpyCont[, c(1:2, 8, 10)]
+    names(LumpyCont) <- c("chr", "start", "info", "detail")
+    
+    LumpyCont$type <- gsub("SVTYPE=([A-Z]+);.+", "\\1", LumpyCont$info)
+    LumpyCont <- LumpyCont[LumpyCont$type %in% c("DEL", "DUP", "INV"), ]
+    LumpyCont$end <- as.numeric(gsub(".+;END=(\\d+);.+", "\\1", LumpyCont$info))
+    LumpyCont$rp_support <- as.numeric(gsub(".+;SU=(\\d+).+", "\\1", LumpyCont$info))
+    LumpyCont$size <- as.numeric(LumpyCont$end - LumpyCont$start)
+    
+    LumpyCont <- LumpyCont[LumpyCont$rp_support>=readsSupport&
+                            LumpyCont$size>=regSizeLowerCutoff&
+                            LumpyCont$size<=regSizeUpperCutoff, ]
+    
+    LumpyCont <- LumpyCont[, c("chr", "start", "end", "size", "rp_support",
+                               "type")]
+
+    LumpyDelDf <- LumpyCont[LumpyCont$type=="DEL", ]
+
+    ## filtering and merging deletions
+    if (!is.null(LumpyDelDf) && nrow(LumpyDelDf)>0) {
+        LumpyDelIrange <- GRanges(seqnames=LumpyDelDf$chr, 
+                              ranges=IRanges(start=LumpyDelDf$start, 
+                                             end=LumpyDelDf$end))
+        LumpyDelIrangeRes <- findOverlaps(LumpyDelIrange, reduce(LumpyDelIrange))
+        LumpyDelDf$clu <- subjectHits(LumpyDelIrangeRes)
+        LumpyDelDfFilMer <- ddply(LumpyDelDf, ("clu"), LumpyCluster)
+        LumpyDelDfFilMer <- LumpyDelDfFilMer[, c("chr", "start", "end", "size", "rp_support")]
+        names(LumpyDelDfFilMer) <- c("chromosome", "pos1", "pos2", "size", "readsSupport")
+	LumpyDelDfFilMer$info <- paste0("SU=", LumpyDelDfFilMer$readsSupport)
+	LumpyDelDfFilMer$readsSupport <- NULL
     } else {
-      LumpyDelFilMer <- LumpyDelFilMer[, c("chromosome", "pos1", "pos2", "size")]
+        LumpyDelDfFilMer <- NULL
     }
-  }
-  
-  ## filtering and merging Inversions
-  LumpyInv <- LumpyPred[LumpyPred$type=="INVERSION", ]
-  
-  if (nrow(LumpyInv)==0) {
-    LumpyInvFilMer <- NULL
-  } else {
-    LumpyInv$size <- abs(LumpyInv$size)
-    LumpyInv$mid <- (LumpyInv$pos1 + LumpyInv$pos2)/2
-    LumpyInv$pos1 <- round(LumpyInv$mid - LumpyInv$size/2)
-    LumpyInv$pos2 <- round(LumpyInv$mid + LumpyInv$size/2)
-    LumpyInvIrange <- GRanges(seqnames=LumpyInv$chromosome, 
-                                   ranges=IRanges(start=LumpyInv$pos1, 
-                                                  end=LumpyInv$pos2))
-    LumpyInvIrangeRes <- findOverlaps(LumpyInvIrange, reduce(LumpyInvIrange))
-    LumpyInv$clu <- subjectHits(LumpyInvIrangeRes)
-    LumpyInvFilMer <- ddply(LumpyInv, ("clu"), LumpyCluster)
-    if (nrow(LumpyInvFilMer)==0) {
-      LumpyInvFilMer <- NULL
+
+    ## reading duplications
+    LumpyDupDf <- LumpyCont[LumpyCont$type=="DUP", ]
+
+    ## filtering and merging duplications
+    if (!is.null(LumpyDupDf) && nrow(LumpyDupDf)>0) {
+        LumpyDupIrange <- GRanges(seqnames=LumpyDupDf$chr, 
+                              ranges=IRanges(start=LumpyDupDf$start, 
+                                             end=LumpyDupDf$end))
+        LumpyDupIrangeRes <- findOverlaps(LumpyDupIrange, reduce(LumpyDupIrange))
+        LumpyDupDf$clu <- subjectHits(LumpyDupIrangeRes)
+        LumpyDupDfFilMer <- ddply(LumpyDupDf, ("clu"), LumpyCluster)
+        LumpyDupDfFilMer <- LumpyDupDfFilMer[, c("chr", "start", "end", "size", "rp_support")]
+        names(LumpyDupDfFilMer) <- c("chromosome", "pos1", "pos2", "size", "readsSupport")
+	LumpyDupDfFilMer$info <- paste0("SU=", LumpyDupDfFilMer$readsSupport)
+	LumpyDupDfFilMer$readsSupport <- NULL
     } else {
-      LumpyInvFilMer <- LumpyInvFilMer[, c("chromosome", "pos1", "pos2", "size")]
+        LumpyDupDfFilMer <- NULL
     }
-  }
-  
-  ## filtering and merging Duplications
-  LumpyDup <- LumpyPred[LumpyPred$type=="DUPLICATION", ]
-  
-  if (nrow(LumpyDup)==0) {
-    LumpyDupFilMer <- NULL
-  } else {
-    LumpyDup$size <- abs(LumpyDup$size)
-    LumpyDup$mid <- (LumpyDup$pos1 + LumpyDup$pos2)/2
-    LumpyDup$pos1 <- round(LumpyDup$mid - LumpyDup$size/2)
-    LumpyDup$pos2 <- round(LumpyDup$mid + LumpyDup$size/2)
-    LumpyDupIrange <- GRanges(seqnames=LumpyDup$chromosome, 
-                                   ranges=IRanges(start=LumpyDup$pos1, 
-                                                  end=LumpyDup$pos2))
-    LumpyDupIrangeRes <- findOverlaps(LumpyDupIrange, reduce(LumpyDupIrange))
-    LumpyDup$clu <- subjectHits(LumpyDupIrangeRes)
-    LumpyDupFilMer <- ddply(LumpyDup, ("clu"), LumpyCluster)
-    if (nrow(LumpyDupFilMer)==0) {
-      LumpyDupFilMer <- NULL
+
+    ## reading inversions
+    LumpyInvDf <- LumpyCont[LumpyCont$type=="INV", ]
+    
+    ## filtering and merging inversions
+    if (!is.null(LumpyInvDf) && nrow(LumpyInvDf)>0) {
+        LumpyInvIrange <- GRanges(seqnames=LumpyInvDf$chr, 
+                              ranges=IRanges(start=LumpyInvDf$start, 
+                                             end=LumpyInvDf$end))
+        LumpyInvIrangeRes <- findOverlaps(LumpyInvIrange, reduce(LumpyInvIrange))
+        LumpyInvDf$clu <- subjectHits(LumpyInvIrangeRes)
+        LumpyInvDfFilMer <- ddply(LumpyInvDf, ("clu"), LumpyCluster)
+        LumpyInvDfFilMer <- LumpyInvDfFilMer[, c("chr", "start", "end", "size", "rp_support")]
+        names(LumpyInvDfFilMer) <- c("chromosome", "pos1", "pos2", "size", "readsSupport")
+	LumpyInvDfFilMer$info <- paste0("SU=", LumpyInvDfFilMer$readsSupport)
+	LumpyInvDfFilMer$readsSupport <- NULL
     } else {
-      LumpyDupFilMer <- LumpyDupFilMer[, c("chromosome", "pos1", "pos2", "size")]
+        LumpyInvDfFilMer <- NULL
     }
-  }
-  
-  retuRes <- list(del=LumpyDelFilMer, dup=LumpyDupFilMer, 
-                       inv=LumpyInvFilMer)
-  attributes(retuRes) <- c(attributes(retuRes), list(method=method))
-  
-  return(retuRes);
+
+    retuRes <- list(del=LumpyDelDfFilMer, dup=LumpyDupDfFilMer, 
+                inv=LumpyInvDfFilMer)
+    attributes(retuRes) <- c(attributes(retuRes), list(method=method))
+    
+    return(retuRes)
 }
-
-
-

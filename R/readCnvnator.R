@@ -11,6 +11,10 @@ CnvnatorCluster <- function(df)
     dfTmp$chr <- df$chr[1]
     dfTmp$CNV_left <- leftMin
     dfTmp$CNV_right <- rightMax
+    dfTmp$eval1 <- df$p_val1
+    dfTmp$eval2 <- df$p_val2
+    dfTmp$eval3 <- df$p_val3
+    dfTmp$eval4 <- df$p_val4
     return(as.data.frame(dfTmp))
 }
 
@@ -49,8 +53,13 @@ readCnvnator <- function(dataDir=".", regSizeLowerCutoff=100,
     CnvnatorDelFilMer <- ddply(CnvnatorDel, ("clu"), CnvnatorCluster)
     CnvnatorDelFilMer$clu <- NULL
     names(CnvnatorDelFilMer) <- c("CNV_type", "size", "chromosome", 
-                                  "pos1", "pos2")
-    CnvnatorDelFilMer <- CnvnatorDelFilMer[, c(3:5, 2)]
+                                  "pos1", "pos2", "eval1", "eval2", "eval3", "eval4")
+    CnvnatorDelFilMer <- CnvnatorDelFilMer[, c(3:5, 2, 6:9)]
+    CnvnatorDelFilMer$info <- paste0("eval1=", CnvnatorDelFilMer$eval1, ";",
+				     "eval2=", CnvnatorDelFilMer$eval2, ";",
+				     "eval3=", CnvnatorDelFilMer$eval3, ";",
+				     "eval4=", CnvnatorDelFilMer$eval4)
+    CnvnatorDelFilMer <- CnvnatorDelFilMer[, -c(5:8)]
     CnvnatorDelFilMer$chromosome <- as.character(CnvnatorDelFilMer$chromosome)
 
     ## filtering and merging duplications
@@ -63,8 +72,13 @@ readCnvnator <- function(dataDir=".", regSizeLowerCutoff=100,
     CnvnatorDupFilMer <- ddply(CnvnatorDup, ("clu"), CnvnatorCluster)
     CnvnatorDupFilMer$clu <- NULL
     names(CnvnatorDupFilMer) <- c("CNV_type", "size", "chromosome", 
-                                  "pos1", "pos2")
-    CnvnatorDupFilMer <- CnvnatorDupFilMer[, c(3:5, 2)]
+                                  "pos1", "pos2", "eval1", "eval2", "eval3", "eval4")
+    CnvnatorDupFilMer <- CnvnatorDupFilMer[, c(3:5, 2, 6:9)]
+    CnvnatorDupFilMer$info <- paste0("eval1=", CnvnatorDupFilMer$eval1, ";",
+				     "eval2=", CnvnatorDupFilMer$eval2, ";",
+				     "eval3=", CnvnatorDupFilMer$eval3, ";",
+				     "eval4=", CnvnatorDupFilMer$eval4)
+    CnvnatorDupFilMer <- CnvnatorDupFilMer[, -c(5:8)]
     CnvnatorDupFilMer$chromosome <- as.character(CnvnatorDupFilMer$chromosome)
 
     retuRes <- list(del=CnvnatorDelFilMer, dup=CnvnatorDupFilMer)

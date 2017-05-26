@@ -10,11 +10,11 @@
 }
 
 \usage{
-    plotChromosome(genomeAnnotation, structuralVariation, windowSize=1000000)
+    plotChromosome(genome, structuralVariation, windowSize=1000000)
 }
 
 \arguments{
-    \item{genomeAnnotation}{GenomicRanges of the chromosome length.}
+    \item{genome}{A data frame with ID and length of all Chromosomes.}
     \item{structuralVariation}{A list of structural variations.}
     \item{windowSize}{A specific size (in base pair) to split chromosomes 
                       into windows.}
@@ -49,10 +49,11 @@
     delly <- readDelly(system.file("extdata/delly",package="intansv"))
     str(delly)
 
-    load(system.file("extdata/genome.anno.RData",package="intansv"))
+    genome.file.path <- system.file("extdata/chr05_chr10.genome.txt", package="intansv")
+    genome <- read.table(genome.file.path, head=TRUE, as.is=TRUE)
     str(genome)
 
     plotChromosome(genome,delly,1000000)
-
+	
 }
 

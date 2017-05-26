@@ -11,10 +11,15 @@ plotRegion <- function(structuralVariation, genomeAnnotation,
   
   RegionIrange <- GRanges(seqnames=regionChromosome, 
                           IRanges(start=regionStart, end=regionEnd))
+  
+  anno.gr <- GRanges(genomeAnnotation$chr[genomeAnnotation$tag=="gene"], 
+                     IRanges(genomeAnnotation$start[genomeAnnotation$tag=="gene"],
+                             genomeAnnotation$end[genomeAnnotation$tag=="gene"]),
+                     Name=genomeAnnotation$ID[genomeAnnotation$tag=="gene"])
+  
   ##  genes in specific region
-  RegionTarget <- genomeAnnotation[subjectHits(findOverlaps(RegionIrange, 
-                                                            genomeAnnotation))]
-  RegionTargetGene <- RegionTarget[RegionTarget$type=="gene"]
+  RegionTarget <- anno.gr[subjectHits(findOverlaps(RegionIrange, anno.gr))]
+  RegionTargetGene <- RegionTarget
   RegionTargetGeneDf <- NULL
   RegionTargetGeneDf$chr <- rep(seqnames(RegionTargetGene)@values, 
                                 seqnames(RegionTargetGene)@lengths)

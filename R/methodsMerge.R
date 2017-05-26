@@ -2,53 +2,50 @@
 ## Merging overlapped SVs predicted by different methods
 methodsCluster <- function(df, methodsName, overLapPer=0.8, numMethodsSup=2)
 {
-    if ( (nrow(df)<2) & (numMethodsSup>=2) ) {
+  if ( (nrow(df)<2) & (numMethodsSup>=2) ) {
+    return(NULL)
+  } else if ( (nrow(df)<2) & (numMethodsSup==1) ) {
+    MethodStat <- paste(df$method, sep="", collapse = ":")
+    infoStat <- paste(df$info, sep="", collapse = ":")
+    return(as.data.frame(t(c(df$chromosome[1], df$pos1[1], df$pos2[1],
+                             MethodStat, infoStat)), stringsAsFactors=FALSE))
+  } else {
+    dfTmp <- as.data.frame(t(as.matrix(df)), stringsAsFactors=F)
+    DistMat <- sapply(dfTmp, function(x) {
+      return(sapply(dfTmp, function(y) {
+        OverlapLen <- min(as.numeric(as.character(x[3])), 
+                          as.numeric(as.character(y[3]))) - 
+          max(as.numeric(as.character(x[2])), 
+              as.numeric(as.character(y[2])))
+        OverlapPercent <- min(OverlapLen/(as.numeric(as.character(x[3]))-
+                                            as.numeric(as.character(x[2]))), 
+                              OverlapLen/(as.numeric(as.character(y[3]))-
+                                            as.numeric(as.character(y[2]))))
+        if (OverlapPercent<overLapPer) {
+          return(1)
+        } else {
+          return(0)
+        }
+      }))
+    })
+    
+    hc <- hclust(as.dist(DistMat))
+    cl <- cutree(hc, h=0)
+    df$cl <- unname(cl)
+    dfRes <- ddply(df, ("cl"), function(dfTemp){
+      if (length(unique(dfTemp$method))<numMethodsSup) {
         return(NULL)
-    } else if ( (nrow(df)<2) & (numMethodsSup==1) ) {
-      MethodStat <- sapply(methodsName, function(x){
-        return(ifelse(any(grepl(x, df$method)),
-                      "Y", "N"))})  
-      return(as.data.frame(t(c(df$chromosome[1], df$pos1[1], df$pos2[1],
-                               MethodStat)), stringsAsFactors=FALSE))
-    } else {
-        dfTmp <- as.data.frame(t(as.matrix(df)), stringsAsFactors=F)
-        DistMat <- sapply(dfTmp, function(x) {
-            return(sapply(dfTmp, function(y) {
-                OverlapLen <- min(as.numeric(as.character(x[3])), 
-                    as.numeric(as.character(y[3]))) - 
-                    max(as.numeric(as.character(x[2])), 
-                    as.numeric(as.character(y[2])))
-                OverlapPercent <- min(OverlapLen/(as.numeric(as.character(x[3]))-
-                    as.numeric(as.character(x[2]))), 
-                    OverlapLen/(as.numeric(as.character(y[3]))-
-                    as.numeric(as.character(y[2]))))
-                if (OverlapPercent<overLapPer) {
-                    return(1)
-                } else {
-                    return(0)
-                }
-            }))
-        })
-
-        hc <- hclust(as.dist(DistMat))
-        cl <- cutree(hc, h=0)
-        df$cl <- unname(cl)
-        dfRes <- ddply(df, ("cl"), function(dfTemp){
-            if (length(unique(dfTemp$method))<numMethodsSup) {
-                return(NULL)
-            } else {
-                tmpRes <- c(dfTemp$chromosome[1], round(mean(dfTemp$pos1)), 
-                            round(mean(dfTemp$pos2)))
-                MethodStat <- sapply(methodsName, function(x){
-                                     return(ifelse(any(grepl(x, dfTemp$method)),
-                                                   "Y", "N"))})
-                return(c(tmpRes, MethodStat))
-            }
-        })
-        return(dfRes)
-    }
+      } else {
+        tmpRes <- c(dfTemp$chromosome[1], round(mean(dfTemp$pos1)), 
+                    round(mean(dfTemp$pos2)))
+        MethodStat <- paste(dfTemp$method, sep="", collapse = ":")
+        infoStat <- paste(dfTemp$info, sep=":", collapse = ":")
+        return(c(tmpRes, MethodStat, infoStat))
+      }
+    })
+    return(dfRes)
+  }
 }
-
 
 
 methodsMerge <- function(..., others=NULL, overLapPerDel=0.8, 
@@ -99,7 +96,7 @@ methodsMerge <- function(..., others=NULL, overLapPerDel=0.8,
       if (nrow(InversionDfMerge)>0) {
         InversionDfMerge$class <- NULL
         InversionDfMerge$cl <- NULL
-        names(InversionDfMerge)[1:3] <- c("chromosome", "pos1", "pos2")
+        names(InversionDfMerge)[1:5] <- c("chromosome", "pos1", "pos2", "methods", "info")
         InversionDfMerge$pos1 <- as.numeric(InversionDfMerge$pos1)
         InversionDfMerge$pos2 <- as.numeric(InversionDfMerge$pos2)
       } else {
@@ -122,7 +119,7 @@ methodsMerge <- function(..., others=NULL, overLapPerDel=0.8,
       if (nrow(DeletionDfMerge)>0) {
         DeletionDfMerge$class <- NULL
         DeletionDfMerge$cl <- NULL
-        names(DeletionDfMerge)[1:3] <- c("chromosome", "pos1", "pos2")
+        names(DeletionDfMerge)[1:5] <- c("chromosome", "pos1", "pos2", "methods", "info")
         DeletionDfMerge$pos1 <- as.numeric(DeletionDfMerge$pos1)
         DeletionDfMerge$pos2 <- as.numeric(DeletionDfMerge$pos2)
       } else {
@@ -144,7 +141,7 @@ methodsMerge <- function(..., others=NULL, overLapPerDel=0.8,
       if (nrow(DuplicationDfMerge)>0) {
         DuplicationDfMerge$class <- NULL
         DuplicationDfMerge$cl <- NULL
-        names(DuplicationDfMerge)[1:3] <- c("chromosome", "pos1", "pos2")
+        names(DuplicationDfMerge)[1:5] <- c("chromosome", "pos1", "pos2", "methods", "info")
         DuplicationDfMerge$pos1 <- as.numeric(DuplicationDfMerge$pos1)
         DuplicationDfMerge$pos2 <- as.numeric(DuplicationDfMerge$pos2)
       } else {

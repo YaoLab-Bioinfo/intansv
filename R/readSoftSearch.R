@@ -30,16 +30,20 @@ readSoftSearch <- function(file="", regSizeLowerCutoff=100, readsSupport=3,
                            method="softSearch", regSizeUpperCutoff=1000000, 
                            softClipsSupport=3, ...) 
 {
-  softSearchColClass <- c("character", "numeric", "NULL", "NULL", "character",
+  softSearchColClass <- c("character", "numeric", "character", "NULL", "character",
                           "NULL", "character", "character", "character", "character")
   softSearchPred <- read.table(file, colClasses=softSearchColClass, as.is=T, ...)
-  names(softSearchPred) <- c("chr1", "start", "alt", "filter", "info", 
+  names(softSearchPred) <- c("chr1", "start", "id", "alt", "filter", "info", 
                              "format", "detail")
   softSearchPred <- softSearchPred[softSearchPred$filter=="PASS", ]
   softSearchPred$alt <- gsub("]", "", softSearchPred$alt)
   softSearchPred$chr2 <- gsub(":.*", "", softSearchPred$alt)
   softSearchPred$alt <- NULL; softSearchPred$filter <- NULL;
   softSearchPred$type <- gsub(".*EVENT=([A-Z_]+);.*", "\\1", softSearchPred$info)
+  softSearchPred$mid <- gsub(".*MATEID=(.+)$", "\\1", softSearchPred$info)
+  softSearchPred$nid <- paste(pmin(softSearchPred$id, softSearchPred$mid),
+			      pmax(softSearchPred$id, softSearchPred$mid), sep="-")
+  softSearchPred$id <- NULL; softSearchPred$mid <- NULL;
   softSearchPred$size <- as.numeric(gsub(".*ISIZE=([0-9]+);.*", "\\1", 
                                          softSearchPred$info))
   softSearchPred$end <- as.numeric(gsub(".*END=([0-9]+);.*", "\\1", 
@@ -61,11 +65,14 @@ readSoftSearch <- function(file="", regSizeLowerCutoff=100, readsSupport=3,
   softSearchDel$softSupp <- as.numeric(softSearchDel$softSupp)
   
   softSearchDel$ReadPairSupp <- as.numeric(softSearchDel$ReadPairSupp)
+  softSearchDel <- ddply(softSearchDel, ("nid"), function(df){
+				   return(df[which.max(df$softSupp), ])
+				   })
   softSearchDel <- softSearchDel[softSearchDel$ReadPairSupp>=readsSupport|
                                    softSearchDel$softSupp>=softClipsSupport,]
   softSearchDel$pos1 <- pmin(softSearchDel$start, softSearchDel$end)
   softSearchDel$pos2 <- pmax(softSearchDel$start, softSearchDel$end)
-  softSearchDel <- softSearchDel[, c("chr1", "pos1", "pos2", "size", "ReadPairSupp")]
+  softSearchDel <- softSearchDel[, c("chr1", "pos1", "pos2", "size", "ReadPairSupp", "softSupp")]
   names(softSearchDel)[1] <- "chromosome"
   
   if (nrow(softSearchDel)==0) {
@@ -84,10 +91,13 @@ readSoftSearch <- function(file="", regSizeLowerCutoff=100, readsSupport=3,
     if (nrow(softSearchDelFilMer)==0) {
       softSearchDelFilMer <- NULL
     } else {
-      softSearchDelFilMer <- softSearchDelFilMer[, c("chromosome", "pos1", "pos2", "size")]
+      softSearchDelFilMer <- softSearchDelFilMer[, c("chromosome", "pos1", "pos2", "size", "ReadPairSupp", "softSupp")]
+      softSearchDelFilMer$info <- paste0("nr=", softSearchDelFilMer$ReadPairSupp, ";", "sc=", softSearchDelFilMer$softSupp)
+      softSearchDelFilMer$ReadPairSupp <- NULL
+      softSearchDelFilMer$softSupp <- NULL
     }
   }
-  
+
   ## filtering and merging Inversions
   softSearchInv <- softSearchPred[softSearchPred$type=="INV", ]
   InvTag <- which(unlist(strsplit(softSearchInv$format[1], ":"))=="INV")
@@ -99,11 +109,14 @@ readSoftSearch <- function(file="", regSizeLowerCutoff=100, readsSupport=3,
   softSearchInv$softSupp[softSearchInv$softSupp=="NA"] <- 0
   softSearchInv$softSupp <- as.numeric(softSearchInv$softSupp)
   softSearchInv$ReadPairSupp <- as.numeric(softSearchInv$ReadPairSupp)
+  softSearchInv <- ddply(softSearchInv, ("nid"), function(df){
+				   return(df[which.max(df$softSupp), ])
+				   })
   softSearchInv <- softSearchInv[softSearchInv$ReadPairSupp>=readsSupport|
                                    softSearchInv$softSupp>=softClipsSupport,]
   softSearchInv$pos1 <- pmin(softSearchInv$start, softSearchInv$end)
   softSearchInv$pos2 <- pmax(softSearchInv$start, softSearchInv$end)
-  softSearchInv <- softSearchInv[, c("chr1", "pos1", "pos2", "size", "ReadPairSupp")]
+  softSearchInv <- softSearchInv[, c("chr1", "pos1", "pos2", "size", "ReadPairSupp", "softSupp")]
   names(softSearchInv)[1] <- "chromosome"
   
   if (nrow(softSearchInv)==0) {
@@ -122,7 +135,10 @@ readSoftSearch <- function(file="", regSizeLowerCutoff=100, readsSupport=3,
     if (nrow(softSearchInvFilMer)==0) {
       softSearchInvFilMer <- NULL
     } else {
-      softSearchInvFilMer <- softSearchInvFilMer[, c("chromosome", "pos1", "pos2", "size")]
+      softSearchInvFilMer <- softSearchInvFilMer[, c("chromosome", "pos1", "pos2", "size", "ReadPairSupp", "softSupp")]
+      softSearchInvFilMer$info <- paste0("nr=", softSearchInvFilMer$ReadPairSupp, ";", "sc=", softSearchInvFilMer$softSupp)
+      softSearchInvFilMer$ReadPairSupp <- NULL
+      softSearchInvFilMer$softSupp <- NULL
     }
   }
   
@@ -137,11 +153,14 @@ readSoftSearch <- function(file="", regSizeLowerCutoff=100, readsSupport=3,
   softSearchDup$softSupp[softSearchDup$softSupp=="NA"] <- 0
   softSearchDup$softSupp <- as.numeric(softSearchDup$softSupp)
   softSearchDup$ReadPairSupp <- as.numeric(softSearchDup$ReadPairSupp)
+  softSearchDup <- ddply(softSearchDup, ("nid"), function(df){
+				   return(df[which.max(df$softSupp), ])
+				   })
   softSearchDup <- softSearchDup[softSearchDup$ReadPairSupp>=readsSupport&
                                    softSearchDup$softSupp>=softClipsSupport,]
   softSearchDup$pos1 <- pmin(softSearchDup$start, softSearchDup$end)
   softSearchDup$pos2 <- pmax(softSearchDup$start, softSearchDup$end)
-  softSearchDup <- softSearchDup[,c("chr1", "pos1", "pos2", "size", "ReadPairSupp")]
+  softSearchDup <- softSearchDup[,c("chr1", "pos1", "pos2", "size", "ReadPairSupp", "softSupp")]
   names(softSearchDup)[1] <- "chromosome"
   
   if (nrow(softSearchDup)==0) {
@@ -160,7 +179,10 @@ readSoftSearch <- function(file="", regSizeLowerCutoff=100, readsSupport=3,
     if (nrow(softSearchDupFilMer)==0) {
       softSearchDupFilMer <- NULL
     } else {
-      softSearchDupFilMer <- softSearchDupFilMer[, c("chromosome", "pos1", "pos2", "size")]
+      softSearchDupFilMer <- softSearchDupFilMer[, c("chromosome", "pos1", "pos2", "size", "ReadPairSupp", "softSupp")]
+      softSearchDupFilMer$info <- paste0("nr=", softSearchDupFilMer$ReadPairSupp, ";", "sc=", softSearchDupFilMer$softSupp)
+      softSearchDupFilMer$ReadPairSupp <- NULL
+      softSearchDupFilMer$softSupp <- NULL
     }
   }
   

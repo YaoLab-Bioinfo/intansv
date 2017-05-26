@@ -1,3 +1,4 @@
+
 import(plyr)
 import(BiocGenerics)
 import(GenomicRanges)
@@ -8,8 +9,10 @@ importFrom(IRanges, IRanges)
 export(
     methodsMerge, plotChromosome, plotRegion,
     readBreakDancer, readCnvnator, readDelly,
-    readPindel, readSvseq, svAnnotation, geneAnnotation,
+    readPindel, readSvseq, svAnnotation, 
     readLumpy, readSoftSearch
 )
 
-
+importFrom("stats", "as.dist", "cutree", "hclust")
+importFrom("utils", "read.table")
+  

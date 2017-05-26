@@ -92,18 +92,22 @@ would be filtered out and overlapped predictions would be resolved.
 
 We begin our discussion by reading in some example data.
 <<read in results of BreakDancer>>=
-breakdancer <- readBreakDancer(system.file("extdata/ZS97.breakdancer.sv",
-                               package="intansv"))
+breakdancer.file.path <- system.file("extdata/ZS97.breakdancer.sv",
+                               package="intansv")
+breakdancer.file.path
+breakdancer <- readBreakDancer(breakdancer.file.path)
 str(breakdancer)
 @
 
 BreakDancer is able to predict deletions and inversions. The prediction of
-all kind of SVs were provided as a single file by BreakDancer. You can feed
+all type of SVs were provided as a single file by BreakDancer. You can feed
 this file to \Rfunction{readBreakdancer} and it will do all the tedious work
 for you.
 
 <<read in results of cnvnator>>=
-cnvnator <- readCnvnator(system.file("extdata/cnvnator",package="intansv"))
+cnvnator.dir.path <- system.file("extdata/cnvnator", package="intansv")
+cnvnator.dir.path
+cnvnator <- readCnvnator(cnvnator.dir.path)
 str(cnvnator)
 @
 
@@ -116,37 +120,43 @@ should only contain the final output files of CNVnator. See the example dataset
 for more details.
 
 <<read in results of SVseq2>>=
-svseq <- readSvseq(system.file("extdata/svseq2",package="intansv"))
+svseq.dir.path <- system.file("extdata/svseq2", package="intansv")
+svseq.dir.path
+svseq <- readSvseq(svseq.dir.path)
 str(svseq)
 @
 
 SVseq2 is able to predict deletions. The final output of SVseq2 contains 
 several files and each file is the output for a specific chromosome. What's more,
-different kind of SVs were written to different files. You should put all these
+different type of SVs were written to different files. You should put all these
 files in the same directory and feed the path of this directory to 
 \Rfunction{readSvseq}. However, the files contain the predicted deletions in this
 directory should be named with suffix of \emph{.del}. See the example dataset 
 for more details.
 
 <<read in results of DELLY>>=
-delly <- readDelly(system.file("extdata/delly",package="intansv"))
+delly.dir.path <- system.file("extdata/delly", package="intansv")
+delly.dir.path
+delly <- readDelly(delly.dir.path)
 str(delly)
 @
 
 DELLY is able to predict deletions, inversions and duplications. The final 
-prediction of different kind of SVs given by DELLY were written to different 
-files. DELLY v0.6.1 outputs vcf files now. You should put all these files 
+prediction of different type of SVs given by DELLY were written to different 
+files. DELLY v0.7.6 outputs vcf files now. You should put all these files 
 in the same directory and feed the path of this directory to \Rfunction{readDelly}. 
 See the example dataset for more details.
 
 <<read in results of Pindel>>=
-pindel <- readPindel(system.file("extdata/pindel",package="intansv"))
+pindel.dir.path <- system.file("extdata/pindel", package="intansv")
+pindel.dir.path
+pindel <- readPindel(pindel.dir.path)
 str(pindel)
 @
 
 Pindel is able to predict deletions, inversions and duplications. The final 
 prediction for different chromosomes given by Pindel were written to different 
-files. And different kind of SVs were written to different files. 
+files. And different type of SVs were written to different files. 
 You should put all these files in the same directory and feed the path of 
 this directory to \Rfunction{readPindel}. However, the files contain the 
 predicted deletions, inversions and duplication in this directory should be 
@@ -154,23 +164,27 @@ named with suffix of \emph{\_D}, \emph{\_INV} and \emph{\_TD} respectively. See
 the example dataset for more details.
 
 <<read in results of Lumpy>>=
-lumpy <- readLumpy(system.file("extdata/ZS97.lumpy.pesr.bedpe",
-                   package="intansv"))
+lumpy.file.path <- system.file("extdata/ZS97.lumpy.pesr.bedpe",
+                   package="intansv")
+lumpy.file.path
+lumpy <- readLumpy(lumpy.file.path)
 str(lumpy)
 @
 
 Lumpy is able to predict deletions, inversions and duplications. The prediction
- of all kind of SVs were provided as a single file by Lumpy. You can feed
+ of all type of SVs were provided as a single file by Lumpy. You can feed
 this file to \Rfunction{readLumpy} and it will do all the tedious work
 for you.
 
 <<read in results of softSearch>>=
- softSearch <- readSoftSearch(system.file("extdata/ZS97.softsearch",package="intansv"))
+softSearch.file.path <- system.file("extdata/ZS97.softsearch", package="intansv")
+softSearch.file.path
+softSearch <- readSoftSearch(softSearch.file.path)
 str(softSearch)
 @
 
 softSearch is able to predict deletions, inversions and duplications. The 
-prediction of all kind of SVs were provided as a single file by softSearch. 
+prediction of all type of SVs were provided as a single file by softSearch. 
 You can feed this file to \Rfunction{readSoftSearch} and it will do all the 
 tedious work for you.
 
@@ -186,7 +200,7 @@ To get more reliable results, we need to integrate the predictions of
 different programs. See our paper \citep{intansv} for more details on 
 how \intansv{} integrate the predictions of different programs.
 <<MethodsMerge>>=
-sv_all_methods <- methodsMerge(breakdancer,pindel,cnvnator,delly,svseq)
+sv_all_methods <- methodsMerge(breakdancer, pindel, cnvnator, delly, svseq)
 str(sv_all_methods)
 @
 
@@ -213,21 +227,21 @@ predictions of other programs should be provided as a data frame with six column
 
 \subsection{Annotate the effects of SVs}
 
-To annotate the effects of SVs to genes, we need the genomic annotation file,
-which is usually a \emph{.gff3} file. This file could be read into R by the 
-\Rpackage{rtracklayer} package and storaged as genomic ranges data. An example 
+To annotate the effects of SVs to genes, we need the genomic annotation file. 
+To avoid confusion, this file should be a plain text file with 6 columns, 
+the chromosome ID, tag of each genome element, start coordinate, end
+coordinate, strand, ID of each genome element. An example 
 genomic annotation file has been storaged in the example dataset of \intansv{}.
 
-The follow code shows how to read a \emph{.gff3} file into R.
 
-<<read in Gff files into R>>=
-library(rtracklayer)
-msu_gff_v7 <- import.gff(system.file("extdata/chr05_chr10.gff3", package="intansv"))
+<<read in annotation file into R>>=
+anno.file.path <- system.file("extdata/chr05_chr10.anno.txt", package="intansv")
+anno.file.path
+msu_gff_v7 <- read.table(anno.file.path, head=TRUE, as.is=TRUE)
 head(msu_gff_v7)
 @
 
 <<sv annotation>>=
-load(system.file("extdata/genome.anno.RData",package="intansv"))
 sv_all_methods.anno <- llply(sv_all_methods,svAnnotation,
                              genomeAnnotation=msu_gff_v7)
 names(sv_all_methods.anno)
@@ -246,8 +260,10 @@ barplot. We also need the length of each chromosome, which was storaged
 in the example dataset of \intansv{}.
 %
 <<genomic_distribution, fig=TRUE, include=FALSE, eps=FALSE, width=7,height=7>>=
-genome
-plotChromosome(genome,sv_all_methods,1000000)
+genome.file.path <- system.file("extdata/chr05_chr10.genome.txt", package="intansv")
+genome.file.path
+genome <- read.table(genome.file.path, head=TRUE, as.is=TRUE)
+plotChromosome(genome, sv_all_methods,1000000)
 @
 
 \begin{figure}[!htb]
@@ -263,12 +279,12 @@ plotChromosome(genome,sv_all_methods,1000000)
 \subsection{Visualize SVs in specific genomic region}
 
 We could also visualize SVs in specific genomic region. Here, we also need the 
-genomic annotation file (named with suffix \emph{.gff3} or \emph{.gff}). 
+genomic annotation file. 
 
 %
 <<region_visualization, fig=TRUE, include=FALSE, eps=FALSE, width=7,height=7>>=
-head(msu_gff_v7,n=3)
-plotRegion(sv_all_methods,msu_gff_v7,"chr05",1,200000)
+head(msu_gff_v7, n=3)
+plotRegion(sv_all_methods,msu_gff_v7, "chr05", 1, 200000)
 @
 
 \begin{figure}[!htb]

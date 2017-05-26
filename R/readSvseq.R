@@ -75,8 +75,10 @@ readSvseq <- function(dataDir=".", regSizeLowerCutoff=100, method="SVseq2",
         })
     })
     
-    SvseqDelDfFilMer <- SvseqDelDfFilMer[, c(1, 9:11)]
-    names(SvseqDelDfFilMer) <- c("chromosome", "pos1", "pos2", "size")
+    SvseqDelDfFilMer <- SvseqDelDfFilMer[, c(1, 9:11, 8)]
+    names(SvseqDelDfFilMer) <- c("chromosome", "pos1", "pos2", "size", "readsSupport")
+    SvseqDelDfFilMer$info <- paste0("SR=", SvseqDelDfFilMer$readsSupport)
+    SvseqDelDfFilMer$readsSupport <- NULL
     retuRes <- list(del=SvseqDelDfFilMer)
     attributes(retuRes) <- c(attributes(retuRes), list(method=method))
     
