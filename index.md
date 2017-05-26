@@ -28,12 +28,21 @@ This package provides efficient tools to read and integrate structural variation
     source("http://bioconductor.org/biocLite.R")  
     biocLite("intansv")  
     
--   the latest development version from github with
+-   the latest development version from Bioconductor with
 
-    if (packageVersion("devtools") < 1.6) {  
-      install.packages("devtools")  
-    }  
-    devtools::install_github("andrewhzau/intansv")  
+    source("http://bioconductor.org/biocLite.R")  
+	useDevel()
+    biocLite("intansv")  
+
+	
+### [intansv development version 1.17.0](http://www.bioconductor.org/packages/devel/bioc/html/intansv.html) support the following version of SV prediction programs
+* BreakDancer version 1.4.5, [example output]({{ BASE_PATH }}/assets/BreakDancer_version_1.4.5.output)  
+* Pindel version v0.2.5b9, [example output]({{ BASE_PATH }}/assets/Pindel_version_0.2.5b9.output.zip)   
+* DELLY version 0.7.6, [example output]({{ BASE_PATH }}/assets/DELLY_version_0.7.6.output.zip)  
+* SVseq2 version 2.2, [example output]({{ BASE_PATH }}/assets/SVseq2_version_2.2.output.zip)  
+* CNVnator version 0.3.3, [example output]({{ BASE_PATH }}/assets/CNVnator_version_0.3.3.output.zip)  
+* Lumpy version 0.2.13, [example output]({{ BASE_PATH }}/assets/Lumpy_version_0.2.13.output)  
+* SoftSearch version 2.4, [example output]({{ BASE_PATH }}/assets/SoftSearch_version_2.4.output)  
 
 ### intansv release version 1.7.3 support the following version of SV prediction programs
 * BreakDancer version 1.4.5, [example output]({{ BASE_PATH }}/assets/BreakDancer_version_1.4.5.output)  
@@ -60,11 +69,9 @@ This package provides efficient tools to read and integrate structural variation
 * [annotation of the human genome (GRCh38.p7) provided by GENCODE, Release 25]({{ BASE_PATH }}/assets/GffAnnotation/GRCh38.gencode.anno.RData)   
 
 ### Report bugs
-If you find any bugs using intansv, please <a href="https://github.com/andrewhzau/intansv/issues" target="_blank">create an issue</a> or send me an email.
+If you find any bugs using intansv, please <a href="https://github.com/venyao/intansv/issues/intansv/issues" target="_blank">create an issue</a> or send me an email.
 
 ### Contact information
-Wen Yao, ywhzau at gmail.com
-
-
+ywhzau at gmail.com
 
 
