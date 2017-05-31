@@ -1,4 +1,11 @@
 
+CHANGES IN VERSION 1.17.1
+------------------------
+
+Notes
+
+    o Fix a small bug in function methodsMerge.
+
 CHANGES IN VERSION 1.17.0
 ------------------------
 

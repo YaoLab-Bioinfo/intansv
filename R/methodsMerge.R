@@ -89,7 +89,7 @@ methodsMerge <- function(..., others=NULL, overLapPerDel=0.8,
         ranges=IRanges(start=InversionDf$pos1, end=InversionDf$pos2))
     InversionRes <- findOverlaps(InversionIrange, reduce(InversionIrange))
     InversionDf$class <- subjectHits(InversionRes)
-    if (nrow(InversionDf)>0) {
+    if (!is.null(nrow(InversionDf)) && nrow(InversionDf)>0) {
       InversionDfMerge <- ddply(InversionDf, ("class"), 
                                 methodsCluster, methodsName=MethodsName, 
                                 overLapPer=overLapPerInv, numMethodsSup=numMethodsSupInv)
@@ -112,7 +112,7 @@ methodsMerge <- function(..., others=NULL, overLapPerDel=0.8,
         ranges=IRanges(start=DeletionDf$pos1, end=DeletionDf$pos2))
     DeletionRes <- findOverlaps(DeletionIrange, reduce(DeletionIrange))
     DeletionDf$class <- subjectHits(DeletionRes)
-    if (nrow(DeletionDf)>0) {
+    if (!is.null(nrow(DeletionDf)) && nrow(DeletionDf)>0) {
       DeletionDfMerge <- ddply(DeletionDf, ("class"), 
                                methodsCluster, methodsName=MethodsName,
                                overLapPer=overLapPerDel, numMethodsSup=numMethodsSupDel)
@@ -134,7 +134,7 @@ methodsMerge <- function(..., others=NULL, overLapPerDel=0.8,
         ranges=IRanges(start=DuplicationDf$pos1, end=DuplicationDf$pos2))
     DuplicationRes <- findOverlaps(DuplicationIrange, reduce(DuplicationIrange))
     DuplicationDf$class <- subjectHits(DuplicationRes)
-    if (nrow(DuplicationDf)>0) {
+    if (!is.null(nrow(DuplicationDf)) && nrow(DuplicationDf)>0) {
       DuplicationDfMerge <- ddply(DuplicationDf, ("class"), 
                                   methodsCluster, methodsName=MethodsName,
                                   overLapPer=overLapPerDup, numMethodsSup=numMethodsSupDup)
