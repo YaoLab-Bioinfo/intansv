@@ -28,10 +28,9 @@ This package provides efficient tools to read and integrate structural variation
 -   the latest development version from github with
 
     ``` r
-    if (packageVersion("devtools") < 1.6) {
-      install.packages("devtools")
-    }
-    devtools::install_github("andrewhzau/intansv")
+    source("http://bioconductor.org/biocLite.R")  
+    useDevel()  
+    biocLite("intansv")  
     ```
 
 ### intansv release version 1.7.3 support the following version of SV prediction programs  
