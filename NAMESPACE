@@ -1,0 +1,18 @@
+
+import(plyr)
+import(BiocGenerics)
+import(GenomicRanges)
+import(ggbio)
+
+importFrom(IRanges, IRanges)
+
+export(
+    methodsMerge, plotChromosome, plotRegion,
+    readBreakDancer, readCnvnator, readDelly,
+    readPindel, readSvseq, svAnnotation, 
+    readLumpy, readSoftSearch
+)
+
+importFrom("stats", "as.dist", "cutree", "hclust")
+importFrom("utils", "read.table")
+  
