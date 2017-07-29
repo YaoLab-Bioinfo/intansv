@@ -33,6 +33,9 @@ This package provides efficient tools to read and integrate structural variation
     biocLite("intansv")  
     ```
 	
+Help Manual
+------------
+[Overview of intansv](https://github.com/venyao/intansv/blob/master/intansvOverview.pdf)
     
 Example output of these SV programs are listed at http://venyao.github.io/intansv/  
 	
