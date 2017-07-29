@@ -23,19 +23,19 @@ This package provides efficient tools to read and integrate structural variation
 
 ### Install
 
--   the latest released version from Bioconductor with
+-   the latest development version from Github with
 
-    source("http://bioconductor.org/biocLite.R")  
-    biocLite("intansv")  
-    
+    install.packages("devtools")  
+    devtools::install_github("venyao/intansv")  
+	
 -   the latest development version from Bioconductor with
 
     source("http://bioconductor.org/biocLite.R")  
     useDevel()  
     biocLite("intansv")  
-
+    
 	
-### [intansv development version 1.17.0](http://www.bioconductor.org/packages/devel/bioc/html/intansv.html) support the following version of SV prediction programs
+### [intansv development version 1.17.1](http://www.bioconductor.org/packages/devel/bioc/html/intansv.html) support the following version of SV prediction programs
 * BreakDancer version 1.4.5, [example output]({{ BASE_PATH }}/assets/BreakDancer_version_1.4.5.output)  
 * Pindel version v0.2.5b9, [example output]({{ BASE_PATH }}/assets/Pindel_version_0.2.5b9.output.zip)   
 * DELLY version 0.7.6, [example output]({{ BASE_PATH }}/assets/DELLY_version_0.7.6.output.zip)  
