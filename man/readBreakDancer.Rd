@@ -10,7 +10,7 @@
 
 \usage{
     readBreakDancer(file="", scoreCutoff=60, readsSupport=3, 
-                    regSizeLowerCutoff=100, regSizeUpperCutoff=1000000,
+                    regSizeLowerCutoff=100, regSizeUpperCutoff=10000000,
                     method="BreakDancer", ...)
 }
 

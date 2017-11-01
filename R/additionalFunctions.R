@@ -1,7 +1,5 @@
 # A function to calculate the overlaping percentage between query and subject in GRanges or IRange format
 tellOLPercantage <- function(query, subject, ...) {
-  require(GenomicRanges) 
-  require(IRanges)
   if(!((class(query)=="GRanges" & class(subject)=="GRanges") | (class(query)=="IRanges" & class(subject)=="IRanges"))) {
     stop("Query and subject need to be of same class, either GRanges or IRanges!")
   }

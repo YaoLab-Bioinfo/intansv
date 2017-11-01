@@ -7,7 +7,6 @@ import(ggbio)
 importFrom(IRanges, IRanges)
 
 export(
-    tellOLPercantage, mergeOLCNVs, 
     methodsMerge, plotChromosome, plotRegion,
     readBreakDancer, readCnvnator, readDelly,
     readPindel, readSvseq, svAnnotation, 
