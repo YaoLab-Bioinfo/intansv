@@ -108,31 +108,33 @@ plotChromosome <- function(genome, structuralVariation,
   
   seqlengths(genomeDelDupInvIrange) <- genome$end[
     match(names(seqlengths(genomeDelDupInvIrange)), genome$chr)]
-  p <- ggplot() + layout_circle(genomeDelDupInvIrange, geom="ideo", 
-                                fill="gray70", radius=30, trackwidth=4)
-  p <- p + layout_circle(genomeDelDupInvIrange,  geom = "scale",  
-                         size = 2,  radius = 35,  trackWidth = 2)
-  ## chromosomes names
-  p <- p + layout_circle(genome.gr, geom = "text",  
-                         aes(label = seqnames),  vjust = 0, 
-                         radius = 38,  trackWidth = 4)  
-  ## barplot of deletions
-  if (!is.null(delOverlapCount)) {
-    p <- p + layout_circle(genomeDelDupInvIrange, geom="bar", radius=25, 
-                           trackwidth=4, aes(y="delScore"), 
-                           color="blue", fill="blue")
-  }
-  ## barplot of duplications
-  if (!is.null(dupOverlapCount)) {
-    p <- p + layout_circle(genomeDelDupInvIrange, geom="bar", radius=20, 
-                           trackwidth=4, aes(y="dupScore"), 
-                           color="red", fill="red")
-  }
+  p <- ggbio() 
+  
   ## barplot of inversions
   if (!is.null(invOverlapCount)) {
-    p <- p + layout_circle(genomeDelDupInvIrange, geom="bar", radius=15, 
-                           trackwidth=4, aes(y="invScore"), 
-                           color="green4", fill="green4")
+    p <- p + circle(genomeDelDupInvIrange, geom="bar", aes(y="invScore"), 
+                    color="green4", fill="green4")
   }
+  
+  ## barplot of duplications
+  if (!is.null(dupOverlapCount)) {
+    p <- p + circle(genomeDelDupInvIrange, geom="bar", aes(y="dupScore"), 
+                    color="red", fill="red")
+  }
+  
+  ## barplot of deletions
+  if (!is.null(delOverlapCount)) {
+    p <- p + circle(genomeDelDupInvIrange, geom="bar", aes(y="delScore"), 
+                    color="blue", fill="blue")
+  }
+  
+  p <- p + circle(genomeDelDupInvIrange, geom="ideo", 
+                                fill="gray70")
+  p <- p + circle(genomeDelDupInvIrange,  geom = "scale",  
+                         size = 2)
+  ## chromosomes names
+  p <- p + circle(genome.gr, geom = "text",  
+                         aes(label = seqnames),  vjust = 0)  
+  
   return(p)
 }
