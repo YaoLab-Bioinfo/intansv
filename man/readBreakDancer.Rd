@@ -10,7 +10,11 @@
 
 \usage{
     readBreakDancer(file="", scoreCutoff=60, readsSupport=3, 
+<<<<<<< HEAD
                     regSizeLowerCutoff=100, regSizeUpperCutoff=10000000,
+=======
+                    regSizeLowerCutoff=100, regSizeUpperCutoff=1000000,
+>>>>>>> upstream/master
                     method="BreakDancer", ...)
 }
 
