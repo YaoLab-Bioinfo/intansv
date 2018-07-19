@@ -10,11 +10,7 @@
 
 \usage{
     readDelly(dataDir=".", regSizeLowerCutoff=100, 
-<<<<<<< HEAD
               regSizeUpperCutoff=10000000, readsSupport=3,
-=======
-              regSizeUpperCutoff=1000000, readsSupport=3,
->>>>>>> upstream/master
               method="DELLY", pass=TRUE, minMappingQuality=20)
 }
 

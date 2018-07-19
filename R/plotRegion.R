@@ -6,12 +6,7 @@ plotRegion <- function(structuralVariation, genomeAnnotation,
   RegionNewIrange <- GRanges(seqnames=regionChromosome, 
                              IRanges(start=1, end=regionEnd-regionStart+1))
   seqlengths(RegionNewIrange) <- regionEnd - regionStart + 1
-<<<<<<< HEAD
   p <- ggbio()
-=======
-  p <- ggplot() + layout_circle(RegionNewIrange, geom="ideo", 
-                                fill="gray70", radius=25, trackWidth=2)
->>>>>>> upstream/master
   
   RegionIrange <- GRanges(seqnames=regionChromosome, 
                           IRanges(start=regionStart, end=regionEnd))
@@ -42,7 +37,6 @@ plotRegion <- function(structuralVariation, genomeAnnotation,
                     RegionTargetGeneDf$end), 
             name=RegionTargetGeneDf$loc)
   
-<<<<<<< HEAD
   ##  duplications in specific region
   if (any(names(structuralVariation)=="dup")) {
     RegionDup <- 
@@ -75,16 +69,6 @@ plotRegion <- function(structuralVariation, genomeAnnotation,
       p <- p + circle(RegionInvIrange, geom="rect", 
                       color="purple", fill="purple")
     }
-=======
-  if (length(RegionTargetGeneDfIrange)>0) {
-    seqlengths(RegionTargetGeneDfIrange) <- regionEnd - regionStart + 1
-    p <- p + layout_circle(RegionTargetGeneDfIrange, geom="rect", 
-                           color="blue", fill="blue", radius=29, trackWidth=2)
-    ##  genes names
-    p <- p + layout_circle(RegionTargetGeneDfIrange, geom="text", 
-                           aes_string(label='name', angle=90), 
-                           radius=33, trackWidth=6, vjust=0, size=2)
->>>>>>> upstream/master
   }
   
   ##  deletions in specific region
@@ -101,7 +85,6 @@ plotRegion <- function(structuralVariation, genomeAnnotation,
       RegionDelIrange <- GRanges(seqnames=RegionDel$chromosome, 
                                  IRanges(RegionDel$pos1, RegionDel$pos2))
       seqlengths(RegionDelIrange) <- regionEnd - regionStart + 1
-<<<<<<< HEAD
       p <- p + circle(RegionDelIrange, geom="rect", 
                       color="red", fill="red")
     }
@@ -119,48 +102,6 @@ plotRegion <- function(structuralVariation, genomeAnnotation,
     p <- p + circle(RegionTargetGeneDfIrange, geom="text", 
                     aes(label=name, label.text.angle=90), 
                     vjust=0, size=2)
-=======
-      p <- p + layout_circle(RegionDelIrange, geom="rect", 
-                             color="red", fill="red", radius=22, 
-                             trackWidth=2)
-    }
-  }
-  
-  ##  inversions in specific region
-  if (any(names(structuralVariation)=="inv")) {
-    RegionInv <- 
-      structuralVariation$inv[(structuralVariation$inv)$chromosome==regionChromosome & 
-                                (structuralVariation$inv)$pos1>=regionStart & 
-                                (structuralVariation$inv)$pos2<=regionEnd, ]
-    RegionInv$pos1 <- RegionInv$pos1 - regionStart + 1
-    RegionInv$pos2 <- RegionInv$pos2 - regionStart + 1
-    if (nrow(RegionInv)>0) {
-      RegionInvIrange <- GRanges(seqnames=RegionInv$chromosome, 
-                                 IRanges(RegionInv$pos1, RegionInv$pos2))
-      seqlengths(RegionInvIrange) <- regionEnd - regionStart + 1
-      p <- p + layout_circle(RegionInvIrange, geom="rect", 
-                             color="purple", fill="purple", 
-                             radius=16, trackWidth=2)
-    }
-  }
-  
-  ##  duplications in specific region
-  if (any(names(structuralVariation)=="dup")) {
-    RegionDup <- 
-      structuralVariation$dup[(structuralVariation$dup)$chromosome==regionChromosome & 
-                                (structuralVariation$dup)$pos1>=regionStart & 
-                                (structuralVariation$dup)$pos2<=regionEnd, ]
-    RegionDup$pos1 <- RegionDup$pos1 - regionStart + 1
-    RegionDup$pos2 <- RegionDup$pos2 - regionStart + 1
-    if (nrow(RegionDup)>0) {
-      RegionDupIrange <- GRanges(seqnames=RegionDup$chromosome, 
-                                 IRanges(RegionDup$pos1, RegionDup$pos2))
-      seqlengths(RegionDupIrange) <- regionEnd - regionStart + 1
-      p <- p + layout_circle(RegionDupIrange, geom="rect", 
-                             color="green4", fill="green4", 
-                             radius=19, trackWidth=2)
-    }
->>>>>>> upstream/master
   }
   
   return(p)

@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 _site/*
 _theme_packages/*
 
@@ -10,11 +9,3 @@ Thumbs.db
 .rbenv-version
 .rvmrc
 .Rproj.user
-=======
-.Rproj.user
-.Rhistory
-.RData
-*.Rproj
-.Rbuildignore
-*~$
->>>>>>> upstream/master
