@@ -28,9 +28,10 @@ This package provides efficient tools to read and integrate structural variation
 -   the latest development version from Bioconductor with
 
     ``` r
-    source("http://bioconductor.org/biocLite.R")  
+    if (!requireNamespace("BiocManager", quietly=TRUE))
+        install.packages("BiocManager")
     useDevel()  
-    biocLite("intansv")  
+    BiocManager::install("intansv")  
     ```
 	
 Help Manual
