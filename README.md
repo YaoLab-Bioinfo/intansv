@@ -30,7 +30,7 @@ This package provides efficient tools to read and integrate structural variation
     ``` r
     if (!requireNamespace("BiocManager", quietly=TRUE))
         install.packages("BiocManager")
-    useDevel()  
+    BiocManager::install(version = "devel")
     BiocManager::install("intansv")  
     ```
 	
