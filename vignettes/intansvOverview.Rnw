@@ -57,10 +57,9 @@ visualizing SVs in specific genomic region. In this vignette,
 we will rely on a simple, illustrative example dataset to explain 
 the usage of \intansv{}.
 
-The \intansv{} package is available at bioconductor.org and can be
-downloaded via \Rfunction{biocLite}:
+The \intansv{} package is available from bioconductor
 
-<<biocLite, eval=FALSE>>=
+<<biocManager, eval=FALSE>>=
 if (!requireNamespace("BiocManager", quietly=TRUE))
     install.packages("BiocManager")
 BiocManager::install("intansv")
