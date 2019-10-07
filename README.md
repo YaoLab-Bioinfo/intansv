@@ -28,9 +28,12 @@ This package provides efficient tools to read and integrate structural variation
 -   the latest development version from Bioconductor with
 
     ``` r
-    source("http://bioconductor.org/biocLite.R")  
-    useDevel()  
-    biocLite("intansv")  
+    if (!requireNamespace("BiocManager", quietly = TRUE))
+        install.packages("BiocManager")
+
+    # The following initializes usage of Bioc devel
+    BiocManager::install(version='devel')
+    BiocManager::install("intansv")  
     ```
 	
 Help Manual
@@ -75,4 +78,4 @@ Example output of these SV programs are listed at http://venyao.github.io/intans
 * Lumpy version 0.1.5
 * SoftSearch version 2.3
 
-Please go to Bioconductor to download the old version of the intansv package.  
+Please go to [Bioconductor](http://www.bioconductor.org) to download the old versions of the intansv package.  
