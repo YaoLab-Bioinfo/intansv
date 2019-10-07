@@ -100,8 +100,8 @@ plotRegion <- function(structuralVariation, genomeAnnotation,
     
     ##  genes names
     p <- p + circle(RegionTargetGeneDfIrange, geom="text", 
-                    aes(label=name, label.text.angle=90), 
-                    vjust=0, size=2)
+                    aes(label=name), 
+                    vjust=0.5, size=2, label.text.angle=10)
   }
   
   return(p)

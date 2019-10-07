@@ -43,7 +43,7 @@
 
 \examples{
 
-    lumpy <- readLumpy(system.file("extdata/ZS97.lumpy.pesr.bedpe",package="intansv"))
+    lumpy <- readLumpy(system.file("extdata/ZS97.LUMPY.vcf",package="intansv"))
     str(lumpy)
 
 }

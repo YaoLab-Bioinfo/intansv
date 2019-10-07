@@ -58,7 +58,7 @@
     svseq <- readSvseq(system.file("extdata/svseq2",package="intansv"))
     str(svseq)
 
-    delly <- readDelly(system.file("extdata/delly",package="intansv"))
+    delly <- readDelly(system.file("extdata/ZS97.DELLY.vcf",package="intansv"))
     str(delly)
 
     pindel <- readPindel(system.file("extdata/pindel",package="intansv"))
