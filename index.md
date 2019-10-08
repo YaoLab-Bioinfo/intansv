@@ -39,6 +39,9 @@ This package provides efficient tools to read and integrate structural variation
     BiocManager::install("intansv")
 	```
     
+	
+### Source code in GitHub
+https://github.com/venyao/intansv  
 
 ### Help Manual
 [Overview of intansv](https://github.com/venyao/intansv/blob/master/intansvOverview.pdf)  
@@ -96,7 +99,7 @@ This package provides efficient tools to read and integrate structural variation
 * [annotation of the human genome (GRCh38.p7) provided by GENCODE, Release 25]({{ BASE_PATH }}/assets/GffAnnotation/GRCh38.gencode.anno.RData)   
 
 ### Report bugs
-If you find any bugs using intansv, please <a href="https://github.com/venyao/intansv/issues/intansv/issues" target="_blank">create an issue</a> or send me an email.
+If you find any bugs using intansv, please <a href="https://github.com/venyao/intansv/issues/" target="_blank">create an issue</a> or send me an email.
 
 ### Contact information
 ywhzau at gmail.com
