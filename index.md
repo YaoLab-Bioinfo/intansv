@@ -30,12 +30,37 @@ This package provides efficient tools to read and integrate structural variation
 	
 -   the latest development version from Bioconductor with
 
-    source("http://bioconductor.org/biocLite.R")  
-    useDevel()  
-    biocLite("intansv")  
+    if (!requireNamespace("BiocManager", quietly = TRUE))
+        install.packages("BiocManager")
+
+    # The following initializes usage of Bioc devel
+    BiocManager::install(version='devel')
+    BiocManager::install("intansv")  
     
-	
-### [intansv development version 1.17.1](http://www.bioconductor.org/packages/devel/bioc/html/intansv.html) support the following version of SV prediction programs
+
+### Help Manual
+[Overview of intansv](https://github.com/venyao/intansv/blob/master/intansvOverview.pdf)  
+
+
+### intansv development version 1.27.0 support the following version of SV prediction programs
+* BreakDancer version 1.4.5, [example output]({{ BASE_PATH }}/assets/BreakDancer_version_1.4.5.output)  
+* Pindel version v0.2.5b9, [example output]({{ BASE_PATH }}/assets/Pindel_version_0.2.5b9.output.zip)   
+* DELLY version 0.8.1, [example output]({{ BASE_PATH }}/assets/DELLY_version_0.8.1.output)  
+* SVseq2 version 2.2, [example output]({{ BASE_PATH }}/assets/SVseq2_version_2.2.output.zip)  
+* CNVnator version 0.3.3, [example output]({{ BASE_PATH }}/assets/CNVnator_version_0.3.3.output.zip)  
+* Lumpy version 0.3.0, [example output]({{ BASE_PATH }}/assets/Lumpy_version_0.3.0.output)    
+* SoftSearch version 2.4, [example output]({{ BASE_PATH }}/assets/SoftSearch_version_2.4.output)  
+
+### intansv development version 1.21.0 support the following version of SV prediction programs
+* BreakDancer version 1.4.5, [example output]({{ BASE_PATH }}/assets/BreakDancer_version_1.4.5.output)  
+* Pindel version v0.2.5b9, [example output]({{ BASE_PATH }}/assets/Pindel_version_0.2.5b9.output.zip)   
+* DELLY version 0.7.6, [example output]({{ BASE_PATH }}/assets/DELLY_version_0.7.6.output.zip)  
+* SVseq2 version 2.2, [example output]({{ BASE_PATH }}/assets/SVseq2_version_2.2.output.zip)  
+* CNVnator version 0.3.3, [example output]({{ BASE_PATH }}/assets/CNVnator_version_0.3.3.output.zip)  
+* Lumpy version 0.2.13, [example output]({{ BASE_PATH }}/assets/Lumpy_version_0.2.13.output)  
+* SoftSearch version 2.4, [example output]({{ BASE_PATH }}/assets/SoftSearch_version_2.4.output)  
+
+### intansv development version 1.17.1 support the following version of SV prediction programs
 * BreakDancer version 1.4.5, [example output]({{ BASE_PATH }}/assets/BreakDancer_version_1.4.5.output)  
 * Pindel version v0.2.5b9, [example output]({{ BASE_PATH }}/assets/Pindel_version_0.2.5b9.output.zip)   
 * DELLY version 0.7.6, [example output]({{ BASE_PATH }}/assets/DELLY_version_0.7.6.output.zip)  
