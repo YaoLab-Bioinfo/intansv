@@ -20,20 +20,20 @@ This package provides efficient tools to read and integrate structural variation
 
 -   the latest development version from Github with
 
-    ``` r
-    install.packages("devtools")  
-    devtools::install_github("venyao/intansv")    
+    ```r
+    install.packages("devtools")
+    devtools::install_github("venyao/intansv")
     ```
 	
 -   the latest development version from Bioconductor with
 
-    ``` r
+    ```r
     if (!requireNamespace("BiocManager", quietly = TRUE))
         install.packages("BiocManager")
 
     # The following initializes usage of Bioc devel
     BiocManager::install(version='devel')
-    BiocManager::install("intansv")  
+    BiocManager::install("intansv")
     ```
 	
 Help Manual
