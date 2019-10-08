@@ -41,7 +41,7 @@ This package provides efficient tools to read and integrate structural variation
     
 	
 ### Source code in GitHub
-https://github.com/venyao/intansv  
+[https://github.com/venyao/intansv](https://github.com/venyao/intansv)  
 
 ### Help Manual
 [Overview of intansv](https://github.com/venyao/intansv/blob/master/intansvOverview.pdf)  
