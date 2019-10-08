@@ -30,11 +30,9 @@ This package provides efficient tools to read and integrate structural variation
 	
 -   the latest development version from Bioconductor with
 
-    if (!requireNamespace("BiocManager", quietly = TRUE))
-        install.packages("BiocManager")
-
-    # The following initializes usage of Bioc devel
-    BiocManager::install(version='devel')
+    if (!requireNamespace("BiocManager", quietly = TRUE))  
+        install.packages("BiocManager")  
+    BiocManager::install(version='devel')  
     BiocManager::install("intansv")  
     
 
