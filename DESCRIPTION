@@ -10,4 +10,4 @@ Maintainer: Wen Yao <ywhzau@gmail.com>
 biocViews: Genetics, Annotation, Sequencing, Software
 Depends: R (>= 2.14.0), plyr, ggbio, GenomicRanges
 Imports: BiocGenerics, IRanges
-License: Artistic-2.0
+License: MIT
