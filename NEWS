@@ -1,3 +1,9 @@
+CHANGES IN VERSION 1.29.0
+------------------------
+
+Notes
+
+    o Fix build error on Windows and Mac.
 
 CHANGES IN VERSION 1.17.1
 ------------------------

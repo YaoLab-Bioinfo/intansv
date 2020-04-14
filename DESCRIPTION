@@ -4,10 +4,10 @@ Description: This package provides efficient tools to read and integrate
 	structural variations predicted by popular softwares. Annotation and
 	visulation of structural variations are also implemented in the
 	package.
-Version: 1.27.0
+Version: 1.29.1
 Author: Wen Yao <ywhzau@gmail.com>
 Maintainer: Wen Yao <ywhzau@gmail.com>
 biocViews: Genetics, Annotation, Sequencing, Software
 Depends: R (>= 2.14.0), plyr, ggbio, GenomicRanges
 Imports: BiocGenerics, IRanges
-License: MIT
+License: MIT + file LICENSE
