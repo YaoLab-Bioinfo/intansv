@@ -20,27 +20,38 @@ This package provides efficient tools to read and integrate structural variation
 
 -   the latest development version from Github with
 
-    ``` r
-    install.packages("devtools")  
-    devtools::install_github("venyao/intansv")    
+    ```r
+    install.packages("devtools")
+    devtools::install_github("venyao/intansv")
     ```
 	
 -   the latest development version from Bioconductor with
 
-    ``` r
-    if (!requireNamespace("BiocManager", quietly=TRUE))
+    ```r
+    if (!requireNamespace("BiocManager", quietly = TRUE))
         install.packages("BiocManager")
-    BiocManager::install(version = "devel")
-    BiocManager::install("intansv")  
+
+    # The following initializes usage of Bioc devel
+    BiocManager::install(version='devel')
+    BiocManager::install("intansv")
     ```
 	
 Help Manual
 ------------
 [Overview of intansv](https://github.com/venyao/intansv/blob/master/intansvOverview.pdf)
     
-Example output of these SV programs are listed at http://venyao.github.io/intansv/  
+Example output of these SV programs are listed at https://venyao.github.io/intansv/  
 	
-### intansv development version 1.17.1 support the following version of SV prediction programs
+### intansv development version 1.27.0 support the following version of SV prediction programs
+* BreakDancer version 1.4.5  
+* Pindel version v0.2.5b9   
+* DELLY version 0.8.1  
+* SVseq2 version 2.2  
+* CNVnator version 0.3.3  
+* Lumpy version 0.3.0  
+* SoftSearch version 2.4  
+
+### intansv development version 1.21.0 support the following version of SV prediction programs
 * BreakDancer version 1.4.5  
 * Pindel version v0.2.5b9   
 * DELLY version 0.7.6  
@@ -67,4 +78,4 @@ Example output of these SV programs are listed at http://venyao.github.io/intans
 * Lumpy version 0.1.5
 * SoftSearch version 2.3
 
-
+Please go to [Bioconductor](http://www.bioconductor.org) to download the old versions of the intansv package.  

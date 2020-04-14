@@ -57,15 +57,15 @@ visualizing SVs in specific genomic region. In this vignette,
 we will rely on a simple, illustrative example dataset to explain 
 the usage of \intansv{}.
 
-The \intansv{} package is available from bioconductor
+The \intansv{} package is available at bioconductor.org and can be
+downloaded via \Rfunction{biocLite}:
 
-<<biocManager, eval=FALSE>>=
-if (!requireNamespace("BiocManager", quietly=TRUE))
-    install.packages("BiocManager")
-BiocManager::install("intansv")
+<<biocLite, eval=FALSE>>=
+source("http://bioconductor.org/biocLite.R")
+biocLite("intansv")
 @
 <<initialize, results=hide>>=
-library(intansv)
+library("intansv")
 @
 
 
@@ -135,16 +135,16 @@ directory should be named with suffix of \emph{.del}. See the example dataset
 for more details.
 
 <<read in results of DELLY>>=
-delly.dir.path <- system.file("extdata/delly", package="intansv")
-delly.dir.path
-delly <- readDelly(delly.dir.path)
+delly.file.path <- system.file("extdata/ZS97.DELLY.vcf", package="intansv")
+delly.file.path
+delly <- readDelly(delly.file.path)
 str(delly)
 @
 
-DELLY is able to predict deletions, inversions and duplications. The final 
-prediction of different type of SVs given by DELLY were written to different 
-files. DELLY v0.7.6 outputs vcf files now. You should put all these files 
-in the same directory and feed the path of this directory to \Rfunction{readDelly}. 
+DELLY is able to predict deletions, inversions and duplications. The prediction
+ of all type of SVs were provided as a single VCF file by DELLY. 
+You can feed this file to to \Rfunction{readDelly} and it will do all the tedious work
+for you. 
 See the example dataset for more details.
 
 <<read in results of Pindel>>=
@@ -164,7 +164,7 @@ named with suffix of \emph{\_D}, \emph{\_INV} and \emph{\_TD} respectively. See
 the example dataset for more details.
 
 <<read in results of Lumpy>>=
-lumpy.file.path <- system.file("extdata/ZS97.lumpy.pesr.bedpe",
+lumpy.file.path <- system.file("extdata/ZS97.LUMPY.vcf",
                    package="intansv")
 lumpy.file.path
 lumpy <- readLumpy(lumpy.file.path)
@@ -172,7 +172,7 @@ str(lumpy)
 @
 
 Lumpy is able to predict deletions, inversions and duplications. The prediction
- of all type of SVs were provided as a single file by Lumpy. You can feed
+ of all type of SVs were provided as a single VCF file by Lumpy. You can feed
 this file to \Rfunction{readLumpy} and it will do all the tedious work
 for you.
 
@@ -197,7 +197,7 @@ inversions.
 \subsection{Integrate predictions of different programs}
 
 To get more reliable results, we need to integrate the predictions of
-different programs. See our paper \citep{intansv} for more details on 
+different programs. See our paper for more details on 
 how \intansv{} integrate the predictions of different programs.
 <<MethodsMerge>>=
 sv_all_methods <- methodsMerge(breakdancer, pindel, cnvnator, delly, svseq)

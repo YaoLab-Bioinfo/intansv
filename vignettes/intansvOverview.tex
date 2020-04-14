@@ -1,0 +1,69 @@
+%\VignetteIndexEntry{An Introduction to intansv}
+%\VignetteDepends{}
+%\VignetteKeywords{Structural variation}
+%\VignettePackage{intansv}
+\documentclass[10pt]{article}
+
+\textwidth=6.5in
+\textheight=8.5in
+%\parskip=.3cm
+\oddsidemargin=-.1in
+\evensidemargin=-.1in
+\headheight=-.3in
+
+\newcommand{\Rfunction}[1]{{\texttt{#1}}}
+\newcommand{\Robject}[1]{{\texttt{#1}}}
+\newcommand{\Rpackage}[1]{{\textit{#1}}}
+\newcommand{\Rmethod}[1]{{\texttt{#1}}}
+\newcommand{\Rfunarg}[1]{{\texttt{#1}}}
+\newcommand{\Rclass}[1]{{\textit{#1}}}
+\newcommand{\Rcode}[1]{{\texttt{#1}}}
+
+\newcommand{\program}[1]{\textsf{#1}}
+\newcommand{\R}{\program{R}}
+\newcommand{\intansv}{\Rpackage{intansv}}
+
+\usepackage{hyperref}
+
+\usepackage[authoryear,round]{natbib}
+\usepackage{times}
+
+\bibliographystyle{plainnat}
+
+\title{An Introduction to \intansv{}}
+\author{Wen Yao}
+\date{\today}
+
+\usepackage{Sweave}
+\begin{document}
+\input{intansvOverview-concordance}
+
+\maketitle
+
+\tableofcontents
+
+
+\section{Introduction}
+
+Currently, dozens of programs have been developped to predict structural
+variations (SV) utilizing next-generation sequencing data. However, the 
+prediction of multiple methods have to be integrated to get relatively 
+reliable results \citep{Drosophila}. The \intansv{} package is designed for 
+integrating results of different methods, annotating effects caused by SVs to 
+genes and its elements, displaying the genomic distribution of SVs and 
+visualizing SVs in specific genomic region. In this vignette,
+we will rely on a simple, illustrative example dataset to explain 
+the usage of \intansv{}.
+
+The \intansv{} package is available at bioconductor.org and can be
+downloaded via \Rfunction{biocLite}:
+
+\begin{Schunk}
+\begin{Sinput}
+> source("http://bioconductor.org/biocLite.R")
+> biocLite("intansv")
+\end{Sinput}
+\end{Schunk}
+\begin{Schunk}
+\begin{Sinput}
+> library("intansv")

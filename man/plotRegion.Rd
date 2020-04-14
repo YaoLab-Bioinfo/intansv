@@ -43,7 +43,7 @@
 
 \examples{
 
-    delly <- readDelly(system.file("extdata/delly",package="intansv"))
+    delly <- readDelly(system.file("extdata/ZS97.DELLY.vcf",package="intansv"))
     str(delly)
 
     anno.file.path <- system.file("extdata/chr05_chr10.anno.txt", package="intansv")
