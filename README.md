@@ -38,9 +38,9 @@ This package provides efficient tools to read and integrate structural variation
 	
 Help Manual
 ------------
-[Overview of intansv](https://github.com/venyao/intansv/blob/master/intansvOverview.pdf)
+[Overview of intansv](https://github.com/YaoLab-Bioinfo/intansv/blob/master/intansvOverview.pdf)
     
-Example output of these SV programs are listed at https://venyao.github.io/intansv/  
+Example output of these SV programs are listed at https://yaolab-bioinfo.github.io/intansv/  
 	
 ### intansv development version 1.27.0 support the following version of SV prediction programs
 * BreakDancer version 1.4.5  
